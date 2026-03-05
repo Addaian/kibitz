@@ -1,0 +1,184 @@
+[Event "Olympiad-03"]
+[Site "Hamburg"]
+[Date "1930.07.15"]
+[Round "3"]
+[White "Weenink, Henri Gerard"]
+[Black "Sultan Khan, Mir"]
+[Result "0-1"]
+[WhiteTeam "Netherlands"]
+[BlackTeam "England"]
+[Annotator "Rout,Padmini"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Sultan Khan"]
+[ChapterName "Weenink, Henri Gerard - Sultan Khan, Mir"]
+[ChapterURL "https://lichess.org/study/mZ2X89vb/VNFRuMlC"]
+[FEN "r4k2/1p3n2/4pp1p/4p2R/p2pP1P1/1P6/2PK1N1P/8 w - - 0 39"]
+[SetUp "1"]
+
+{ [#] }
+39. bxa4 Ng5 { The position is absolutely winning, Sultan Khan's move
+does not allow the rook's escape via h3 and giving up the h6 pawn to prevent
+any h4-g5 later freeing the rook. } (39... Rxa4) 40. Rxh6 Kg7 41. Rh5 Rxa4 42. h4 Nf7 43. Nd3 (43. g5 f5) 43... b6 { [%csl Bc5] } 44. Nf2 Ra1 45. Nd1 Ra3 46. Nb2 Rg3 { 0-1 White resigns. } 0-1
+
+
+[Event "Christmas Congress 1931/32-12 Premier"]
+[Site "Hastings White Rock Pavilion"]
+[Date "1931.12.30"]
+[Round "3"]
+[White "Thomas, George Alan"]
+[Black "Sultan Khan, Mir"]
+[Result "0-1"]
+[Variant "Standard"]
+[ECO "B15"]
+[Opening "Caro-Kann Defense: Main Line"]
+[StudyName "Sultan Khan"]
+[ChapterName "Thomas, George Alan - Sultan Khan, Mir"]
+[ChapterURL "https://lichess.org/study/mZ2X89vb/6M6L4cRs"]
+[Annotator "https://lichess.org/@/agileknight"]
+
+1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Ng3 g6 6. Nf3 Bg7 7. Be2 O-O 8. O-O Nbd7 9. c3 Qc7 10. Bd2 c5 11. Qc1 cxd4 12. Nxd4 e5 13. Nf3 Nd5 14. Rd1 Nf4 15. Bxf4 exf4 16. Ne4 Re8 17. Qc2 Nc5 18. Nd6 Rd8 19. Nxc8 Raxc8 20. Rxd8+ Rxd8 21. Rd1 Bf6 22. h3 a6 23. Rxd8+ Qxd8 24. b4 Ne6 25. c4 a5 26. a3 axb4 27. axb4 Qa8 28. Qe4 Qa1+ 29. Bf1 b6 { Time for a patient conversion into a win } 30. Qc6 Qa7 31. Qd5 Qc7 32. Qa8+ Kg7 33. Qe4 Qd6 34. Qb1 Bc3 35. b5 f5 36. Qd3 Qxd3 37. Bxd3 Nc5 38. Bc2 Kf6 39. Kf1 g5 40. Ke2 h6 41. Nh2 h5 42. Nf3 Ne6 43. Kd3 Bb4 44. Nd4 Nxd4 45. Kxd4 Bc5+ 46. Kd3 Bxf2 47. Ke2 Bc5 48. Kf1 g4 49. Bd3 Kg5 50. Bc2 f3 51. h4+ Kxh4 { 0-1 White resigns. } 0-1
+
+
+[Event "Simultaneous display, London"]
+[Date "1929.04.28"]
+[White "J.R. Capablanca"]
+[Black "Sultan, Khan"]
+[Result "0-1"]
+[Annotator "Rout,Padmini"]
+[Variant "Standard"]
+[ECO "D53"]
+[Opening "Queen's Gambit Declined"]
+[StudyName "Sultan Khan"]
+[ChapterName "J.R. Capablanca - Sultan, Khan"]
+[ChapterURL "https://lichess.org/study/mZ2X89vb/8YFGblLp"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Bg5 Be7 5. e3 a6 6. cxd5 exd5 7. Bd3 Be6 8. Nge2 h6 9. Bh4 c5 10. dxc5 Bxc5 11. O-O Nc6 12. Nf4 g5 13. Nxe6 fxe6 14. Bg3 Ke7 15. Rc1 Bd6 16. f4 Qc7 17. Ne2 Ng4 18. Nd4 Nxe3 19. Qe2 gxf4 20. Bh4+ Kd7 21. Qh5 Raf8 22. Qg6 Qb6 23. Qxe6+ Kc7 24. Qxd5?? Nxd5 0-1
+
+
+[Event "19th Delhi Open"]
+[Date "2022.03.23"]
+[Round "2"]
+[White "Gupta, Abhijeet"]
+[Black "Padmini, Rout"]
+[Result "1/2-1/2"]
+[WhiteElo "2628"]
+[BlackElo "2350"]
+[Annotator "Rout,Padmini"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Types of Players"]
+[ChapterName "Gupta, Abhijeet - Padmini, Rout Delhi 2022"]
+[ChapterURL "https://lichess.org/study/gixydcvv/RLT64jLH"]
+[FEN "5rk1/p1r3p1/bpnqpnBp/3pN2P/3p1P2/2P1P3/PP1N4/R2QK1R1 w Q - 0 19"]
+[SetUp "1"]
+
+{ [#] }
+19. exd4 Nxd4 { Not necessarily the correct sacrifice but once I saw, it
+was hard to resist sacrificing it owing to the fact that white's King is still
+in the centre } (19... Ne7) 20. cxd4 Qb4 21. Nf3 Ne4 22. Qb3 Qd6 23. Bxe4? (23. Rg4! $18) 23... dxe4 24. Nxe4 Qxf4 { The game ended in a draw after
+75 moves } 1/2-1/2
+
+
+[Event "FIDE Womens Grand Swiss 2021"]
+[Site "Riga"]
+[Date "2021.10.30"]
+[Round "4.7"]
+[White "Padmini, Rout"]
+[Black "Kashlinskaya, Alina"]
+[Result "0-1"]
+[WhiteElo "2380"]
+[BlackElo "2493"]
+[TimeControl "40/6000+30:20/3000+30:900+30"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Types of Players"]
+[ChapterName "Padmini, Rout - Kashlinskaya, Alina"]
+[ChapterURL "https://lichess.org/study/gixydcvv/CncfjF2x"]
+[Annotator "https://lichess.org/@/agileknight"]
+[FEN "1rb1r3/ppq2pbk/2n3pp/P1p1p3/1nN1R3/3P1NPP/1PPB1PB1/R1Q3K1 b - - 0 16"]
+[SetUp "1"]
+
+{ [#] }
+16... g5 { 526 } 17. c3! { 473 Giving up a pawn } 17... Nxd3 { 365 } 18. Qc2 { 10 } 18... f5 { 13 } 19. Qxd3! { 76 and now an exchange } 19... fxe4? { 245 } (19... Rd8 20. Qb1 fxe4 21. Qxe4+ Kg8) 20. Qxe4+ { 2 } 20... Kg8 { 126 } 21. h4 $18 { 836 } 0-1
+
+
+[Event "Tata Steel-A 75th"]
+[Site "Wijk aan Zee"]
+[Date "2013.01.15"]
+[Round "4"]
+[White "Aronian, Levon"]
+[Black "Anand, Viswanathan"]
+[Result "0-1"]
+[WhiteElo "2802"]
+[BlackElo "2772"]
+[Variant "Standard"]
+[ECO "D46"]
+[Opening "Semi-Slav Defense: Chigorin Defense"]
+[StudyName "Types of Players"]
+[ChapterName "Anand- Aronian, Wijk Aan Zee 2013"]
+[ChapterURL "https://lichess.org/study/gixydcvv/NlEDjTtQ"]
+[Annotator "https://lichess.org/@/agileknight"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. e3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5 8. Bd3 Bd6 9. O-O O-O 10. Qc2 Bb7 11. a3 Rc8 12. Ng5 c5 13. Nxh7 Ng4 14. f4 cxd4 15. exd4 Bc5 16. Be2 Nde5 17. Bxg4 Bxd4+ 18. Kh1 Nxg4 19. Nxf8 f5 20. Ng6 Qf6 21. h3 Qxg6 22. Qe2 Qh5 23. Qd3 Be3 { 0-1 Black wins. } 0-1
+
+
+[Event "AVRO"]
+[Site "Netherlands"]
+[Date "1938.11.15"]
+[Round "7"]
+[White "Botvinnik, Mikhail"]
+[Black "Alekhine, Alexander"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "D41"]
+[Opening "Queen's Gambit Declined: Semi-Tarrasch Defense, Pillsbury Variation"]
+[StudyName "Types of Players"]
+[ChapterName "Botvinnik- Alekhine, 1938"]
+[ChapterURL "https://lichess.org/study/gixydcvv/nRgp1pB3"]
+[Annotator "https://lichess.org/@/agileknight"]
+
+1. Nf3 d5 2. d4 Nf6 3. c4 e6 4. Nc3 c5 5. cxd5 Nxd5 6. e3 Nc6 7. Bc4 cxd4 8. exd4 Be7 9. O-O O-O 10. Re1 b6?! 11. Nxd5 exd5 12. Bb5 Bd7 13. Qa4 Nb8 14. Bf4 Bxb5 15. Qxb5 a6 16. Qa4 Bd6 17. Bxd6 Qxd6 18. Rac1 Ra7 19. Qc2 Re7 20. Rxe7 Qxe7 21. Qc7 Qxc7 22. Rxc7 f6 23. Kf1 Rf7 24. Rc8+ Rf8 25. Rc3 g5 26. Ne1 h5 27. h4 Nd7 28. Rc7 Rf7 29. Nf3 g4 30. Ne1 f5 31. Nd3 f4 32. f3 gxf3 33. gxf3 a5 34. a4 Kf8 35. Rc6 Ke7 36. Kf2 Rf5 37. b3 Kd8 38. Ke2 Nb8 39. Rg6 Kc7 40. Ne5 Na6 41. Rg7+ Kc8 42. Nc6 Rf6 43. Ne7+ Kb8 44. Nxd5 Rd6 45. Rg5 Nb4 46. Nxb4 axb4 47. Rxh5 Rc6 48. Rb5 Kc7 49. Rxb4 Rh6 50. Rb5 Rxh4 51. Kd3 { 1-0 White wins. } 1-0
+
+
+[Event "Candidates sf Karpov-Spassky +4-1=6"]
+[Site "Leningrad"]
+[Date "1974.04.??"]
+[Round "9"]
+[White "Karpov, Anatoly"]
+[Black "Spassky, Boris Vasilievich"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "B83"]
+[Opening "Sicilian Defense: Scheveningen Variation, Modern Variation"]
+[StudyName "Types of Players"]
+[ChapterName "Karpov- Spassky 1974"]
+[ChapterURL "https://lichess.org/study/gixydcvv/S6tnOCOL"]
+[Annotator "https://lichess.org/@/agileknight"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Be2 Be7 7. O-O O-O 8. f4 Nc6 9. Be3 Bd7 10. Nb3 a5 11. a4 Nb4 12. Bf3 Bc6 13. Nd4 g6 14. Rf2 e5 15. Nxc6 bxc6 16. fxe5 dxe5 17. Qf1 Qc8 18. h3 Nd7 19. Bg4 h5 20. Bxd7 Qxd7 21. Qc4 Bh4 22. Rd2 Qe7 23. Rf1 Rfd8 24. Nb1 Qb7 25. Kh2 Kg7 26. c3 Na6 27. Re2 Rf8 28. Nd2 Bd8 29. Nf3 f6 30. Rd2 Be7 31. Qe6 Rad8 32. Rxd8 Bxd8 33. Rd1 Nb8 34. Bc5 Rh8 35. Rxd8 { 1-0 White wins. } 1-0
+
+
+[Event "Bad Ragaz Accentus YM"]
+[Site "Bad Ragaz"]
+[Date "2019.03.03"]
+[Round "5"]
+[White "Engel, Luis"]
+[Black "Albornoz Cabrera, Carlos Daniel"]
+[Result "1/2-1/2"]
+[WhiteElo "2469"]
+[BlackElo "2577"]
+[Variant "Standard"]
+[ECO "B30"]
+[Opening "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack"]
+[StudyName "Types of Players"]
+[ChapterName "Luis Engel- Albornoz 2019"]
+[ChapterURL "https://lichess.org/study/gixydcvv/G2aHrg8k"]
+[Annotator "https://lichess.org/@/agileknight"]
+
+1. e4 c5 2. Nf3 Nc6 3. Bb5 d6 4. O-O Bd7 5. Re1 Nf6 6. c3 a6 7. Bf1 Bg4 8. d4 Bxf3 9. gxf3 g5 10. Be3 Rg8 11. Nd2 cxd4 12. cxd4 d5 13. e5 Nh5 14. Qc2 Rg7 15. Nb3 e6 16. Kh1 Nf4 17. a3 Ng6 18. Bh3 h5 19. Rg1 Nh4 20. Rg3 f5 21. Rag1 g4 22. fxg4 hxg4 23. Nd2 Rc7 24. Qd1 Rf7 25. Bf4 Ng6 26. Be3 Nh4 27. Rxg4!? fxg4 28. Qxg4 Nf5 29. Qg6 Ncxd4 30. Nb3 Nxb3 31. Bxf5 exf5 32. Bg5 Qc7 33. e6 Nc5 34. Rc1 d4 35. f3 d3 36. Re1 Nxe6 37. Rxe6+ Be7 38. Bxe7 Qxe7 39. Rxe7+ Kxe7 40. Qg5+ Kd7 41. Qe3 Raf8 42. Qxd3+ Kc7 43. b4 Rd7 44. Qc3+ Kb8 45. Kg2 Rg8+ 46. Kf2 Rh7 47. Qe5+ Ka8 48. Ke3 Rgh8 49. b5 f4+ 50. Qxf4 axb5 51. Qb4 Re8+ 52. Kf2 Rxh2+ 53. Kg3 Ra2 54. Qb3 Ra1 55. f4 Rc8 56. Qb2 Rg1+ 57. Kf2 Rgc1 58. Qxb5 R1c2+ 59. Kf3 R2c3+ 60. Kg4 Rg8+ 61. Kf5 Rxa3 62. Ke4 Ra6 63. f5 Rf8 64. Qc5 Re8+ 65. Kf4 Rc6 66. Qd5 Rec8 67. Qa5+ Ra6 68. Qd5 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+

@@ -1,0 +1,3225 @@
+[Event "Endgame Studies 1: No 1 - 5+3"]
+[Date "2017.08.26"]
+[White "No 1"]
+[Black "5+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "3N4/2p5/8/3q4/3k4/8/3PKP2/R7 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 1 - 5+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/svwNcuzd"]
+[FEN "3N4/2p5/8/3q4/3k4/8/3PKP2/R7 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ra4+ Ke5 2. Ra5 c5 (2... Qxa5 3. Nc6+) 3. Rxc5 Qxc5 4. d4+ Qxd4 (4... Kxd4 5. Ne6+) 5. Nc6+ Ke4 6. Nxd4 (6. f3+? Kd5 7. Nxd4 Kxd4 8. Kf2 Ke5) 6... Kxd4 7. Kf3 *
+
+
+[Event "Endgame Studies 1: No 2 - 4+3"]
+[Date "2017.08.26"]
+[White "No 2"]
+[Black "4+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/1Pr5/1R5P/8/8/8/p7/k5K1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 2 - 4+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/Mf9W0VtL"]
+[FEN "8/1Pr5/1R5P/8/8/8/p7/k5K1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. b8=B!! (1. h7 Rc1+ 2. Kg2 Rc2+ 3. Kh3 Rc3+ 4. Kg4 Rg3+ 5. Kh5 Rg5+ 6. Kh6 Rh5+ 7. Kg6 Rh6+ 8. Kg5 Rh5+) (1. b8=Q Rg7+ 2. Kf2 Rg2+ 3. Ke3 Re2+ 4. Kd4 Re4+ 5. Kd5 Rd4+ 6. Kc6 Rd6+ 7. Kb5 Rd5+ 8. Ka6 Ra5+ 9. Kb7 Ra7+ 10. Kc6 Rc7+ 11. Kd5 Rc5+ 12. Ke6 Rc6+! 13. Qd6 Rxb6!) 1... Rg7+ 2. Kf2 Rg2+ 3. Ke3 Re2+ 4. Kd4 Re4+ 5. Kd5 Rd4+ 6. Kc6 Rd6+ 7. Kb5 Rd5+ 8. Ka6 Ra5+ 9. Kb7 Ra7+ 10. Kc6 Rc7+ 11. Kd5 Rc5+ (11... Rd7+ 12. Bd6 Rxd6+ 13. Rxd6) 12. Ke6 Rh5 13. Kd7 Rg5 (13... Rd5+ 14. Bd6) 14. h7 Rg7+ 15. Kc6 Rg6+ 16. Kb5 Rg5+ 17. Ka6 Ra5+ 18. Kb7 Ra7+ 19. Kc6 Rc7+ 20. Kd5 Rc5+ 21. Ke6! Rh5 22. h8=Q+ Rxh8 23. Be5# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 3 - 3+2"]
+[Date "2017.08.26"]
+[White "No 3"]
+[Black "3+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "K7/1P6/k1q5/8/8/1Q6/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 3 - 3+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/B7w5VeUR"]
+[FEN "K7/1P6/k1q5/8/8/1Q6/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qb4 (1. Qb1 Qd5) (1. Qb2 Qd5) 1... Qh1 (1... Qf3 2. Qa4+ Kb6 3. Qb3+ Qxb3 4. b8=Q+) (1... Qd5 2. Qa4+ Kb6 3. Qb3+ Qxb3 4. b8=Q+) (1... Qg2 2. Qa3+ Kb6 3. Qb2+ Qxb2 4. b8=Q+) 2. Qa3+ Kb6 3. Qb2+ Kc7 (3... Ka6 4. Qa2+ Kb6 5. Qb1+ Qxb1 6. b8=Q+) (3... Kc5 4. Ka7 Qh7 5. Qb6+ Kc4 6. Ka6) 4. Qh2+!! Qxh2 5. b8=Q+ *
+
+
+[Event "Endgame Studies 1: No 4 - 3+3"]
+[Date "2017.08.26"]
+[White "No 4"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "1b6/2p5/8/2K2B2/k7/8/1P6/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 4 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/6jB8kEne"]
+[FEN "1b6/2p5/8/2K2B2/k7/8/1P6/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bc2+ Ka5 2. b4+ Ka6 3. Kc6 Ka7 (3... Ba7 4. Bd3#) 4. b5 Ka8 5. Be4 Ka7 6. Bd5 Ka8 7. b6 cxb6 8. Kxb6# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 5 - 5+4"]
+[Date "2017.08.26"]
+[White "No 5"]
+[Black "5+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "1k6/8/p5p1/6p1/6P1/5P1P/6PK/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 5 - 5+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/AJ9KfWfQ"]
+[FEN "1k6/8/p5p1/6p1/6P1/5P1P/6PK/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f4 (1. h4 gxh4 2. f4 Kc7 3. f5 Kd7 4. fxg6 Ke7 5. g7 Kf7) 1... Kc7 (1... gxf4 2. h4) (1... a5 2. f5 gxf5 3. h4 gxh4 4. g5) 2. fxg5 a5 3. Kg3 a4 4. Kh4 a3 5. g3 a2 { 1/2-1/2 Draw by stalemate. } *
+
+
+[Event "Endgame Studies 1: No 6 - 3+3"]
+[Date "2017.08.26"]
+[White "No 6"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "2K5/2P2R2/k7/8/8/8/2r2p2/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 6 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/sWTB6N5J"]
+[FEN "2K5/2P2R2/k7/8/8/8/2r2p2/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kb8 Rb2+ 2. Ka8 Rc2 3. Rf6+ Ka5 (3... Kb5 4. Kb7) 4. Kb7 Rb2+ 5. Ka7 Rc2 6. Rf5+ Ka4 (6... Kb4 7. Kb7) 7. Kb7 Rb2+ 8. Ka6 Rc2 9. Rf4+ Ka3 (9... Kb3 10. Kb7) 10. Kb6 Rb2+ 11. Ka5 Rc2 12. Rf3+ Ka2 13. Rxf2 Rxf2 14. c8=Q *
+
+
+[Event "Endgame Studies 1: No 7 - 2+2"]
+[Date "2017.08.26"]
+[White "No 7"]
+[Black "2+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 7 - 2+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/k9JDkkM1"]
+[FEN "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+{ [#] }
+1. c7 Rd6+ 2. Kb5 Rd5+ 3. Kb4 Rd4+ 4. Kb3 Rd3+ 5. Kc2 Rd4 6. c8=R Ra4 7. Kb3 *
+
+
+[Event "Endgame Studies 1: No 8 - 3+3"]
+[Date "2017.08.26"]
+[White "No 8"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "5k2/4p2p/6P1/3K4/8/4B3/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 8 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/SuDZgrEU"]
+[FEN "5k2/4p2p/6P1/3K4/8/4B3/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bh6+ Kg8 2. g7 Kf7 (2... e5 3. Ke6 e4 4. Kf6) (2... e6+ 3. Kd6 Kf7 4. Ke5 Kg8 5. Kf6 e5 6. Ke6 e4 7. Kf6) 3. g8=Q+ (3. Ke5 e6 4. Kd6 e5 5. Kxe5 Kg8) 3... Kxg8 4. Ke6 Kh8 5. Kf7 { [%cal Gh6g7] } *
+
+
+[Event "Endgame Studies 1: No 9 - 4+4"]
+[Date "2017.08.26"]
+[White "No 9"]
+[Black "4+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "2k5/2P4K/1P3p2/6p1/6n1/8/5P2/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 9 - 4+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/oeMKqYOF"]
+[FEN "2k5/2P4K/1P3p2/6p1/6n1/8/5P2/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f3 (1. Kg6 Nxf2 2. Kxf6 g4 3. Ke6 g3 4. Kd6 Nd3 5. b7+ Kxb7 6. Kd7 Nc5+ 7. Kd8 Ne6+) 1... Ne5 2. Kg7 Nxf3 (2... Nd7 3. Kg6 Kb7 4. Kf5) 3. Kxf6 g4 4. Kf5 (4. Ke6 g3 5. Kd6 g2 6. b7+ Kxb7 7. Kd7 Ne5+ 8. Kd8 Nc6+ 9. Kd7 Na7) 4... g3 5. Kg4 g2 6. Kh3 g1=Q (6... g1=R 7. b7+ Kxb7 8. c8=Q+) (6... g1=B 7. Kg2) 7. b7+ Kxb7 8. c8=Q+ *
+
+
+[Event "Endgame Studies 1: No 10 - 4+6"]
+[Date "2017.08.26"]
+[White "No 10"]
+[Black "4+6"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "4B3/8/6N1/5p2/1r4p1/6pk/7b/4K2Q w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 10 - 4+6"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/4srMSlgA"]
+[FEN "4B3/8/6N1/5p2/1r4p1/6pk/7b/4K2Q w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bc6 Rb1+ 2. Ke2 Rxh1 3. Bg2+ Kxg2 4. Nf4+ Kg1 5. Ke1 g2 6. Ne2# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 11 - 4+3"]
+[Date "2017.08.26"]
+[White "No 11"]
+[Black "4+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "1K6/1P1k4/1P6/8/8/r7/6R1/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 11 - 4+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/9zrs3WSF"]
+[FEN "1K6/1P1k4/1P6/8/8/r7/6R1/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rd2+ (1. Rg7+ Kd8) 1... Ke7 (1... Ke6 2. Kc8 Rc3+ 3. Kd8) 2. Rd6 (2. Kc7 Rc3+ 3. Kb8 Ra3) 2... Rc3 (2... Kxd6 3. Kc8 Rc3+ 4. Kd8) 3. Rc6 (3. Ka7 Ra3+ 4. Kb8 Rc3) 3... Rxc6 4. Ka7 { [%cal Gb7b8] } *
+
+
+[Event "Endgame Studies 1: No 12 - 7+6"]
+[Date "2017.08.26"]
+[White "No 12"]
+[Black "7+6"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "R7/1p4p1/2q4p/1N6/4kP2/6P1/2PPp3/4K3 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 12 - 7+6"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/AJo9co0y"]
+[FEN "R7/1p4p1/2q4p/1N6/4kP2/6P1/2PPp3/4K3 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Re8+ Kd5 (1... Qxe8 2. Nd6+) 2. Re6 Qc4 (2... Qxc2 3. Re5+ Kc4 (3... Kc6 4. Nd4+) 4. Na3+) 3. Re4 Qc6 4. d3 { [%csl Rd5][%cal Ge4e5] } 4... Qg6 5. Re5+ Kc6 6. Re6+ Qxe6 7. Nd4+ *
+
+
+[Event "Endgame Studies 1: No 13 - 4+5"]
+[Date "2017.08.26"]
+[White "No 13"]
+[Black "4+5"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/7q/2K2p2/4p3/2k1P2p/8/3P4/7Q w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 13 - 4+5"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/CQ58kU8Q"]
+[FEN "8/7q/2K2p2/4p3/2k1P2p/8/3P4/7Q w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qb1 { [%cal Gb1b5,Gb5d5] } 1... Kd4 (1... Qf7 2. Qa2+ { [%csl Rf7] }) 2. Qb3 Qxe4+ (2... Kxe4 3. Qc2+ { [%csl Rh7] }) 3. Kd6 { [%cal Gb3c3] } 3... Qa8 (3... Qg2 4. Qc3+ Ke4 5. Qc6+ { [%csl Rg2] }) 4. Qe3+ Kc4 5. Qc3+ Kb5 6. Qb3+ Ka6 7. Qa4+ Kb7 8. Qb5+ Ka7 (8... Kc8 9. Qd7+ Kb8 10. Qc7#) 9. Kc7 *
+
+
+[Event "Endgame Studies 1: No 14 - 3+2"]
+[Date "2017.08.26"]
+[White "No 14"]
+[Black "3+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "6k1/3p4/8/8/8/B7/P7/7K w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 14 - 3+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/uQcFdse9"]
+[FEN "6k1/3p4/8/8/8/B7/P7/7K w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bb4 Kf7 2. a4 Ke6 (2... Ke8 3. a5 Kd8 4. Bd6 Kc8 5. a6) 3. a5 Kd5 4. a6 Kc6 5. Ba5 { [%csl Rc6] } 5... d5 6. Kg1 d4 7. Kf1 d3 8. Ke1 d2+ 9. Kxd2 *
+
+
+[Event "Endgame Studies 1: No 16 - 3+4"]
+[Date "2017.08.26"]
+[White "No 16"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "B7/8/P7/p7/8/K1p5/2k1r3/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 16 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/l1bPwsGY"]
+[FEN "B7/8/P7/p7/8/K1p5/2k1r3/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. a7 Re8 (1... Re7? 2. Be4+ { [%cal Ga7a8] }) 2. Bc6 Rd8 3. a8=Q Rxa8 4. Bxa8 Kd3 { [%csl Re4][%cal Ra8e4] } 5. Kb3 (5. Ka2? c2 6. Kb2 Kd2) 5... a4+ 6. Ka2! c2 7. Be4+ Kxe4 8. Kb2 Kd3 9. Kc1 Kc3 { 1/2-1/2 Draw by stalemate. } (9... a3) *
+
+
+[Event "Endgame Studies 1: No 17 - 2+2"]
+[Date "2017.08.26"]
+[White "No 17"]
+[Black "2+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "5k2/8/8/p7/8/8/1P6/2K5 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 17 - 2+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/zGKR65vD"]
+[FEN "5k2/8/8/p7/8/8/1P6/2K5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kc2 { [%cal Gc2b3,Gb3a4] } 1... a4 2. Kb1!! { [%cal Gb1a2,Ga2a3,Ga3a4] } (2. Kc3? a3 3. b4 Ke7 4. Kb3 Kd6 5. Kxa3 Kc6) 2... a3 3. b3! Ke7 4. Ka2 Kd6 5. Kxa3 Kc6 6. Ka4 Kb6 7. Kb4 *
+
+
+[Event "Endgame Studies 1: No 18 - 4+5"]
+[Date "2017.08.26"]
+[White "No 18"]
+[Black "4+5"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/3q1p2/2p1bk2/B7/8/6Q1/4P3/2K5 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 18 - 4+5"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/9ezEKLl9"]
+[FEN "8/3q1p2/2p1bk2/B7/8/6Q1/4P3/2K5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bd8+ Kf5 (1... Qxd8 2. Qh4+) 2. Qf3+ Ke5 (2... Kg6 3. Qf6+ Kh7 4. Qh4+ Kg6 5. Qg5+ Kh7 6. Bf6) 3. Bc7+ Kd4 (3... Qxc7 4. Qg3+) 4. Bd6!! { [%cal Gf3d3] } 4... Qxd6 (4... Bf5 5. Qf4+ Kd5 (5... Be4 6. Qd2+ Kc4 7. Qb4+ Kd5 8. Qc5+ Ke6 9. Qe5#) 6. Qe5+ Kc4 7. Qc5+ Kb3 8. Qb4+ Ka2 9. Qa3#) 5. Qd3+ Kc5 (5... Ke5 6. Qg3+ Kd5 7. e4+ Kc5 8. Qa3+) 6. Qa3+ Kd5 7. e4+ Ke5 8. Qg3+ *
+
+
+[Event "Endgame Studies 1: No 19 - 2+3"]
+[Date "2017.08.27"]
+[White "No 19"]
+[Black "2+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "7K/6p1/8/7p/8/8/R7/6k1 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 19 - 2+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/ProxjzoC"]
+[FEN "7K/6p1/8/7p/8/8/R7/6k1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kh7!! (1. Kxg7? h4 2. Kg6 h3 3. Kg5 h2 4. Kg4 h1=Q 5. Kg3 Qh8 { [%csl Ga1][%cal Gh8a1] }) 1... h4 (1... g5 2. Kg6 g4 (2... h4 3. Kxg5 h3 4. Kg4 h2 5. Kg3 h1=N+ 6. Kf3) 3. Kg5! (3. Kxh5? g3 4. Kg4 g2 5. Kh3 Kh1!) 3... g3 4. Kh4 g2 5. Kh3 Kh1 6. Rxg2 h4 7. Rf2) 2. Kg6 h3 3. Kg5 h2 4. Kg4! h1=Q (4... h1=N 5. Kf3 g5 6. Rd2 g4+ 7. Kxg4 Nf2+ 8. Kf3 Nh1 9. Ra2) 5. Kg3 { [%cal Ga2a1] } 5... Qh8 { [%csl Rg7][%cal Gh8a1] } *
+
+
+[Event "Endgame Studies 1: No 21 - 5+3"]
+[Date "2017.08.27"]
+[White "No 21"]
+[Black "5+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "3n2k1/3N4/7P/6N1/8/K7/7P/4b3 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 21 - 5+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/ZcAq4A7N"]
+[FEN "3n2k1/3N4/7P/6N1/8/K7/7P/4b3 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nf6+ Kh8 (1... Kf8 2. h7 Kg7 3. Nh5+ Kh8 4. Nf4 Kg7 5. Ng6) 2. Nf3 { [%cal Gf3h4,Gh4g6] } (2. h7 Bh4 3. Nfe4 Bxg5 4. Nxg5 Nc6) 2... Bc3 3. Nd5 Ba5 (3... Ba1 4. Ka2) 4. Ka4 Nb7 (4... Bc7 5. Nxc7) 5. Kb5 { [%cal Gb5a6] } 5... Bd8 6. Kc6 Na5+ 7. Kd7 Nb7 8. Kc8 *
+
+
+[Event "Endgame Studies 1: No 22 - 3+4"]
+[Date "2017.08.27"]
+[White "No 22"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "6k1/5R2/1P1n4/8/8/4b1K1/7r/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 22 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/lw2uj5BZ"]
+[FEN "6k1/5R2/1P1n4/8/8/4b1K1/7r/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rd7 Rd2 2. b7 Ne4+ (2... Nf5+ 3. Kg4 (3. Kf3 Rf2+ 4. Ke4) 3... Nh6+ 4. Kf3) 3. Kf3 Ba7 4. b8=Q+ (4. Rc7 Ng5+ 5. Kg4 Nf7 6. Rc8+ Rd8) 4... Bxb8 5. Rb7 Ng5+ 6. Kg4 Rg2+ 7. Kf5 Bh2 8. Rg7+ Kxg7 { 1/2-1/2 Draw by stalemate. } *
+
+
+[Event "Endgame Studies 1: No 24 - 2+2"]
+[Date "2017.08.27"]
+[White "No 24"]
+[Black "2+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "7K/8/k1P5/7p/8/8/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 24 - 2+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/AkoM6gYb"]
+[FEN "7K/8/k1P5/7p/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kg7 h4 2. Kf6 h3 3. Ke6 h2 4. c7 h1=Q 5. c8=Q+ *
+
+
+[Event "Endgame Studies 1: No 25 - 5+6"]
+[Date "2017.08.27"]
+[White "No 25"]
+[Black "5+6"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "k2r1q2/2b2p1Q/7R/pK6/2N5/1P6/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 25 - 5+6"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/60hXWGTn"]
+[FEN "k2r1q2/2b2p1Q/7R/pK6/2N5/1P6/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qe4+ Kb8 2. Rb6+ (2. Ka6 Qxh6+) 2... Bxb6 (2... Kc8 3. Qb7+ Kd7 4. Ne5+ Ke7 5. Qxc7+ Ke8 6. Qc6+ Ke7 7. Rb7+) 3. Ka6 Rd7 4. Qa8+ Kxa8 5. Nxb6+ Kb8 6. Nxd7+ { [%cal Gd7f8] } *
+
+
+[Event "Endgame Studies 1: No 26 - 2+2"]
+[Date "2017.08.27"]
+[White "No 26"]
+[Black "2+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/4K3/8/3pk3/3R4/8/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 26 - 2+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/MLx88lAh"]
+[FEN "8/4K3/8/3pk3/3R4/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rd2 (1. Rd1? d4 2. Kd7 Kd5 3. Kc7 Kc5! 4. Kd7 Kd5 5. Ke7 Ke5) 1... d4 2. Rd1! Kd5 3. Kd7! Kc4 (3... Ke4 4. Kc6 d3 5. Kc5 Ke3 6. Kc4 d2 7. Kc3) 4. Ke6 d3 5. Ke5 Kc3 6. Ke4 d2 7. Ke3 *
+
+
+[Event "Endgame Studies 1: No 27 - 3+3"]
+[Date "2017.08.27"]
+[White "No 27"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "3K4/kp6/p7/1P6/8/8/7P/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 27 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/oVxk0b3y"]
+[FEN "3K4/kp6/p7/1P6/8/8/7P/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+{ [#] }
+1. b6+ Kb8 2. h4 a5 3. h5 a4 4. h6 a3 5. h7 a2 6. h8=Q a1=Q 7. Qg8 Qa2 8. Qe8 (8. Qf8 Qa3 9. Qe8 Qd6+) 8... Qa4 9. Qe5+ Ka8 10. Qh8 *
+
+
+[Event "Endgame Studies 1: No 28 - 3+5"]
+[Date "2017.08.27"]
+[White "No 28"]
+[Black "3+5"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "R7/p7/5N2/8/1K5p/1p5p/3k4/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 28 - 3+5"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/hNK06xcy"]
+[FEN "R7/p7/5N2/8/1K5p/1p5p/3k4/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ka3!! (1. Kxb3 h2 2. Ne4+ Ke3 3. Re8 Kf3) (1. Rh8 b2 2. Ne4+ Ke3 3. Nc3 Kf2) 1... h2 2. Re8 (2. Ne4+ Ke2 3. Re8 Kf3) 2... h1=Q 3. Ne4+ Kc2 (3... Kc1 4. Rc8+ Kb1 5. Nd2+ Ka1 6. Nxb3+ Kb1 7. Nd2+ Ka1 8. Rc2 Qh3+ 9. Nb3+ Kb1 10. Rb2#) (3... Kd1 4. Nf2+) 4. Rc8+ Kb1 5. Nd2+ Ka1 6. Nxb3+ { [%csl Ga3][%cal Gb4a3] } 6... Kb1 7. Nd2+ Ka1 8. Rc2 { [%cal Gc2a2] } *
+
+
+[Event "Endgame Studies 1: No 29 - 6+8"]
+[Date "2017.08.27"]
+[White "No 29"]
+[Black "6+8"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "4k3/n1P1p2R/p3p2P/4P1bN/4K1p1/8/1p6/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 29 - 6+8"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/SoimYcQz"]
+[FEN "4k3/n1P1p2R/p3p2P/4P1bN/4K1p1/8/1p6/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rh8+ Kf7 (1... Kd7 2. Rb8) 2. Rb8 Nb5 3. Rf8+ (3. Rxb5 axb5 4. c8=Q b1=Q+ 5. Kd4 Qb4+ 6. Kd3 Qd2+ 7. Ke4 Qe3#) 3... Kg6 (3... Kxf8 4. c8=Q+ Kf7 5. Qc2 b1=Q 6. Qxb1 Nc3+ 7. Kd3 Nxb1 8. h7) 4. Nf4+ (4. Rf1 Bc1 5. Nf4+ Kh7 6. Nd3 b1=Q 7. c8=Q Nc3+ 8. Kd4 (8. Qxc3 Qb7+) 8... Ne2+ 9. Ke4 Ng3+ 10. Kd4 Qa1+) 4... Kh7 5. Rh8+ Kxh8 6. c8=Q+ Kh7 7. Qc2 b1=Q (7... b1=B 8. Nd3 Bxc2) 8. Ke3+ (8. Qxb1 Nc3+) 8... Qxc2 { 1/2-1/2 Draw by stalemate. } *
+
+
+[Event "Endgame Studies 1: No 30 - 3+4"]
+[Date "2017.08.27"]
+[White "No 30"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "k7/3B4/1r5P/3n2K1/8/1b6/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 30 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/r17OJljJ"]
+[FEN "k7/3B4/1r5P/3n2K1/8/1b6/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. h7 Rb8 2. Be6 (2. Bf5 Ne3 3. Be4+ Bd5 4. Bd3 Rh8 5. Kh6 Bg8 6. Kg7 Bxh7) 2... Rh8 (2... Nf6 3. Kxf6 Bxe6 (3... Bc2 4. Bg8) 4. Kg7) 3. Kh6 (3. Kg6 Nf4+ 4. Kg7 Rxh7+ 5. Kxh7 Bxe6) 3... Nf6 4. Bxb3 Rxh7+ (4... Nxh7 5. Kg7 Rb8 6. Bd5+) 5. Kg6 Rh3 (5... Rb7 6. Be6 { [%csl Rb7,Rf6][%cal Ge6d5] }) 6. Be6 Rf3 7. Bf5 Nd5 8. Be4 Rf6+ 9. Kg5 Rd6 10. Kf5 Kb7 11. Ke5 Kc6 12. Kd4 { [%csl Rd5][%cal Rd6d7,Rd7d8,Ge4f3,Gf3g2,Gg2h1] } *
+
+
+[Event "Endgame Studies 1: No 31 - 4+8"]
+[Date "2017.08.27"]
+[White "No 31"]
+[Black "4+8"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/6k1/2Qpp3/B1p5/1p4K1/1P1bb3/2p5/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 31 - 4+8"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/vhKKukhA"]
+[FEN "8/6k1/2Qpp3/B1p5/1p4K1/1P1bb3/2p5/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+{ [%evp 0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] [#] }
+1. Qd7+ Kf6 2. Bd8+ Ke5 3. Bf6+ (3. Qg7+ Kd5 4. Qb7+ Kd4 5. Bf6+ e5) 3... Kxf6 4. Qd8+ Ke5 5. Qh8+ Ke4 6. Qh1+ Kd4 7. Qa1+ Kd5 8. Qa8+ *
+
+
+[Event "Endgame Studies 1: No 32 - 4+4"]
+[Date "2017.08.27"]
+[White "No 32"]
+[Black "4+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/b1p3p1/Bk6/4N3/8/8/8/N5K1 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 32 - 4+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/3qq6TCGQ"]
+[FEN "8/b1p3p1/Bk6/4N3/8/8/8/N5K1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Be2 (1. Bd3 Kb7+ 2. Kg2 (2. Kf1 Bd4 3. Be4+ Kc8) 2... Bd4 3. Nb3 Bxe5 4. Na5+ Kb6 (4... Ka8 5. Nc6) 5. Nc4+ Kc5 6. Nxe5 Kd4) (1. Bf1 Kb7+ 2. Kh1 Bd4 3. Nb3 (3. Bg2+ Kc8) 3... Bxe5 4. Na5+ Ka8 5. Nc6 Bd6 6. Ba6 g5 7. Kg2 g4 8. Bc8 g3) (1. Bc8 Kb5+ 2. Kf1 Bd4 3. Bd7+ Ka6 4. Nd3 Bxa1 5. Nc5+ Kb6) 1... Kb7+ (1... Ka5+ 2. Kg2 Bd4 3. Nb3+) 2. Kg2 Bd4 3. Nb3 Bxe5 4. Na5+ Ka8 (4... Kb6 5. Nc4+) (4... Ka7 5. Nc6+) (4... Kc8 5. Bg4+ Kd8 6. Nc6+) 5. Nc6 Bb2 6. Ba6 g5 7. Kf3 Bc1 8. Kg4 Bd2 9. Kf5 Bc1 10. Ke6 g4 11. Kd7 g3 12. Kc8 g2 13. Bb7# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 33 - 3+2"]
+[Date "2017.08.28"]
+[White "No 33"]
+[Black "3+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "7k/8/5r2/8/8/2R5/8/K1B5 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 33 - 3+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/vcvKJ4kM"]
+[FEN "7k/8/5r2/8/8/2R5/8/K1B5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bb2 Rf8 (1... Ra6+ 2. Ra3+) (1... Rf7 2. Rh3+ Kg8 3. Rh8#) (1... Rh6 2. Rg3+ Kh7 3. Rg7+ Kh8 4. Kb1 Rh1+ 5. Rg1+ Kh7 6. Rxh1+) 2. Rc7+ Kg8 3. Rg7+ Kh8 4. Ka2 Ra8+ 5. Ra7+ Kg8 6. Rxa8+ *
+
+
+[Event "Endgame Studies 1: No 34 - 4+5"]
+[Date "2017.08.28"]
+[White "No 34"]
+[Black "4+5"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/3N1Ppk/7q/1b6/3K4/8/B2b4/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 34 - 4+5"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/ToI7RNv2"]
+[FEN "8/3N1Ppk/7q/1b6/3K4/8/B2b4/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nf8+ Kh8 2. Ng6+ Qxg6 (2... Kh7 3. f8=N#) 3. f8=Q+ Kh7 4. Bb1 Bc3+ (4... Qxb1 5. Qf5+ Qxf5) (4... Be3+ 5. Kc3 Bd4+ 6. Kd2 Bc3+ 7. Ke3 Bd2+ 8. Kd4) 5. Ke3 Bd4+ (5... Qxb1 6. Qf5+ Qxf5) 6. Kd2 Be3+ (6... Qxb1 7. Qh8+ Kg6 8. Qh7+ Kxh7) 7. Kc3 Bd2+ 8. Kd4 *
+
+
+[Event "Endgame Studies 1: No 35 - 5+4"]
+[Date "2017.08.28"]
+[White "No 35"]
+[Black "5+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "2q5/8/6p1/B6p/7k/7P/R5PK/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 35 - 5+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/RjM1uh3o"]
+[FEN "2q5/8/6p1/B6p/7k/7P/R5PK/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rc2 Qxc2 (1... Qd7 2. Rd2 { [%csl Rh4][%cal Ga5d8] }) 2. Bd8+ g5 3. Ba5 { [%cal Ga5e1] } 3... Qe2 4. Bc7 { [%cal Gc7g3] } 4... Qf2 5. Bd6!! (5. Be5 g4) 5... Qf4+ 6. g3+ Qxg3+ 7. Bxg3# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 37 - 3+3"]
+[Date "2017.08.30"]
+[White "No 37"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "k4b2/8/8/8/6b1/6B1/6R1/6K1 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 37 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/KUEkTOJI"]
+[FEN "k4b2/8/8/8/6b1/6B1/6R1/6K1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bf2 Be6 2. Rg6 Bd5 (2... Bb3 3. Ra6+ Kb7 4. Rb6+ { [%csl Rb3] }) (2... Bc4 3. Rc6 { [%csl Rf8][%cal Gc6c8] }) 3. Rg5 Bc4 (3... Be6 4. Re5 Bd7 5. Rd5 { [%csl Rf8][%cal Gd5d8] }) 4. Rg4 Bb3 5. Rg3 Ba2 6. Rf3 Be7 (6... Bb4 7. Rf4 { [%csl Ra2][%cal Gf4a4] }) (6... Bd6 7. Rf6 { [%csl Ra2][%cal Gf6a6] }) 7. Re3 Bd6 8. Rd3 Bb4 9. Rd4 { [%csl Ra2][%cal Gd4a4] } *
+
+
+[Event "Endgame Studies 1: No 41 - 5+4"]
+[Date "2017.09.01"]
+[White "No 41"]
+[Black "5+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "5n1N/8/4P3/6NK/3k4/4n3/B2p4/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 41 - 5+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/XFmeb8kk"]
+[FEN "5n1N/8/4P3/6NK/3k4/4n3/B2p4/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nf3+ Kc3 (1... Kd3 2. e7 Nd7 3. Nxd2 Nf5 4. Bb1+) 2. e7 Nd7 3. Nxd2 Nf5 (3... Kxd2 4. Kg5) 4. Ne4+ (4. e8=N Kxd2 5. Be6 Nf6+ 6. Nxf6 Ng7+) 4... Kd4 5. e8=N (5. e8=Q Ng7+) 5... Kxe4 6. Bb1+ Ke5 7. Ng6+ Ke6 8. Ba2# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 42 - 3+2"]
+[Date "2017.09.01"]
+[White "No 42"]
+[Black "3+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/k7/2P5/2KB4/r7/8/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 42 - 3+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/pUeTXpeU"]
+[FEN "8/k7/2P5/2KB4/r7/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. c7 Ra5+ 2. Kc4 (2. Kb4 Rb5+ 3. Kxb5) (2. Kd4 Rxd5+ 3. Kxd5 Kb7 4. Kd6 Kc8 5. Kc6) (2. Kc6 Rxd5 3. c8=Q Rc5+ 4. Kxc5) 2... Ra1 3. Bc6 Rc1+ 4. Kd5 (4. Kb5 Rb1+ 5. Kc5 Rb8) 4... Rd1+ 5. Ke6 Re1+ 6. Kf7 (6. Kf6 Re8 7. Bxe8 Kb7) 6... Rf1+ 7. Kg7 (7. Kg8 Rb1 8. c8=Q Rb8) 7... Rg1+ 8. Kh7 *
+
+
+[Event "Endgame Studies 1: No 43 - 2+3"]
+[Date "2017.09.01"]
+[White "No 43"]
+[Black "2+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/1pPK3b/8/8/8/5k2/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 43 - 2+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/U9LnVfF4"]
+[FEN "8/1pPK3b/8/8/8/5k2/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kc8!! (1. c8=Q?? Bf5+ { [%cal Gf5c8,Gb7b5] }) (1. Kd6 Bf5 { [%cal Gf5c8] } 2. Kc5 Ke4 3. Kb6 Bc8 4. Ka7 b5) 1... b5 2. Kd7! b4 3. Kd6 (3. Ke6? Ke4 4. c8=Q Bf5+ { [%cal Gf5c8] }) 3... Bf5 4. Ke5 Bc8 5. Kd4 b3 6. Kc3 Be6 7. c8=Q Bxc8 8. Kxb3 { 1/2-1/2 The game is a draw. } *
+
+
+[Event "Endgame Studies 1: No 45 - 3+3"]
+[Date "2017.09.01"]
+[White "No 45"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/3k4/1K6/8/4BR2/4p3/4p3/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 45 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/tNFej09Z"]
+[FEN "8/3k4/1K6/8/4BR2/4p3/4p3/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bf5+ (1. Bc6+? Kd6 2. Rd4+ Ke5 3. Re4+ Kd6 4. Rxe3 e1=Q 5. Rxe1) 1... Kd6 2. Rd4+ Ke7! 3. Re4+ Kd8 4. Bd7!! e1=Q (4... Kxd7 5. Rxe3) 5. Bb5 { [%cal Ge4e8] } *
+
+
+[Event "Endgame Studies 1: No 46 - 5+5"]
+[Date "2017.09.01"]
+[White "No 46"]
+[Black "5+5"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "1b3nq1/P1kp4/8/KP6/8/8/8/3R1B2 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 46 - 5+5"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/4eNtjpIr"]
+[FEN "1b3nq1/P1kp4/8/KP6/8/8/8/3R1B2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. b6+ Kb7 2. Bc4 Qxc4 3. Rxd7+ Nxd7 (3... Kc8 4. Rd8+ Kxd8 5. axb8=Q+) (3... Ka8 4. axb8=Q+ Kxb8 5. Rd8+ Kb7 6. Rd7+) 4. a8=B+ (4. a8=Q+ Kc8) 4... Kxa8 (4... Kc8 5. b7+ Kd8 (5... Kc7)) 5. b7+ Kxb7 { 1/2-1/2 Draw by stalemate. } (5... Ka7) *
+
+
+[Event "Endgame Studies 1: No 48 - 3+3"]
+[Date "2017.09.02"]
+[White "No 48"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "3b3k/4n3/8/8/7B/8/8/5KR1 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 48 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/WsZU5oJ0"]
+[FEN "3b3k/4n3/8/8/7B/8/8/5KR1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bf6+ Kh7 2. Rg7+ Kh6 (2... Kh8 3. Rxe7+ Kg8 4. Re8+) 3. Rf7 Kg6 (3... Nc6 4. Bxd8 Nxd8 5. Rd7 Ne6 6. Rd6) 4. Rf8 Nc6! 5. Bxd8 Kg7 6. Re8 Kf7 7. Rh8 Kg7 8. Bf6+!! Kxf6 9. Rh6+ { [%cal Gh6c6] } *
+
+
+[Event "Endgame Studies 1: No 49 - 2+2"]
+[Date "2017.09.08"]
+[White "No 49"]
+[Black "2+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/5R2/6n1/8/2k1K3/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 49 - 2+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/hMMu3GgB"]
+[FEN "8/8/5R2/6n1/8/2k1K3/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kf4! (1. Rc6+? Kb4 2. Kf4 Nh3+ (2... Kb5? 3. Rf6 Nh3+ 4. Kg4 Ng1 5. Rf2)) (1. Rg6 Nf7! 2. Ke4 Kc4) 1... Nh3+ 2. Kf3! Ng5+ (2... Ng1+ 3. Ke3 Nh3 4. Rg6) 3. Ke3!! Kc4 (3... Kc2 4. Rg6 Nf7 5. Kd4 Nd8 6. Kd5 Nb7 7. Ra6! { [%cal Ga6a7,Ga7d7] }) (3... Kb3 4. Kf4 Nh3+ 5. Kg4 Ng1 6. Rf2 { [%cal Gf2g2] }) 4. Kf4 Nh3+ 5. Ke4! Ng5+ 6. Ke5 Nh3 7. Rf3 Ng5 8. Rf5 Nh3 9. Ke4 Ng1 10. Ke3 *
+
+
+[Event "Endgame Studies 1: No 50 - 5+3"]
+[Date "2017.09.08"]
+[White "No 50"]
+[Black "5+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/1K6/8/1N2k3/1P5n/8/6BN/2b5 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 50 - 5+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/hK23Iy2b"]
+[FEN "8/1K6/8/1N2k3/1P5n/8/6BN/2b5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bh1 (1. Bc6? Bd2) (1. Nf3+? Nxf3 2. Bxf3 Bd2 3. Na7 Bxb4 4. Nc6+ Kf4) 1... Bd2 2. Na7 Bxb4 3. Nc6+ Kf4 4. Nxb4 Kg3 5. Nf1+ Kf2 6. Nd2 Ng2 7. Nd3+ Kg1 8. Nf3+ Kxh1 9. Nf2# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 51 - 3+4"]
+[Date "2017.09.08"]
+[White "No 51"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "b6k/7p/2p5/8/8/2N5/3B4/1K6 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 51 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/dVGS1v6P"]
+[FEN "b6k/7p/2p5/8/8/2N5/3B4/1K6 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bh6 Kg8 (1... c5 2. Nb5! Kg8 3. Nd6 Bd5 4. Kc2 c4 5. Kc3 Bf7 6. Kd4 Be6 7. Ke5 Bh3 (7... Bd7 8. Kf6 c3 9. Ne4 (9. Ke7 Bc6) 9... c2 10. Ke7 c1=Q 11. Nf6+ Kh8 12. Bxc1 Kg7 13. Nxd7) 8. Kf6 c3 9. Ke7 c2 10. Ne4 c1=Q 11. Nf6+ Kh8 12. Bxc1 Kg7 13. Nh5+) 2. Ne4 Kf7 (2... c5 3. Nd6 Bg2 4. Kc2 { [%cal Gc2d2,Gd2e3,Ge3f4,Gf4e5,Ge5f6,Gf6e7] }) 3. Nc5 Kg6 4. Bf8 h5 5. Kc2 Kf5 6. Bd6 Kg4 7. Kd2 Kf3 8. Ke1 Kg2 9. Be7 Kg3 10. Kf1 Kf3 11. Bd6 Ke3 12. Be5 Kf3 13. Kg1 Kg4 14. Kh2 Kf5 15. Bd6 Kf6 16. Kg3 Kf5 17. Bc7 Kg6 18. Kf4 Kf6 19. Bd8+ Kg6 20. Ke5 *
+
+
+[Event "Endgame Studies 1: No 54 - 3+2"]
+[Date "2017.09.12"]
+[White "No 54"]
+[Black "3+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "n6k/8/8/6P1/3K4/3B4/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 54 - 3+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/GLpIfz7Y"]
+[FEN "n6k/8/8/6P1/3K4/3B4/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kc5 { [%cal Gc5c6] } 1... Nc7 2. Kd6 Ne8+ 3. Ke7 Ng7 (3... Nc7 4. Kf7 Nd5 5. g6 { [%cal Gg6g7] }) 4. Bg6! (4. Kf7? Nh5 5. g6 Ng7 6. Be4 Nh5 7. Bf5 Ng7 8. Bg4 Nh5) 4... Kg8 5. Bf7+ (5. Kd6? Kf8 6. Kd7 Kg8 7. Ke7 Kh8 8. Kf7 Nf5) 5... Kh7 (5... Kh8 6. Kf6 Kh7 7. Ke5 Kh8 8. Kf4! { [%cal Gf4g4,Gg5g6] }) 6. Kf6 Kh8 7. Ke5! (7. Kg6? Ne6) 7... Kh7 8. Ke4! Kh8 9. Kf4 Kh7 10. Kg4 Kh8 11. g6! *
+
+
+[Event "Endgame Studies 1: No 56 - 4+3"]
+[Date "2017.09.13"]
+[White "No 56"]
+[Black "4+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/Pk6/8/8/N7/7n/2K4p/1B6 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 56 - 4+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/dTyDqq2R"]
+[FEN "8/Pk6/8/8/N7/7n/2K4p/1B6 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kb2 (1. Ba2? Nf4) (1. Kd2 Nf2 2. Ba2 Ne4+) (1. Kc3 Nf2 2. Ba2 Ne4+) 1... Nf2! (1... h1=Q 2. Be4+ Qxe4 3. Nc5+) 2. Ba2! Nd1+! (2... Nd3+ 3. Ka3 Nf4 4. Bb1) 3. Ka3 Ne3 4. Bb1 Nc4+ 5. Kb4 Nd2 6. Ba2 h1=Q 7. Bd5+ Qxd5 8. a8=Q+ Kxa8 9. Nb6+ *
+
+
+[Event "Endgame Studies 1: No 57 - 2+3"]
+[Date "2017.09.14"]
+[White "No 57"]
+[Black "2+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/8/8/5K2/8/5B1p/2k4r w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 57 - 2+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/wTVFBjyQ"]
+[FEN "8/8/8/8/5K2/8/5B1p/2k4r w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kg3 Kc2 (1... Rf1? 2. Be3+) (1... Kb1? 2. Bb6!) (1... Kd2 2. Bd4! Kd3 3. Bh8! { [%cal Gg3g2] }) 2. Bc5 Kb3 (2... Kd3? 3. Bd6 { [%cal Gg3g2] }) 3. Bb6 Ka4! (3... Kc4? 4. Bc7 { [%cal Gg3g2] }) 4. Ba7 Kb5 5. Bb8 { [%cal Gg3g2,Gb8h2] } *
+
+
+[Event "Endgame Studies 1: No 58 - 3+4"]
+[Date "2017.09.15"]
+[White "No 58"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "kn3n2/8/1p1K4/1P5R/8/8/8/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 58 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/4stT1WEh"]
+[FEN "kn3n2/8/1p1K4/1P5R/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rh8 (1. Re5? Nfd7 2. Re7 Nc5) 1... Nfd7 (1... Nbd7 2. Ke7 { [%csl Gb5,Gb6][%cal Ga6h6,Gh6a6] } 2... Kb7 3. Rxf8 Nxf8 4. Kxf8 Kc7 5. Ke7) 2. Kc7 Ka7 3. Re8!! (3. Rd8 Nc5! 4. Rxb8 Ne6+ 5. Kc8 (5. Kd6 Nc7) 5... Nc5) (3. Rh1? Nc5 4. Ra1+ Nca6+ 5. Kc8 Ka8 6. bxa6 Ka7 7. Kc7 b5 8. Kd6 b4 9. Kc5 b3 10. Kb5 b2) 3... Nf6! (3... Nc5!? 4. Re7 Nb3 5. Kc8+ Ka8 6. Rb7 Nc5 7. Rxb6 Nbd7 8. Rc6 Ka7 9. Kc7 Ka8 10. Rh6 Ka7 11. Kc6 Kb8 12. Rh8+ { [%csl Rc5,Rd7][%cal Gh8d8] }) 4. Rxb8 Ne8+ 5. Kd7! (5. Kc8? Nd6+) 5... Nc7! 6. Ra8+!! Nxa8 (6... Kb7 7. Ra7+ Kxa7 8. Kxc7) 7. Kc8 Nc7 8. Kxc7 Ka8 9. Kxb6 Kb8 10. Kc6 Ka7 11. Kc7 Ka8 12. Kb6 Kb8 13. Ka6 Ka8 14. b6 Kb8 15. b7 *
+
+
+[Event "Endgame Studies 1: No 59 - 3+5"]
+[Date "2017.09.15"]
+[White "No 59"]
+[Black "3+5"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/2R5/3K4/4P3/2p1p1p1/2r5/8/6k1 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 59 - 3+5"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/DHHRngxT"]
+[FEN "8/2R5/3K4/4P3/2p1p1p1/2r5/8/6k1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. e6 Rd3+ 2. Ke5! (2. Kc5? Rd8 3. e7 Re8 4. Kxc4 e3 5. Kd3 Kf2 6. Rc2+ Kf3 7. Rc7 e2 8. Kd2 Kf2) 2... e3 3. Rxc4 e2 4. Rxg4+ (4. Re4? Kf2 5. e7 e1=Q 6. e8=Q Qxe4+ 7. Kxe4 Re3+ { [%csl Re8] }) 4... Kf2 5. Re4 Re3 6. Rxe3 Kxe3 7. e7 e1=Q 8. Ke6!! (8. e8=Q? Kd2+ { [%csl Re8] }) 8... Kd4+ (8... Kf4+ 9. Kf7) 9. Kd7 *
+
+
+[Event "Endgame Studies 1: No 60 - 5+6"]
+[Date "2017.09.15"]
+[White "No 60"]
+[Black "5+6"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "2B5/pR6/2pP1k2/8/6Kb/4p1P1/5p2/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 60 - 5+6"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/x0ySoojo"]
+[FEN "2B5/pR6/2pP1k2/8/6Kb/4p1P1/5p2/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. d7 Ke7 2. Rb8! (2. Rb1? e2) 2... Bxg3! (2... f1=Q? 3. d8=Q+ Kxd8 4. Ba6+ Kc7 5. Bxf1 Kxb8 6. gxh4) 3. Ra8!! f1=Q 4. d8=Q+ Kxd8 5. Ba6+ Bb8!! 6. Bxf1 (6. Rxb8+? Kc7 7. Rb7+ (7. Rc8+ Kd7) 7... Kc8 8. Rb6+ Kc7) 6... Kc7 7. Ba6 (7. Kf3 Kb7) 7... e2 8. Bxe2 Kb7 9. Bf3 Kxa8 (9... a6 10. Bxc6+) 10. Bxc6# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 61 - 3+4"]
+[Date "2017.09.15"]
+[White "No 61"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "R7/6N1/8/4p3/4k3/6n1/7b/3K4 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 61 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/5j8e1qXi"]
+[FEN "R7/6N1/8/4p3/4k3/6n1/7b/3K4 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ra2 Bg1 (1... Nf1 2. Ke1) 2. Rg2 Kf3 3. Rxg1 Kf2 4. Re1 e4 5. Ne6 e3 6. Nc5 (6. Nf4 e2+ 7. Nxe2 Nf1 { [%cal Gf1e3,Ge3f1] }) 6... e2+ 7. Kd2 Nf1+ 8. Kc1!! (8. Kc2 Ne3+ 9. Kd2 Nf1+) 8... Kxe1 9. Nd3# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 62 - 4+4"]
+[Date "2017.09.16"]
+[White "No 62"]
+[Black "4+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/3P4/2r5/4B2k/4r1p1/8/5R1K w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 62 - 4+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/mD04XsPr"]
+[FEN "8/8/3P4/2r5/4B2k/4r1p1/8/5R1K w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. d7 g2+ 2. Kxg2 (2. Bxg2 Rd3) 2... Re2+ 3. Kf3 (3. Rf2 Rg5+) 3... Rd2 4. Kf4 Rc3 5. Bd3!! Rcxd3 (5... Rdxd3 6. Rh1+ Rh3 7. d8=Q+) 6. d8=Q+ Rxd8 7. Rh1+ *
+
+
+[Event "Endgame Studies 1: No 63 - 7+7"]
+[Date "2017.09.16"]
+[White "No 63"]
+[Black "7+7"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/2p2k2/4p1NP/p5p1/8/b7/P4P1P/1K1b2N1 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 63 - 7+7"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/SA5hPqk2"]
+[FEN "8/2p2k2/4p1NP/p5p1/8/b7/P4P1P/1K1b2N1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. h7 Bh5 2. Nf4! (2. h8=Q Bxg6+ 3. Ka1 Be7) 2... gxf4 3. h8=Q Bg6+ 4. Ka1 Be7 5. Nf3 Bf6+ 6. Ne5+ Ke7 7. Qh4!! Bxh4 (7... Bf5 8. Qxf4) 8. Nxg6+ { [%cal Gg6h4] } *
+
+
+[Event "Endgame Studies 1: No 65 - 3+3"]
+[Date "2017.10.05"]
+[White "No 65"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/K6p/6p1/8/8/k5PP/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 65 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/06aZBKBr"]
+[FEN "8/8/K6p/6p1/8/8/k5PP/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. g4! (1. Kb5? Kb2! (1... Kb3 2. Kc5? Kc2! (2... Kc3? 3. g4 (3. Kd5? Kd2! (3... Kd3? 4. g4 (4. Ke5? Ke2! (4... Ke3? 5. g4! (5. Kf6? g4! (5... Kf2? 6. g4 Kg2 (6... Kf3 7. Kf5) 7. Kg6 Kh3 8. Kh5))) 5. g4 Ke3)) 4. g4 Kd3))) 2. Kc4 (2. g4 Kb3) 2... Kc2 3. Kd4 Kd2 4. Ke5 (4. Ke4 Ke2) 4... Ke2 5. Kf6 g4!) 1... Ka3 2. Ka5! (2. Kb5? Kb3 3. Kc5 Kc3 4. Kd5 Kd3 5. Ke5 Ke3 6. Kf5 Kf3) 2... Kb2 3. Kb6 (3. Kb4? Kc2 4. Kc4 Kd2 5. Kd4 Ke2 6. Ke4 Kf2 7. Kf5 Kf3) 3... Kb3 4. Kb5! Kc2 5. Kc6 Kc3 6. Kc5 Kd2 7. Kd6! Kd3 8. Kd5 Ke2 9. Ke6 Ke3 10. Ke5 Kf2 11. Kf6 Kf3 12. Kf5! Kg2 13. Kg6 Kh3 14. Kh5! *
+
+
+[Event "Endgame Studies 1: No 66 - 2+4"]
+[Date "2017.10.05"]
+[White "No 66"]
+[Black "2+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/8/7n/8/7N/3kp1K1/5n2 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 66 - 2+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/bnZJmaCY"]
+[FEN "8/8/8/7n/8/7N/3kp1K1/5n2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ng1 Ne3+ (1... e1=Q 2. Nf3+) 2. Kh3 (2. Kh2 e1=N 3. Kh3 N1g2 4. Nf3+ Ke2 5. Ne5 Nf6 6. Kg3 Ne4+ 7. Kh3) 2... Nf4+ (2... e1=N 3. Nf3+ Nxf3) 3. Kh2 Ng4+ (3... e1=N 4. Nf3+ Nxf3+ 5. Kg3) 4. Kh1 Nf2+ 5. Kh2 e1=N 6. Nf3+ Nxf3+ 7. Kg3 Ke3 { 1/2-1/2 Draw by stalemate. } *
+
+
+[Event "Endgame Studies 1: No 67 - 6+7"]
+[Date "2017.10.06"]
+[White "No 67"]
+[Black "6+7"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "4N3/2PP2P1/6b1/2bN3k/6p1/p7/K1pn4/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 67 - 6+7"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/VMJiLeXF"]
+[FEN "4N3/2PP2P1/6b1/2bN3k/6p1/p7/K1pn4/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nf4+ (1. d8=Q? c1=N+ 2. Ka1 Ndb3#) 1... Kh6 (1... Kh4 2. d8=Q+ Kg3 3. Ne2+ { [%cal Gd8d2] }) 2. g8=N+ Kh7 3. Ngf6+! (3. Nef6+ Kg7 4. N4h5+ (4. N6h5+ Bxh5 5. Nxh5+ Kh8 6. d8=Q c1=N+ 7. Ka1 Ncb3+) 4... Kh8!) 3... Kh6 (3... Kh8 4. Nxg6#) 4. Nxg4+ Kh7 5. Nef6+ Kg7 6. Ne6+ Kf7 7. d8=N+ Ke7 8. c8=N# { 1-0 White wins by checkmate. } *
+
+
+[Event "Endgame Studies 1: No 68 - 3+3"]
+[Date "2017.10.06"]
+[White "No 68"]
+[Black "3+3"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "6B1/4K1k1/8/5P2/8/8/4n2n/8 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 68 - 3+3"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/MvSvOYBa"]
+[FEN "6B1/4K1k1/8/5P2/8/8/4n2n/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f6+ Kh8! 2. Bd5! (2. f7? Nf4 3. f8=Q Ng6+) 2... Nd4 (2... Nf4 3. Be4 Ng4 4. f7 Ng6+ 5. Bxg6 Nh6 6. f8=B (6. f8=R+? Kg7 7. Bc2 Ng8+ 8. Ke8 Nf6+) 6... Ng4 7. Bh5 Ne5 (7... Ne3 8. Ke6 { [%csl Rd5,Rf5,Rg4] } 8... Nc4 9. Bc5 { [%csl Rb6,Rd6,Re3,Re5] } 9... Na5 10. Bf3 { [%csl Rb7,Rc6] } 10... Nb3 11. Bb6 { [%csl Ra5,Rc5,Rd4] } 11... Nd2 12. Bd5 { [%csl Rb3,Rc4,Re4,Rf3] } 12... Nf1 13. Bf2 Nd2 (13... Nh2 14. Kf5) 14. Be3 Nf1 (14... Nb1 15. Bd4+ Kh7 16. Be4+ { [%csl Rb1] }) 15. Bf4) 8. Ke6 Nd3 9. Bd6 Nf2 10. Kf5 Nd3 11. Be2 Nc1 12. Bc4) 3. Be4 Ng4 4. f7 Nf5+ 5. Bxf5 Nh6 6. f8=R+! (6. f8=Q+ Ng8+) *
+
+
+[Event "Endgame Studies 1: No 70 - 3+4"]
+[Date "2017.10.09"]
+[White "No 70"]
+[Black "3+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/8/8/8/6p1/1N6/2k1K2n/R3b3 w - - 0 0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 70 - 3+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/WAKmD42j"]
+[FEN "8/8/8/8/6p1/1N6/2k1K2n/R3b3 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nd4+ Kc3 2. Nb5+ Kc4 (2... Kb4 3. Rb1+ { [%cal Ge2e1] }) 3. Nd6+ (3. Na3+ Kb3 4. Kxe1 Kb2 5. Nc2 Nf3+) 3... Kc5 4. Nb7+ (4. Ne4+ Kd5 5. Nf6+ Ke5 6. Nd7+ Ke6 7. Nc5+ Kd5) 4... Kc6 5. Nd8+ Kc7 6. Ne6+ Kd7 (6... Kd6 7. Ra6+) 7. Nf8+ Ke7 8. Ng6+ Kf7 9. Nh8+ Kg7 10. Rxe1 Kxh8 (10... Nf3 11. Rh1 Ng5 12. Kf2 Nh3+ 13. Kg3 Kxh8 14. Kxg4) 11. Rh1 g3 12. Ke3 Kg7 13. Kf4 g2 14. Rg1 Nf1 15. Rxg2+ { [%csl Rf1][%cal Gg2f2] } *
+
+
+[Event "Endgame Studies 1: No 71 - 5+6"]
+[Date "2018.11.18"]
+[White "No 71"]
+[Black "5+6"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "8/q1b5/8/8/3k4/p3R2p/P5Bp/6BK w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 71 - 5+6"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/vZ8JVWUV"]
+[FEN "8/q1b5/8/8/3k4/p3R2p/P5Bp/6BK w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Re4+ (1. Rd3+ Kxd3 2. Bf1+ Kc2 3. Bxa7 Kb2 4. Bc4 Be5) 1... Kd5 (1... Kd3 2. Bf1+ Kxe4 3. Bxa7 Bd6 4. Bb6 Kf3 5. Bxh3 Ke2 6. Bf5 Kd2 7. Bd4 Ke2 8. Kg2 Kd2 9. Be4 Ke2 10. Kh3 Kf1 11. Kg4 Bb4 12. Kf5 Be1 13. Ke6 Bf2 14. Kd5) 2. Rd4+ Kc5 (2... Ke5 3. Rd5+ Ke6 4. Bxh3+ Kxd5 5. Bxa7 Kc4 6. Be3 Kc3 7. Bc1 Bd6 8. Bf5) 3. Rd5+ Kc6 4. Rc5+ Kb6 5. Rc6+ Kb7 6. Rb6+ Kc8 7. Bxh3+ Kd8 8. Rd6+ Bxd6 9. Bxa7 *
+
+
+[Event "Endgame Studies 1: No 74 - 5+4"]
+[Date "2018.11.23"]
+[White "No 74"]
+[Black "5+4"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "7r/2P1B1Pp/2k5/6P1/8/8/2p5/6K1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 74 - 5+4"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/o7kiMAlB"]
+[FEN "7r/2P1B1Pp/2k5/6P1/8/8/2p5/6K1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. gxh8=Q c1=Q+ 2. Kg2 (2. Kf2 Qf4+) (2. Kh2 Qf4+) 2... Qd2+ 3. Kf3 (3. Kh3 Qe3+) (3. Kg3 Qe3+) 3... Qd3+ 4. Kf4 (4. Kg4 Qe4+) 4... Qf1+ 5. Kg4 Qg2+ 6. Kf5 Qf3+ 7. Ke6 Qd5+ 8. Kf6 Qd4+ 9. Kf7 Qxh8 10. Bd8 Kd7 11. c8=Q+ Kxc8 12. Bf6 h6 13. g6 { [%csl Rh8][%cal Gg6g7,Gg7g8] } *
+
+
+[Event "Endgame Studies 1: No 75 - 5+8"]
+[Date "2018.11.25"]
+[White "No 75"]
+[Black "5+8"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "1N5n/7p/1k5p/4pQ2/7K/1q4p1/6Pb/5B2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 75 - 5+8"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/ErAlLdLG"]
+[FEN "1N5n/7p/1k5p/4pQ2/7K/1q4p1/6Pb/5B2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qf6+ Kb7 (1... Kc5 2. Qxe5+ Kb6 3. Qxh8) 2. Qxh8 Qa4+ 3. Kh3 Qa8 4. Ba6+ Ka7 5. Qg7+ Kxb8 6. Qxe5+ Ka7 7. Qa5 h5 (7... Kb8 8. Qb6+) (7... Qb8 8. Bc8#) (7... Qe8 8. Bb5+) (7... Qg8 8. Bc4+) (7... Qf8 8. Be2+ Kb7 (8... Kb8 9. Qb6+ Kc8 10. Bg4+) 9. Bf3+ Kc8 10. Qa8+) 8. Bc8+ Kb8 9. Qd8 h4 (9... Ka7 10. Qc7+) (9... Qa7 10. Ba6#) (9... Qa3 10. Bg4+ Kb7 11. Bf3+ Ka6 12. Qa8+) 10. Ba6+ Ka7 11. Qa5 h6 12. Bc8+ Kb8 13. Qd8 h5 14. Ba6+ Ka7 15. Qa5 Bg1 16. Bd3+ Kb8 17. Qe5+ Ka7 18. Qa1+ Kb8 19. Qxg1 *
+
+
+[Event "Endgame Studies 1: No 76 - 3+2"]
+[Date "2018.11.25"]
+[White "No 76"]
+[Black "3+2"]
+[Result "*"]
+[Annotator "Hemant Sharma"]
+[FEN "7k/8/8/8/8/8/KR4R1/2q5 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No 76 - 3+2"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/AbfYiL7U"]
+[FEN "7k/8/8/8/8/8/KR4R1/2q5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rgc2 Qd1 (1... Qe1 2. Rc8+ Kg7 3. Rb7+ Kf6 4. Rc6+ Kf5 5. Rb5+ Kf4 6. Rc4+ Kf3 7. Rb3+ Kf2 8. Rc2+ Kf1 9. Rb1) 2. Rb8+ Kg7 3. Rc7+ Kf6 4. Rb6+ Ke5 5. Rc5+ Ke4 6. Rb4+ Ke3 7. Rc3+ Ke2 8. Rb2+ Kf1 9. Rb1 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 78"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#232"]
+[FEN "8/2b1p3/2r4P/6RN/8/2kP4/4K3/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No. 78 - White to move"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/YK02iApv"]
+[FEN "8/2b1p3/2r4P/6RN/8/2kP4/4K3/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ng7 (1. h7 Re6+ 2. Kf3 Rh6) 1... Rxh6 (1... Bf4 2. h7 Rh6 3. Rh5 Rxh5 4. Nxh5 Be5 5. Ke3 { [%cal Gh5f4,Gf4g6,Gh7h8] }) 2. Rc5+ Kd4 3. Rc4+ (3. Rxc7 Rh2+ { [%csl Rd3] }) 3... Ke5 4. Rxc7 Kf6 5. Ne8+ Kf7 6. Rc8 Re6+ 7. Kd1 Rg6 8. Nc7 (8. Ra8 Rc6 9. Ke2 Rc2+ 10. Ke3 Rc1 11. Ke4 Rc2 12. Kd5 Rc1 13. d4 Rc2 14. Nd6+ exd6 15. Kxd6 Rd2 16. d5 Rd1) 8... Rc6 9. Kd2 Rc5 10. Rf8+ Kxf8 11. Ne6+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 79"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#235"]
+[FEN "8/8/2P5/kr6/8/rP5R/4P3/3K4 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No. 79 - White to move"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/fD0qcMoS"]
+[FEN "8/8/2P5/kr6/8/rP5R/4P3/3K4 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. c7 Ra1+ (1... Rc5 2. Rh5) 2. Kc2 Rc5+ 3. Kb2 Rac1 4. b4+ Kxb4 5. Rb3+ Ka5 6. Ra3+ Kb6 7. c8=N+ (7. c8=Q R1c2+ 8. Kb1 Rxc8 9. Rb3+ Ka5 10. Ra3+ Kb4) 7... Rxc8 8. Rb3+ Ka5 9. Ra3+ Kb4 10. Rb3+ Kc4 11. Rd3 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 80"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#238"]
+[FEN "2N5/6p1/6k1/6P1/8/K3p3/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No. 80 - White to move"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/eCxaQBDU"]
+[FEN "2N5/6p1/6k1/6P1/8/K3p3/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ne7+ Kxg5 (1... Kh7 2. g6+ Kh8 3. Kb4 e2 4. Kc5 e1=Q 5. Kd6) (1... Kf7 2. Nc6 e2 3. Ne5+ { [%cal Ge5f3] }) 2. Nc6 Kf4 3. Nb4 Ke4 (3... Kf3 4. Kb2 g5 5. Kc1 g4 6. Kd1 g3 7. Nd3 e2+ 8. Kd2 g2 9. Ne1+ Kf2 10. Nxg2 Kxg2 11. Kxe2) 4. Kb2 e2 5. Nc2 Kf3 6. Kc3 g5 7. Kd2 g4 8. Ke1 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 81"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#241"]
+[FEN "8/P1k5/3p4/8/2K3Rb/8/2p5/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 1"]
+[ChapterName "No. 81 - White to move"]
+[ChapterURL "https://lichess.org/study/BPJx2pmD/FzuxxL3D"]
+[FEN "8/P1k5/3p4/8/2K3Rb/8/2p5/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rg7+ Kb6 2. a8=N+ Ka6 (2... Ka5 3. Ra7#) (2... Kc6 3. Rc7#) 3. Nc7+ Ka5 (3... Kb7 4. Ne6+ { [%cal Gg7g1] }) (3... Kb6 4. Nd5+ Ka6 5. Nb4+ { [%cal Gb4c2] }) 4. Rg1 Bg5 5. Rxg5+ d5+ 6. Rxd5+ Ka4 7. Nb5 c1=Q+ (7... Ka5 8. Nd4+ (8. Na3+ Ka4 9. Nb5) 8... Ka4 9. Nb3) 8. Nc3+ Ka3 9. Ra5+ Kb2 10. Ra2# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 83"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#247"]
+[FEN "8/8/1p6/8/1pK5/kP5p/Pr3RR1/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 83 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/o4cflzZd"]
+[FEN "8/8/1p6/8/1pK5/kP5p/Pr3RR1/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rh2 (1. Rxb2 h2 2. Rb1 h1=Q 3. Rxh1 b5+ 4. Kxb5) 1... Rd2 (1... Rxf2 2. Rxf2 h2 3. Rf1) 2. Kb5 Re2 3. Ka6 b5 4. Ka5 Rd2 5. Re2 Rc2 6. Rd2 (6. Rhf2 h2 7. Rxh2 Rxe2 8. Rxe2) 6... Rb2 7. Rc2 Rxc2 8. Rxc2 h2 9. Rc1 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 84"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#250"]
+[FEN "2k5/pNpn4/p7/2P5/7b/1K6/P5B1/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 84 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/7HjhAa4g"]
+[FEN "2k5/pNpn4/p7/2P5/7b/1K6/P5B1/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. c6 Ne5 2. Bh3+ (2. Bf1 Nxc6 3. Bxa6 Kb8 4. Nc5 Ne5) 2... Kb8 3. Nc5 Nxc6 4. Nd7+ Kb7 (4... Kc8) 5. Bg2 { [%csl Gb3,Rb7,Rc6,Gd7,Rh4][%cal Gb3a4,Gb3c4,Gb3c2] } 5... Bg3 6. Kc4 a5 7. Nc5+ Kb6 8. Na4+ Kb7 { [%csl Gc4,Rc6,Gd5,Gd7,Ge4,Gg2][%cal Gc4d7,Gc4d3,Gd3e3,Gg4f5,Gf5e6,Gf3f4,Gf4f5,Gf5f6,Gf6e6,Ge6d7,Gg2e4,Ge3f3,Gf3g4] } 9. Kd3 a6 10. Ke2 Be5 11. Be4 Bd4 12. Kf3 Ba7 13. Kg4 Bb8 { [%cal Gb7a7] } 14. Nc5+ (14. Kf5 Ka7 15. Bxc6) 14... Kb6 15. Nd7+ Kb5 (15... Kb7 16. Nxb8 Kxb8 17. Bxc6 { [%csl Ga8,Gc6] }) 16. a4+ Kxa4 17. Bxc6+ Kb4 18. Nxb8 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 86"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#256"]
+[FEN "8/p1pp4/P4K2/PkpP4/8/2P5/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 86 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/XWL6BZuD"]
+[FEN "8/p1pp4/P4K2/PkpP4/8/2P5/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ke7 c4 (1... Kc4 2. Kxd7 Kxd5 3. Kc8 Kc6 4. Kb8 Kd7 5. Kxa7 Kc8 6. c4) (1... d6 2. Kd7 Kc4 3. Kxc7 Kxc3 4. Kb7 c4 5. Kxa7 Kd3 6. Kb8 c3 7. a7 c2 8. a8=Q c1=Q 9. a6 Qg5 10. Qc6 Qd8+ 11. Kb7) 2. Kd8 (2. Kxd7 Kc5 3. Kc8 c6 4. d6 Kxd6 5. Kb8 c5 6. Kxa7 Kc7) 2... Kc5 3. Kc8 (3. Kxc7 Kxd5 4. Kb7 Kd6 5. Kxa7 Kc7) 3... c6 4. d6 Kxd6 5. Kb8 c5 6. Kb7 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 88"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#262"]
+[FEN "6KB/4p2P/8/3P4/8/1r2P2k/7p/1B5r w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 88 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/dWIr63gD"]
+[FEN "6KB/4p2P/8/3P4/8/1r2P2k/7p/1B5r w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bf5+ Kg2 (1... Kg3 2. Be5+ Kf2 3. Kf7 Rd1 4. Bxh2 Rxd5 5. h8=Q Rxf5+ 6. Ke6) 2. Be4+ Kf2 (2... Kg1 3. Bg7 Rb8+ 4. Bf8) 3. Bxh1 Rb8+ 4. Kf7 (4. Kg7 Kxe3 5. Kf7 Rxh8 6. Kg7 Rb8 7. h8=Q Rxh8 8. Kxh8 Kd4 9. Kg7 Ke5 10. Kf7 Kd6) 4... Rxh8 (4... Kg1 5. Be5 Ra8 6. h8=Q Rxh8 7. Bxh8 Kxh1 8. Be5 Kg2 9. Bxh2 Kf3 10. Kxe7) 5. Kg7 Rd8 6. h8=Q Rxh8 7. Kxh8 Kg1 8. Be4 Kf2 9. Kg7 Kxe3 10. Bh1 Kd4 11. Kf7 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 89"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#265"]
+[FEN "k7/8/4p3/7P/8/3P4/1Bb4P/K7 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 89 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/jgZsovVh"]
+[FEN "k7/8/4p3/7P/8/3P4/1Bb4P/K7 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bh8 (1. Ba3 Bxd3 2. Kb2 Be4 3. Kc3 e5 4. Kc4 Kb7 5. Kc5 Kc7) 1... Kb7 (1... e5 2. Kb2 Bxd3 3. Kc3 Be4 4. Bxe5 Kb7 5. Kd4) 2. Kb2 Bxd3 3. Kc3 Bf5 4. Kd4 Kc6 5. Ke5 Kd7 6. Kf6 Ke8 7. Kg7 e5 8. h6 e4 9. h7 e3 10. Kh6 e2 11. Bc3 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 90"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#268"]
+[FEN "8/4Bk2/8/pK5R/8/8/p3n1P1/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 90 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/OwEy6ULP"]
+[FEN "8/4Bk2/8/pK5R/8/8/p3n1P1/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rh7+ Ke6 (1... Kg6 2. Rh6+ Kxh6 3. Bf6) 2. Rh1 Nc3+ 3. Ka6 Nb1 4. Re1+ Kf7 5. Bd6 a1=Q 6. Re7+ Kg6 7. Re6+ Kf5 8. Re5+ Kf6 (8... Kg4 9. Re4+) 9. Rxa5 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 91"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#271"]
+[FEN "8/3n3B/8/N7/4K3/8/8/1k6 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 91 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/Ms1Dx5oW"]
+[FEN "8/3n3B/8/N7/4K3/8/8/1k6 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bf5 Nb6 (1... Nb8 2. Bc8 Kb2 3. Kd4 Ka3 4. Kc5 Ka4 5. Nc4 Kb3 6. Nd6 { [%cal Gc5b6,Gb6c7,Gc7b8] }) 2. Kd4+ Kc1 (2... Kb2 3. Kc5 Na4+ 4. Kb4 Nc3 5. Nc4+) (2... Ka2 3. Kc5 Na4+ 4. Kb4 Nb2 5. Bc2 Ka1 6. Nb3+ Ka2 7. Nc1+ Ka1 8. Ne2 { [%cal Ge2c3] }) 3. Kc5 Na4+ (3... Na8 4. Kc6 { [%cal Gc6b7,Gb7a8] }) 4. Kb4 Nb2 5. Ka3 (5. Kb3 Nd1) 5... Nd1 6. Nb3# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 92"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#274"]
+[FEN "2b4k/8/5Pr1/5N2/8/8/8/K1B5 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 92 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/nn6w0iHS"]
+[FEN "2b4k/8/5Pr1/5N2/8/8/8/K1B5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f7 Ra6+ (1... Rf6 2. Bb2) (1... Rg8 2. fxg8=Q+ Kxg8 3. Ne7+) 2. Ba3 Rxa3+ 3. Kb2 Ra2+ 4. Kc1 (4. Kc3 Rc2+ 5. Kb4 Rc4+ 6. Kb5 Bd7+ 7. Ka6 Rc8) 4... Ra1+ 5. Kd2 Ra2+ 6. Ke3 Ra3+ 7. Kf4 Ra4+ 8. Kg5 Rg4+ 9. Kh6 (9. Kxg4 Bxf5+ 10. Kxf5 Kg7 11. Ke6 Kf8) 9... Rg8 (9... Rg6+ 10. Kxg6 Bxf5+ 11. Kf6) 10. Ne7 Be6 11. fxg8=Q+ Bxg8 12. Ng6# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 94"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#280"]
+[FEN "5K1k/8/8/8/8/7B/5pPP/5b2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 94 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/RzUleKTg"]
+[FEN "5K1k/8/8/8/8/7B/5pPP/5b2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ke7 Kg7 2. Kd6 (2. Kd8 Kf6 3. Kc7 Kg5 4. Kd6 Kh4 5. Bd7 Bxg2 6. Bb5 Kh3 7. Ke5 Kxh2 8. Kf4 Kg1 9. Kg3 Bf1 10. Bd7 Bc4 11. Bh3 Be6 12. Bg2 Bd7) 2... Kf6 3. Kc5 Ke5 (3... Kg5 4. Kd4 Kh4 5. Ke3) 4. Kb6 (4. Kb4 Kd4 5. Ka5 (5. Ka3 Kc3) 5... Kc5 6. Ka4 Bb5+) 4... Kd4 (4... Kd6 5. Ka7 Kc7 6. Ka8 Kb6 7. Kb8) 5. Ka7 Ke3 6. Kb6 Kd2 7. Kc5 Ke1 8. Kd4 Be2 9. g3 Bf1 10. Bd7 Bg2 11. Bb5 Bf3 12. Ke3 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 95"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#283"]
+[FEN "8/6P1/1k6/8/1B6/1P6/3R2K1/1r5r w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 95 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/KeDRg9nI"]
+[FEN "8/6P1/1k6/8/1B6/1P6/3R2K1/1r5r w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kg3 (1. Kf3 Rh3+ 2. Kg4 Rh7) 1... Rxb3+ 2. Kg2 Rbb1 3. Ba5+ Ka6 (3... Kxa5 4. Ra2+ Kb4 5. Rb2+ Rxb2+ 6. Kxh1) (3... Kc6 4. Bb6) 4. Bb6 Kxb6 5. Rb2+ Rxb2+ 6. Kxh1 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 96"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#286"]
+[FEN "8/8/8/P3P3/1n6/8/3P4/K1n3k1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 96 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/ebOv91Va"]
+[FEN "8/8/8/P3P3/1n6/8/3P4/K1n3k1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. e6 (1. Kb2 Nc6 2. Kxc1 Nxa5 3. e6 Nc6 4. d4 Ne7 5. Kc2 Kf2) 1... Nc6 (1... Nb3+ 2. Kb2 Nxd2 3. e7 Nc4+ 4. Kb3 Nxa5+ 5. Ka4) 2. a6 Nd3 3. e7 (3. a7 Nxa7 4. e7 Nc6 5. e8=Q Ncb4 { [%csl Ra2,Rb2,Gb4,Rc1,Rc2,Gd3] } 6. Qe2 Nc2+ 7. Kb1 Na3+) 3... Nxe7 4. a7 Nc6 5. a8=Q Ncb4 6. Qf3 Kh2 7. Qg4 Kh1 8. Qg3 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 99"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#295"]
+[FEN "3r4/1p3r2/RR6/4kp2/p7/1n1P1PK1/P2P4/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 99 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/zkRhu0OK"]
+[FEN "3r4/1p3r2/RR6/4kp2/p7/1n1P1PK1/P2P4/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rb5+ (1. axb3 f4+ 2. Kf2 bxa6) 1... Nc5 (1... Rd5 2. f4+ Kd4 3. Rxa4+ Kxd3 4. Rxd5+) 2. Rxc5+ Kd4 { [%csl Ra6,Rc5] } (2... Rd5 3. Rxd5+ Kxd5 4. Rxa4) 3. Raa5 (3. Rc4+ Kxd3 4. Raxa4 b5 5. Rc3+ Kxd2 6. Raa3 b4) 3... Rg7+ (3... b6 4. Rxf5 { [%csl Ra5,Rf7] }) 4. Kf4 b6 5. Rc4+ Kxd3 6. Raxa4 b5 7. Rc3+ Kxd2 { [%csl Ra4,Rc3] } 8. Raa3 b4 9. Rc5 { [%cal Rg7g1] } 9... bxa3 10. Rd5+ Rxd5 { 1/2-1/2 Draw by stalemate. } (10... Kc3 11. Rxd8 Rg2) *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 100"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#298"]
+[FEN "8/r2p4/1pk5/2PR4/8/1K3B1b/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 100 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/leopViKk"]
+[FEN "8/r2p4/1pk5/2PR4/8/1K3B1b/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rd6+ Kb5 (1... Kxc5 2. Rd5+ Kc6 3. Ra5+) (1... Kc7 2. cxb6+ Kxd6 3. bxa7) 2. cxb6 Be6+ (2... Ra1 3. b7 Ka5 4. Kb2) 3. Rxe6 (3. Kb2 Ra2+ 4. Kb1 Rh2 5. b7 Rh8) 3... Rb7 4. Re5+ (4. Bxb7 dxe6 { [%csl Rb6] }) 4... d5 5. Bxd5 (5. Rxd5+ Kxb6 6. Rd6+ Kc5+) 5... Rxb6 (5... Rb8 6. b7) 6. Bb7# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 102"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#304"]
+[FEN "5rB1/3R4/8/8/3K2kB/p7/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 102 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/hrR8sv2a"]
+[FEN "5rB1/3R4/8/8/3K2kB/p7/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rd8 a2 2. Bxa2 Rf4+ 3. Ke3 Ra4 4. Bb3 Rb4 (4... Ra3 5. Rd4+ { [%csl Gb3,Gh4][%cal Gd4b4] }) 5. Rd4+ Rxd4 6. Be7 Rf4 (6... Rd7 7. Be6+) 7. Be6+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 103"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#307"]
+[FEN "8/6R1/K1Nk4/8/8/8/1q6/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 103 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/3NzuQeYA"]
+[FEN "8/6R1/K1Nk4/8/8/8/1q6/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rb7 Qe2+ 2. Kb6 Qe3+ 3. Kb5 Qg5+ 4. Kb6 Qc5+ 5. Ka6 Qc4+ (5... Kxc6 6. Rc7+ Kxc7) 6. Ka5 Qa2+ (6... Kxc6 7. Rc7+) 7. Kb6 Qb3+ 8. Ka6 Qc4+ 9. Ka5 Qd5+ 10. Rb5 Qa2+ 11. Kb6 Qf2+ 12. Kb7 Qf7+ 13. Kb6 Qc7+ 14. Ka6 Qc8+ 15. Ka7 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 104"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#310"]
+[FEN "8/4K1np/8/1B1P3k/4p3/8/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 104 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/0vcGUDfV"]
+[FEN "8/4K1np/8/1B1P3k/4p3/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kf6 Kh6 2. d6 Ne8+ 3. Bxe8 e3 4. d7 (4. Bb5 e2 5. Bxe2) 4... e2 5. d8=N (5. d8=Q e1=Q) 5... e1=N (5... e1=Q 6. Nf7+ Kh5 7. Ne5+ Kh4 8. Nf3+ { [%cal Gf3e1] }) 6. Nc6 Nf3 7. Ne7 Nh4 8. Ng8# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 105"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#313"]
+[FEN "8/8/5k2/2n2P2/2K5/p7/2B2N2/4N1n1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 105 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/m0tBHxJB"]
+[FEN "8/8/5k2/2n2P2/2K5/p7/2B2N2/4N1n1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bb1 (1. Ne4+ Nxe4 2. Bxe4 a2 3. Nc2 Ne2 { [%csl Rf5][%cal Ge2g3] }) 1... a2 (1... Na4 2. Ne4+ Kf7 3. Kb4) 2. Bxa2 Nb7 3. Kd5 Ne2 (3... Kxf5 4. Kc6 Nd8+ 5. Kd7 Nb7 6. Kc7 Na5 7. Kb6) 4. Kc6 Nd8+ 5. Kd7 Nf7 (5... Nb7 6. Kc7 Nc3 7. Be6) 6. Be6 Ne5+ 7. Ke8 Ng3 8. Ng2 Nxf5 9. Ne4+ Kxe6 (9... Kg6 10. Nf4+ { [%csl Rf5] }) 10. Nf4# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 106"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#316"]
+[FEN "8/7k/3B3P/3b2R1/7P/3P4/1K5P/7q w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 106 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/c7PpeAH2"]
+[FEN "8/7k/3B3P/3b2R1/7P/3P4/1K5P/7q w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rg7+ (1. Bf4 Qf3 2. Rg7+ Kh8 3. Be5 Qe2+) 1... Kxh6 (1... Kh8 2. Be5) 2. Bf8 Kh5 (2... Qf3 3. Rf7+) 3. Rg5+ Kxh4 4. Be7 Kh3 (4... Qe1 5. Re5+) 5. Rg3+ Kxh2 6. Bd6 Bg2 (6... Qf1 7. Rf3+) (6... Qd1 7. Rg5+ { [%cal Gg5d5] }) 7. Rf3+ Kg1 8. Bc5+ Kh2 9. Bd6+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 108"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#322"]
+[FEN "3R4/2P5/pn2N3/8/8/7K/k3p3/5n2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 108 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/9hMpeTl8"]
+[FEN "3R4/2P5/pn2N3/8/8/7K/k3p3/5n2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Ra8 e1=Q (1... Nc8 2. Rxa6+ Kb1 (2... Kb2 3. Nf4 e1=Q 4. Nd3+) 3. Nd4 e1=Q 4. Ra1+ Kxa1 5. Nc2+) 2. Rxa6+ Na4 (2... Kb3 3. Rxb6+ Ka4 4. Ra6+ Kb4 5. Rb6+ Ka5 6. Ra6+ Kb5 7. Nd4+ Kxa6 8. c8=Q+) 3. Rxa4+ Kb2 4. Rb4+ Ka3 5. Rb3+ Kxb3 6. Nd4+ Ka4 7. Ne2 Qxe2 8. c8=Q *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 109"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#325"]
+[FEN "8/k7/P2b2P1/KP1Pn2P/4R3/8/6np/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 109 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/j2oAO1Ct"]
+[FEN "8/k7/P2b2P1/KP1Pn2P/4R3/8/6np/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. b6+ (1. Re1 Bc7+) 1... Ka8 2. Re1 Nxe1 3. g7 h1=Q (3... Nc4+ 4. Kb5 h1=Q 5. g8=Q+ Bb8 6. a7 Na3+ 7. Kc6 Qh2 8. axb8=Q+ Qxb8 9. b7+ Ka7 10. Qg1+ Ka6 11. Qb6#) 4. g8=Q+ Bb8 5. a7 Nc6+ 6. dxc6 Qxh5+ 7. Qg5 (7. Ka6 Qe2+) 7... Qxg5+ 8. Ka6 Bxa7 9. c7 { [%cal Gb6b7,Gc7c8] } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 110"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#328"]
+[FEN "2K5/2Pnk1P1/PP6/8/2b5/2n5/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 110 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/2XDOEoJO"]
+[FEN "2K5/2Pnk1P1/PP6/8/2b5/2n5/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. a7 (1. b7 Ne4 { [%cal Ge4d6] }) (1. g8=Q Bxg8 2. a7 Ne4 3. Kb7 Bd5+ 4. Ka6 Nxb6 5. Kxb6 Nd6) (1. Kb7 Bd5+ 2. Kc8 Nxb6+ 3. Kb8 Nd7+ 4. Kc8 Na4 5. g8=N+ Bxg8) 1... Ba6+ (1... Ne4 2. Kb7 Nd6+ 3. Kc6 Bb5+ 4. Kd5 Nxb6+ 5. Kc5 Kf7) 2. b7 Ne4 3. g8=N+ Ke8 4. Nf6+ Nexf6 5. a8=B (5. a8=Q Nd5 { [%cal Gd5e7] }) 5... Ne5 6. Kb8 Nc6+ 7. Kc8 Bf1 8. b8=R (8. b8=Q Ba6+ 9. Qb7 Ne4 10. Qxa6 Nd6#) (8. b8=N Ne7+ 9. Kb7 Bg2+ 10. Nc6 Bxc6+ 11. Ka7 Bd7 12. Bb7 Nfd5) 8... Ba6+ 9. Rb7 Ne4 { 1/2-1/2 Draw by stalemate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 111"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#331"]
+[FEN "6R1/2Q5/1p6/8/4q3/p7/k7/rN1K4 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 111 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/9NqKEpQ8"]
+[FEN "6R1/2Q5/1p6/8/4q3/p7/k7/rN1K4 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qf7+ (1. Rg2+ Qxg2 2. Qf7+ Kxb1 3. Qb3+ Qb2 4. Qc4 b5) 1... Kb2 2. Rg2+ Qxg2 3. Qf2+ Kb3 (3... Qxf2) 4. Qxb6+ (4. Qxg2 Rxb1+ { [%csl Rg2][%cal Rb1b2] }) 4... Ka2 5. Qe6+ Kxb1 6. Qb3+ Qb2 7. Qc4 Ra2 8. Qb4 Ka1 9. Qc3 Kb1 10. Qb4 Ra1 11. Qc4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 112"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#334"]
+[FEN "5R2/8/8/r7/1p6/8/p7/k2K1B2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 112 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/2UdfUK88"]
+[FEN "5R2/8/8/r7/1p6/8/p7/k2K1B2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bc4 (1. Kc2 Rc5+ 2. Kb3 Rc3+ 3. Kxb4 Kb2 4. Ra8 Rb3+ 5. Kc4 Ra3) 1... Rc5 (1... Kb1 2. Rb8 Ra4 3. Bxa2+ Kxa2 4. Kc2) 2. Bg8!! (2. Be6 Kb1 3. Rb8 Rc1+ 4. Kd2 Rc2+ 5. Kd1 a1=Q 6. Rxb4+ Rb2 7. Rc4 Rb6 8. Rc1+ Kb2 9. Rxa1 Rd6+ 10. Ke2 Rxe6+ { [%csl Ra1] }) 2... Kb1 3. Rb8 Rc1+ 4. Kd2 Rc2+ 5. Kd1 a1=Q 6. Rxb4+ Rb2 7. Rc4 Rc2 (7... Rd2+ 8. Kxd2 Qa5+ 9. Ke2) 8. Rb4+ (8. Rxc2 Qd4+ 9. Rd2 Qg1+) 8... Rb2 9. Rc4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 113"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#337"]
+[FEN "1N6/p7/8/k1K5/2p1P3/1p1p4/1P6/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 113 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/EQwcTpkP"]
+[FEN "1N6/p7/8/k1K5/2p1P3/1p1p4/1P6/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nc6+ Ka4 2. Nb4 d2 3. Nd5 d1=N (3... d1=Q 4. Nc3+) 4. e5 c3 5. Nxc3+ Nxc3 6. Kd4 Nb5+ (6... Kb4 7. bxc3+ Kb5 8. Kd3 a5 9. c4+ Kc5 10. Kd2! Kc6 11. Kc3 a4 12. Kb2 Kc5 13. Kc3) 7. Kc5 Nc7 8. Kd6 Ne8+ 9. Ke7 Ng7 10. Kf6 Nh5+ 11. Kg5 Ng3 12. Kf4 Ne2+ (12... Kb5 13. Kxg3 a5 14. Kf4 a4 15. e6 Kc6 16. Ke5 a3 17. Kf6 axb2 18. e7 b1=Q 19. e8=Q+) 13. Ke3 Nc3 14. Kd4 Ne2+ 15. Ke3 Ng3 16. Kf4 { [%cal Rg3h5,Rh5g7,Rg7e8,Re8c7,Rc7b5,Gf4g5,Gg5f6,Gf6e7,Ge7d6,Gd6c5] } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 114"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#340"]
+[FEN "7k/6p1/1p2p3/1P2P1P1/p5P1/6PK/7P/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 114 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/h9ZeIxFZ"]
+[FEN "7k/6p1/1p2p3/1P2P1P1/p5P1/6PK/7P/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. g6 (1. Kh4 a3 2. g6 a2 3. g5 a1=B 4. g4 (4. Kh5 Bxe5 5. h4 Bxg3) 4... Bxe5 5. h3 Kg8 6. Kh5 Bg3 7. h4 Bxh4 8. Kxh4 Kf8 9. Kg3 e5 (9... Ke7 10. Kf4 Kd6 11. Ke4 e5 12. Kf5 Kd5) 10. Kf3 Ke7 11. Ke3 Kd6 12. Ke4 Ke6) 1... a3 2. g5 a2 3. Kg4 a1=Q (3... a1=B 4. Kf4 Bc3 5. h4) 4. Kh5 Qxe5 5. h4 Qe1 (5... Qxb5 6. g4 Qxg5+ 7. Kxg5 b5 8. Kf4 b4 9. Ke4 e5 10. Kd3) (5... Kg8 6. g4 Qf6 7. gxf6 gxf6 8. Kh6 e5 9. g7 e4 10. Kg6 e3 11. h5 e2 12. h6 e1=Q 13. h7#) 6. g4 Qxh4+ 7. Kxh4 Kg8 8. Kg3 Kf8 9. Kf4 Ke7 10. Ke5 Kd7 11. Kd4 Kd6 12. Ke4 e5 (12... Kc5 13. Ke5 Kxb5 14. Kxe6 Kc5 15. Kf7 b5 16. Kxg7 b4 17. Kf6 b3 18. g7 b2 19. g8=Q b1=Q 20. Qe6) 13. Kf5 Kd5 { 1/2-1/2 Draw by stalemate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 115"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#343"]
+[FEN "8/8/5P2/8/2k2p1p/2B1p2P/6P1/2b2K2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 115 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/rn88ejP9"]
+[FEN "8/8/5P2/8/2k2p1p/2B1p2P/6P1/2b2K2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f7 (1. Bb4 Kd3 2. Ke1 f3 3. gxf3 e2 4. f7 Bf4 5. Kf2) 1... Ba3 2. Bg7 (2. Bb2 Bf8 3. Ke2 Kd5 4. Bf6 Ke6) 2... f3 3. gxf3 Kd3 4. f8=B (4. f8=Q e2+ 5. Kf2 (5. Ke1 Bxf8 6. Bxf8 Ke3 { [%csl Rf3,Rh3] }) 5... Bc5+ 6. Qxc5 e1=Q+ 7. Kxe1) 4... e2+ (4... Bc1 5. Bh6 Bd2 6. Kg2 Be1 7. Bc5 e2 8. Bf2) 5. Kf2 e1=Q+ 6. Kxe1 Ke3 7. f4 Kxf4 8. Kf2 Bc1 9. Bh6+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 116"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#346"]
+[FEN "3k4/2pn4/8/4P1P1/p2p3P/1p6/4NP2/3K4 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 116 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/3fbRRIAD"]
+[FEN "3k4/2pn4/8/4P1P1/p2p3P/1p6/4NP2/3K4 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. g6 b2 2. Nc3 (2. Kc2 d3+) 2... dxc3 3. Kc2 Ke7 4. g7 Nf6 (4... Kf7 5. e6+) 5. exf6+ Kf7 6. h5 a3 7. Kb1 Kg8 8. h6 c6 9. f3 c5 10. f4 c4 11. f5 c2+ 12. Kxc2 b1=Q+ 13. Kxb1 c3 14. f7+ Kxf7 15. g8=Q+ Kxg8 16. f6 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 117"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#349"]
+[FEN "8/k7/2R1P1P1/8/8/3r4/8/3b1K2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 117 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/84sUdWUf"]
+[FEN "8/k7/2R1P1P1/8/8/3r4/8/3b1K2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. e7 (1. g7 Rg3 2. e7 Bh5 3. Rg6 Rxg6 4. e8=Q Rf6+ 5. Ke1 Bxe8 6. g8=Q Bd7 7. Qd8 Re6+) 1... Re3 (1... Rf3+ 2. Ke1 Re3+ 3. Kxd1 Rxe7 4. Rc5 Kb6 5. Rg5 Rg7 6. Ke2 Kc6 7. Kf3 Kd6 8. Kg4 Ke7 9. Kh5 { [%cal Gh5h6] }) 2. g7 Bb3 3. Rc7+ (3. Re6 Rxe6 (3... Bxe6 4. Kf2) 4. g8=Q Bc4+ 5. Kf2 Re2+ 6. Kf3 Bxg8 7. Kxe2 Bf7) 3... Ka6 (3... Kb6 4. Rc3) 4. Kf2 Re4 5. Rc6+ Ka5 6. Re6 Rxe6 (6... Bxe6 7. e8=Q) 7. g8=Q Rf6+ 8. Kg1 Bxg8 9. e8=Q { [%csl Rf6,Rg8][%cal Ge8e5] } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 118"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#352"]
+[FEN "2n2b2/8/8/8/2B5/5P2/1B3K2/7k w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 118 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/CwmrrVoq"]
+[FEN "2n2b2/8/8/8/2B5/5P2/1B3K2/7k w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Be6 Bc5+ (1... Ne7 2. Be5 Ng6 3. Bg3 Bh6 4. f4 Nxf4 5. Bc8 Nh3+ 6. Kf1 { [%cal Gc8b7] }) 2. Kf1 Bd6 (2... Nd6 3. Be5) 3. Bd4 (3. Bxc8 Be5 4. Ba3 Bd6 5. Bc1 Bf4) 3... Ne7 4. Bg1 { [%csl Rh1][%cal Ge6h3,Gh3g2] } 4... Bh2 5. Bc5 Bf4 (5... Ng6 6. f4 Bxf4 7. Bg1 { [%cal Ge6d5] }) 6. Bxe7 Bd6 7. Bg5 Bf4 8. Bd5 Bxg5 9. f4+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 119"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#355"]
+[FEN "4b2R/1N1r4/8/8/k3B3/2K5/2p5/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 119 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/nkpGbphh"]
+[FEN "4b2R/1N1r4/8/8/k3B3/2K5/2p5/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kb2 (1. Kxc2 Rc7+) (1. Bxc2+ Kb5 2. Rxe8 (2. Ba4+ Kxa4 3. Nc5+ Kb5 4. Nxd7 Bxd7) 2... Rxb7) 1... c1=Q+ (1... Re7 2. Rxe8 Rxe8 3. Bc6+) 2. Kxc1 Rc7+ 3. Bc2+ Kb4 (3... Ka3 4. Rxe8 Rxb7 5. Re3+ Ka2 6. Rc3) 4. Rh4+ Ka3 (4... Kc3 5. Nd6 Bd7 6. Rf4 Rc6 (6... Bc6 7. Rc4#) 7. Nb5#) 5. Nd6 Bd7 6. Kb1 (6. Rd4 Ka2 7. Rb4) 6... Ra7 7. Rd4 Bc6 8. Nc4+ Kb4 9. Ne5+ Kc5 10. Rc4+ Kd5 11. Nxc6 Rb7+ 12. Rb4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 120"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#358"]
+[FEN "8/8/2P5/kP3K2/8/8/7B/3b3r w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 120 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/fi9v9asf"]
+[FEN "8/8/2P5/kP3K2/8/8/7B/3b3r w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. c7 Rf1+ 2. Bf4 Bc2+ 3. Ke6 (3. Kg4 Rg1+ 4. Bg3 Rc1 5. c8=Q Bd1+ { [%cal Rc1c8] }) 3... Re1+ (3... Rxf4 4. c8=Q Bf5+ 5. Ke5 Bxc8 6. Kxf4) 4. Be5 (4. Kf7 Bb3+ 5. Kf8 Rg1 6. c8=Q Rg8+) 4... Bb3+ 5. Kd7 (5. Kd6 Rd1+ 6. Ke7 Rc1 7. Kd7 Bd1 8. c8=Q Bg4+) 5... Rd1+ (5... Rxe5 6. c8=Q Be6+ 7. Kd6) 6. Bd6 Bc2 7. Ke6 Rf1 8. Bf4 Re1+ (8... Rxf4 9. c8=Q Bf5+ 10. Ke5) 9. Be5 Bd1 10. Kf5 (10. c8=Q Bg4+ 11. Kd6 Rd1+ 12. Kc7 Rc1+) 10... Rg1 11. Bg3 Rf1+ (11... Rxg3 12. c8=Q Bg4+ 13. Kf4) 12. Bf4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 121"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#361"]
+[FEN "5k2/3Pb2n/1r2q3/8/8/8/1BK3B1/6Q1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 121 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/UHoByU0b"]
+[FEN "5k2/3Pb2n/1r2q3/8/8/8/1BK3B1/6Q1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qd4 Qf6 (1... Qf5+ 2. Be4 Qf6 3. d8=Q+ Bxd8 4. Qc5+ Qe7 5. Qxe7+ Kxe7 6. Bxh7) 2. d8=Q+ Bxd8 3. Qc5+ (3. Ba3+ Be7 4. Qd8+ Kg7 5. Bxe7 Qf2+ 6. Kc3 Qb2+ 7. Kc4 Qc2+ 8. Kd4 Qxg2) 3... Qe7 4. Ba3 { [%csl Re7][%cal Gc5f5] } 4... Kg7 (4... Ke8 5. Bc6+ Kf7 6. Qc4+ Qe6 7. Bd5) 5. Qd4+ Qf6 6. Bb2 { [%csl Rf6][%cal Gd4g4,Gd4d7] } 6... Kh6 (6... Kg6 7. Be4+) 7. Qe3+ Qg5 8. Bc1 { [%csl Rg5][%cal Ge3h3] } 8... Kg7 (8... Kh5 9. Qe2+ Qg4 10. Bf3) 9. Qd4+ Qf6 10. Bb2 Kf8 11. Qc5+ Qe7 12. Ba3 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 122"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#364"]
+[FEN "8/5R2/Pk3p2/6Q1/P1q5/2r5/6p1/6K1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 122 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/QtH9nMlY"]
+[FEN "8/5R2/Pk3p2/6Q1/P1q5/2r5/6p1/6K1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. a5+ (1. Rxf6+ Ka7 2. Qg7+ Qc7 3. Rf7 Rc1+ 4. Kxg2 Rc2+ 5. Kf3 Rc3+ 6. Ke4 Rc4+ 7. Kd5 Rc5+ 8. Ke6 Rc6+ 9. Kf5 Rc5+ 10. Kg6 Rc6+ 11. Kh7 Kxa6 12. Rxc7 Rxc7 13. Qxc7) 1... Kxa6 2. Rxf6+ Ka7 3. Qg7+ Qc7 4. Rf7 Rc1+ 5. Kxg2 Rc2+ 6. Kf3 Rc3+ 7. Ke4 Rc4+ 8. Kd5 Rc5+ 9. Ke6 Rc6+ 10. Kf5 Rc5+ 11. Kg6 Rc6+ 12. Kh7 Ka8 13. Qg8+ (13. Rxc7 Rxc7 14. Qxc7) 13... Qc8 14. Rf8 Rc7+ 15. Kh8 Ka7 16. Qg1+ (16. Rxc8 Rxc8 17. Qxc8) *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 124"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#370"]
+[FEN "7r/2R5/6P1/8/8/8/K7/6k1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 124 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/tjRnFGVd"]
+[FEN "7r/2R5/6P1/8/8/8/K7/6k1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. g7 Rb8 2. Rb7 (2. Rf7 Rg8 3. Kb3 Kg2 4. Kc4 Kg3 5. Kd5 Kg4 6. Ke6 Kg5) 2... Rc8 3. Kb3 Kg2 4. Rc7 Rd8 5. Kc4 Kg3 6. Rd7 Re8 7. Kd5 Kg4 8. Re7 Rg8 9. Ke6 Kg5 10. Kf7 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 125"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#373"]
+[FEN "5k2/8/pppppppp/8/PPPPPPPP/8/8/5K2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 125 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/3CvFaDB8"]
+[FEN "5k2/8/pppppppp/8/PPPPPPPP/8/8/5K2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. d5 exd5 2. exd5 cxd5 (2... c5 3. a5 bxa5 4. b5 axb5 5. cxb5) 3. a5 bxa5 4. b5 axb5 5. cxb5 Ke7 6. b6 Kd7 7. b7 Kc7 8. g5 fxg5 9. h5 gxh5 10. f5 a4 11. f6 a3 12. f7 a2 13. b8=Q+ Kxb8 14. f8=Q+ Kb7 15. Qg7+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 126"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#376"]
+[FEN "8/5k2/2P4R/4B3/n1P5/1pPK4/4Pb2/1r6 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 126 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/H1DdXomp"]
+[FEN "8/5k2/2P4R/4B3/n1P5/1pPK4/4Pb2/1r6 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. c7 Nc5+ 2. Kd2 Rb2+ 3. Kc1 Rc2+ 4. Kb1 Ne4 5. Rh7+ Kg6 6. Rg7+ (6. Rd7 Bd4 7. Rg7+ Kh6) 6... Kh6 7. Rd7 Bd4 8. Bf4+ (8. Bxd4 Nd2+ 9. Ka1 Ra2#) 8... Kh5 (8... Kg6 9. Rd6+ Kf7 10. Rd7+ Ke6 11. Rd6+ Nxd6 12. Bxd6 { [%cal Gc3d4] }) 9. Rh7+ Kg6 10. Rh6+ (10. Rh3 Be3 11. Rg3+ Kf7) 10... Kg7 11. Rh3 Be3 12. Be5+ (12. Bxe3 Nxc3+ 13. Ka1 Ra2#) 12... Kf7 (12... Kg6 13. Rg3+ Kh5 14. Rh3+ Kg5 15. Rg3+ Kh6 16. Rh3+ Kg6 17. Rg3+ Bg5 18. Rd3) 13. Rh7+ (13. Rf3+ Ke7 14. c8=N+ Ke6) 13... Kg6 14. Rg7+ Kh6 15. Rd7 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 127"]
+[Black "White to move"]
+[Result "*"]
+[FEN "7r/8/5K2/8/8/8/2P3Pk/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 127 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/dGT1dn20"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "7r/8/5K2/8/8/8/2P3Pk/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. g4 Kg3 2. g5 Rf8+ 3. Ke6 Rg8 (3... Kg4 4. g6 Kg5 5. g7 Rc8 6. Kf7 (6. c4) 6... Rc7+ 7. Kf8 Kf6 8. g8=N+) 4. c4 Rxg5 5. Kd6 Rg6+ 6. Kd5 Kf4 7. c5 Rg5+ 8. Kd6 Ke4 9. c6 Rg6+ 10. Kd7 Kd5 11. c7 Rg7+ 12. Kd8 Kd6 13. c8=N+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 128"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#382"]
+[FEN "8/4P3/8/4br1B/2R3p1/8/6p1/2K1k3 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 128 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/cOeP8I1B"]
+[FEN "8/4P3/8/4br1B/2R3p1/8/6p1/2K1k3 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kb1 (1. Rxg4 Bf4+ 2. Rxf4 Re5) (1. Re4+ Kf2 2. Rxg4 Bg3) 1... Rf1 (1... g3 2. Rc1+ Kf2 3. Rc2+ Kf1 4. e8=Q) 2. Rxg4 Bg3 3. e8=Q+ Kf2+ 4. Kc2 g1=Q (4... Rc1+ 5. Kxc1 g1=Q+ 6. Kc2) 5. Qe2+ Kxe2 6. Re4+ Kf2 7. Re2# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 129"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#385"]
+[FEN "1R6/k7/6b1/1K6/8/1P6/1B2r2b/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 129 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/683KBMF3"]
+[FEN "1R6/k7/6b1/1K6/8/1P6/1B2r2b/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rg8 Bd3+ 2. Kb4 Bd6+ (2... Rxb2 3. Kc3 Bh7 4. Rg7+) 3. Kc3 Bb1 { [%csl Rb2][%cal Gd6e5] } 4. Ba1 Ra2 (4... Be5+ 5. Kb4 Bxa1 6. Rg1 Rb2 7. Rh1) 5. Re8 (5. Rg5 Bf4 6. Rd5 Be4 7. Rd7+ Bb7 8. Bb2 Be5+) 5... Rxa1 6. Re1 (6. Kb2 Bg6 7. Re6 Ra6 8. Rxg6 Be5+ { [%csl Rg6] }) 6... Ba2 7. Re4 { [%cal Gc3b2] } (7. Re6 Bf8 8. Kb2 Bg7+) 7... Bf8 8. Rg4 Bb1 9. Rg1 (9. Kb2 Bf5) 9... Bd6 10. Re1 Bf8 11. Rg1 Ba3 (11... Ba2 12. Rg4) 12. b4 Kb6 13. Re1 Kb5 14. Rg1 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 130"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#388"]
+[FEN "kb2n3/8/1P3P2/8/K7/1N6/8/6r1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 130 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/TGD19I73"]
+[FEN "kb2n3/8/1P3P2/8/K7/1N6/8/6r1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f7 Rg4+ 2. Ka5 (2. Kb5 Nd6+) 2... Rg5+ 3. Ka6 Nc7+ 4. bxc7 Rg8 5. fxg8=B Bxc7 6. Nd4 { [%cal Gd4c6,Gg8e6,Ge6c8,Gc8b7] } 6... Kb8 7. Nc6+ Ka8 (7... Kc8 8. Be6#) 8. Be6 Bd6 9. Bc8 Bc7 10. Bb7# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 132"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#394"]
+[FEN "6br/2R5/8/8/8/4K3/P5P1/1k6 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 132 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/lFSuVQiH"]
+[FEN "6br/2R5/8/8/8/4K3/P5P1/1k6 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Rc8 (1. Rb7+ Ka1 2. Rb8 Kxa2) 1... Kxa2 2. Rb8 Ka3 (2... Bd5 3. Rxh8 Bxg2 4. Rh2) 3. g3 Ka4 4. Kf4 Ka5 (4... Ka3 5. g4 Ka2 6. Re8 Kb3 7. Ke5 Kc4 8. g5 Kc5 9. Kf6 Kd6 10. g6 Kd7 11. Rf8 { [%cal Gf6g7] }) 5. g4 Ka6 (5... Ka4 6. Ke5 Be6 7. Rxh8 Bxg4 8. Rh4) 6. g5 Rh4+ (6... Ka7 7. Rf8 Rh4+ 8. Kg3 Rh8 9. g6) 7. Kg3 Rh8 8. g6 Bf7 (8... Ka7 9. Rf8 Kb7 10. Kf4) 9. Rxh8 Bxg6 10. Rh6 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 133"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#397"]
+[FEN "1k2n3/1p6/1P2nP2/7K/8/2B5/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 133 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/8CW19rke"]
+[FEN "1k2n3/1p6/1P2nP2/7K/8/2B5/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f7 Nd6 2. Be5 Ka8 3. Bxd6 Nd8 4. f8=N Ne6 5. Nd7 Nc5 (5... Nf8 6. Ne5) 6. Ne5 (6. Nf6 Ne4) 6... Nd7 7. Nc4 Ne5 8. Na3 (8. Na5 Nc4) 8... Nc4 9. Nb5 Nxb6 10. Nc7+ Ka7 (10... Kb8 11. Nd5+ Ka7 12. Bc5) 11. Bc5 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 134"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#400"]
+[FEN "6Q1/8/7q/2B5/4p3/2K1pp2/p6p/k7 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 134 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/3sx08mt0"]
+[FEN "6Q1/8/7q/2B5/4p3/2K1pp2/p6p/k7 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bd4 Qb6 (1... Qc6+ 2. Kb4+ Kb1 3. Qb3+ Kc1 4. Bxe3#) 2. Bxb6 h1=Q 3. Bd4 Qd1 (3... Qc1+ 4. Kb4+ Qb2+ 5. Bxb2+ Kxb2 6. Qb3+ Kc1 7. Qxe3+) 4. Qg1 (4. Kc4+ Qxd4+ 5. Kxd4 e2) 4... e2 (4... Qxg1 5. Kc2#) 5. Bh8 f2 (5... Kb1 6. Qb6+) 6. Qg7 Qc1+ (6... Kb1 7. Qb7+) 7. Kb3+ Kb1 8. Qa1# { 1-0 White wins by checkmate. } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 135"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#403"]
+[FEN "8/6KP/6P1/8/3k4/8/p6B/b7 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 135 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/EpCsM9iO"]
+[FEN "8/6KP/6P1/8/3k4/8/p6B/b7 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kg8 Ke4 (1... Kd5 2. Bf4 (2. g7 Bxg7 3. Kxg7 a1=Q+ 4. Kg8 Qa8+) 2... Bb2 3. Bc1 Bc3 4. Bd2 Bd4 5. Be3 Be5 6. Bf4 Bf6 7. Bg5) 2. Bd6 Kf5 (2... Bb2 3. Ba3 Bc3 4. Bb4 Bd4 5. Bc5 Be5 6. Bd6 Bf6 7. Be7) 3. Bf8 Bh8 (3... Kxg6 4. h8=Q Bxh8 5. Bg7 Bxg7) 4. g7 (4. Kxh8 a1=Q+ 5. g7 Kg6 6. Kg8 Qa2+ 7. Kh8 Qb2 8. Kg8 Qb3+ 9. Kh8 Qc3 10. Kg8 Qc4+ 11. Kh8 Qd4 12. Kg8 Qd5+ 13. Kh8 Qe5 14. Kg8 Qh5 15. h8=N+ Kf6 16. Bb4 Qd5+ 17. Kh7 Qe4+) 4... a1=Q 5. gxh8=N (5. gxh8=Q Qa2+ 6. Kg7 Qb2+ 7. Kg8 Qb3+ 8. Kg7 Qc3+ 9. Kg8 Qc4+ 10. Kg7 Qd4+ 11. Kg8 Qd5+ 12. Kg7 Qe5+ 13. Kg8 Qe6+ 14. Kg7 Qg6#) 5... Qa2+ 6. Nf7 Kg6 7. h8=N+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 136"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#406"]
+[FEN "1N6/8/8/5k2/8/3r4/B6N/2K5 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 136 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/vur30RfB"]
+[FEN "1N6/8/8/5k2/8/3r4/B6N/2K5 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bb1 Ke4 2. Ng4 Kd4 3. Nc6+ Kc3 4. Nf2 { [%cal Rd3e3,Re3g3] } 4... Rd5 (4... Rf3 5. Ne4+ Kc4 6. Ne5+) (4... Rd7 5. Ne4+ Kb3 6. Nc5+) 5. Bg6 { [%cal Rd5c5,Rd5g5] } 5... Kc4 (5... Rb5 6. Ne4+ Kb3 (6... Kc4 7. Nd6+) 7. Nd4+) 6. Ne4 { [%cal Rd5b5,Rd5d3] } 6... Kb5 7. Nc3+ Kxc6 8. Be4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 137"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#409"]
+[FEN "8/5k2/b5p1/3n2P1/6P1/p7/P1B3N1/7K w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 137 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/EeuE3m9i"]
+[FEN "8/5k2/b5p1/3n2P1/6P1/p7/P1B3N1/7K w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bb3 Ke6 2. Nf4+ Kd6 (2... Ke5 3. Nxg6+ Kd4 4. Kg2 Ne3+ 5. Kg3) 3. Bxd5 (3. Nxg6 Ne3 4. Nf4 Ke5 5. g6 Nxg4 6. g7 Nh6) 3... Ke5 4. Ne6 Bc8 5. Nc7 Kd6 6. Na8 Bxg4 (6... Kxd5 7. Nb6+) 7. Nb6 (7. Bf7 Bf3+) (7. Bg2 Be6) 7... Kc5 8. Nc4 Be2 (8... Bd1 9. Bf7 Bb3 10. Nd6) (8... Kxd5 9. Ne3+) 9. Ne3 Kd4 10. Ng2 Kxd5 11. Nf4+ { [%cal Gf4e2] } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 138"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#412"]
+[FEN "8/8/8/8/P7/2r3p1/7B/3k1K2 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 138 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/flRgVu2s"]
+[FEN "8/8/8/8/P7/2r3p1/7B/3k1K2 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bg1 Rc2 { [%cal Gg3g2] } 2. Ba7 (2. Bd4 g2+ 3. Kg1 Rc4) 2... g2+ 3. Kg1 Rc7 4. Bf2 (4. Bb8 Rg7 5. a5 Rg8 6. Bh2 Ke2 7. a6 Kf3 8. a7 Rh8) 4... Rg7 5. a5 Ke2 6. a6 Kf3 7. a7 Rg8 8. Bg3 Rh8 (8... Kxg3 9. a8=Q Rxa8) 9. Bh2 Re8 10. Be5 Rd8 11. Bd6 Rc8 12. Bc7 Ra8 13. Bb8 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 140"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#418"]
+[FEN "8/r7/1K6/5k2/b3R3/8/3P1P2/n7 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 140 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/28tO2kGe"]
+[FEN "8/r7/1K6/5k2/b3R3/8/3P1P2/n7 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f3 (1. d3 Ra8 2. Kb7 Ra5 3. Kb6 Nb3 4. Rb4 Ra8 5. Kb7 Re8 6. d4 (6. Kc7 Re7+ 7. Kb6 Re6+ 8. Kc7 Nc5) 6... Re4 7. Rxa4 Nc5+ 8. dxc5 Rxa4 9. c6 Rb4+) 1... Ra8 2. Kb7 Ra5 3. Kb6 Nb3 4. Rb4 Ra8 5. Kb7 Rh8 (5... Re8 6. d4) 6. d4 (6. Kc7 Rh7+ 7. Kb6 Rh6+ 8. Ka7 Nc5 9. d4 Ra6+) 6... Rh4 7. f4 (7. Rxa4 Nc5+ 8. dxc5 Rxa4 9. c6 Ke6 10. c7 Rb4+ 11. Kc8 Ke7 12. f4 Rxf4 13. Kb7 Rb4+ 14. Kc6 Rc4+) 7... Rxf4 8. Rxa4 Nc5+ 9. dxc5 Rxa4 10. c6 Rb4+ 11. Kc8 Ke6 12. c7 Ke7 { 1/2-1/2 Draw by stalemate. } (12... Kd6 13. Kd8 Rh4 14. c8=N+) *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 142"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#424"]
+[FEN "6N1/3P3k/n2K3p/2p3n1/1b6/2p1p1P1/8/3B4 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 142 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/BVAPJ3Ph"]
+[FEN "6N1/3P3k/n2K3p/2p3n1/1b6/2p1p1P1/8/3B4 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Nf6+ Kg7 (1... Kg6 2. Bh5+ Kf5 3. d8=Q) 2. Nh5+ Kg6 (2... Kh7 3. Bc2+) (2... Kf7 3. d8=Q) 3. Bc2+ Kxh5 4. d8=Q Nf7+ 5. Ke6 Nxd8+ 6. Kf5 e2 7. Be4 e1=N 8. Bd5 { [%cal Gd5c4,Gc4e2] } 8... c2 9. Bc4 c1=N 10. Bb5 Nc7 11. Ba4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 144"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#430"]
+[FEN "7B/8/B4Pp1/3n4/8/3p1K2/8/5bk1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 144 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/5ez0Xyg5"]
+[FEN "7B/8/B4Pp1/3n4/8/3p1K2/8/5bk1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. f7 d2 2. Bd4+ (2. Be2 Bxe2+ 3. Kxe2 Nf4+ 4. Kxd2 Ne6 5. Ke3 Nf8 6. Kf4 Nh7) 2... Kh1 (2... Kh2 3. Be5+ Kg1 4. Be2 Bxe2+ 5. Kxe2) 3. Be2 Bxe2+ (3... Nf4 4. Bd1 Ne6 5. Kg3 Bg2 6. Be3 Bd5 7. Bxd2 Kg1 8. Be2 Nf8 9. Be3+ Kh1 10. Bc5 Nh7 11. Bd3 { [%cal Gd3g6] }) 4. Kxe2 Nf4+ 5. Kxd2 Ne6 6. Ke3 (6. Kd3 Nf8 7. Ke4 Kg2 8. Ke5 Nh7) (6. Bc5 g5 7. Kc3 Kg2 8. Kc4 Kf3 9. Kd5 Nf4+ 10. Ke5 Kg4 11. Kf6 Nh5+ 12. Ke7 Nf4 13. Be3 Ng6+ 14. Kf6 Kh5 15. Bxg5 Nf8 16. Bf4 Ng6) 6... Nf8 (6... g5 7. Ke4 g4 8. Ke5 Nf8 9. Kf4) (6... Kh2 7. Bg7 Kh3 8. Bh6 Kh4 9. Ke4 Kh5 10. Ke5 Kxh6 11. Kxe6 Kg7 12. Ke7) 7. Kf4 Nh7 8. Kg3 Nf8 9. Be3 Nh7 10. Bc5 g5 11. Kg4 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 145"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#433"]
+[FEN "1r6/6K1/4P2p/P1P2k2/8/8/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 145 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/gJZfeif9"]
+[FEN "1r6/6K1/4P2p/P1P2k2/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Kf7 (1. e7 Ke6) 1... Rh8 (1... Ke5 2. e7 Kd5 3. a6 { [%cal Ga6a7] }) 2. e7 Rh7+ 3. Kf8 Kf6 4. e8=N+ Ke5 (4... Ke6 5. Ng7+ Kd7 6. Kg8 Rxg7+ 7. Kxg7 h5 8. a6 Kc6 9. Kf7 h4 10. a7 Kb7 11. Ke7 h3 12. c6+ Kxa7 13. c7 h2 14. c8=Q h1=Q) 5. c6 Rh8+ 6. Ke7 Rxe8+ 7. Kd7 Kd5 8. c7 Rg8 9. c8=Q Rxc8 10. Kxc8 Kc6 11. Kb8 { [%cal Ga5a6] } 11... Kb5 12. Kb7 { Reti } 12... Kxa5 13. Kc6 h5 14. Kd5 *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 146"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#436"]
+[FEN "7Q/1P6/8/3P4/8/pK4P1/r4k2/2r3q1 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 146 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/szkjOqzo"]
+[FEN "7Q/1P6/8/3P4/8/pK4P1/r4k2/2r3q1 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qd4+ Kf3 2. Qxg1 Rb2+ 3. Kxa3 Rcb1 4. Qf1+ (4. Qd1+ Kg2) (4. Qh1+ Rxh1 5. Kxb2 Rh8) 4... Kg4 (4... Rxf1 5. Kxb2) (4... Ke4 5. Qc4+ Kf5 6. Qf4+ Kg6 7. Qg4+ Kh6 8. Qe6+ Kh7 9. Qf7+ Kh6 10. Qf6+ { [%csl Rb2] }) 5. Qd1+ Kh3 (5... Kg5 6. Qc1+) 6. Qh1+ Kxg3 (6... Kg4 7. Qh4+ Kf5 8. Qf4+) 7. Qg1+ Kf3 (7... Kh3 8. Qe3+ Kg2 9. Qg5+ Kf1 10. Qc1+) 8. Qf1+ Ke3 (8... Ke4 9. Qc4+ Ke5 10. Qc3+ Kd6 11. Qc6+) 9. Qc1+ *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 147"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#439"]
+[FEN "5Q2/5P1b/8/7K/8/1q4k1/1p4B1/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 147 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/3RrWQqTH"]
+[FEN "5Q2/5P1b/8/7K/8/1q4k1/1p4B1/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Qg7+ (1. Qd6+ Kxg2 2. f8=Q Qh3+ 3. Kg5 Qe3+) 1... Kh2 2. f8=Q (2. Qe5+ Kxg2 3. f8=Q Qh3+ 4. Kg5 b1=Q) 2... Qb5+ (2... b1=Q 3. Qf4+) 3. Kh6 (3. Kg4 Bf5+ 4. Kf4 Qc4+) 3... Qb6+ 4. Bc6 (4. Kxh7 b1=Q+ 5. Kh8 Qb8) 4... Qxc6+ (4... Qe3+ 5. Qg5) 5. Kxh7 b1=Q+ 6. Kh8 Kh1 7. Qfg8 { [%csl Gg1,Gg2,Gh6,Gh7] } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 148"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#442"]
+[FEN "8/6Q1/3n2r1/4R3/P5r1/5P2/8/5k1K w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 148 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/naV6EqWt"]
+[FEN "8/6Q1/3n2r1/4R3/P5r1/5P2/8/5k1K w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Re1+ Kxe1 2. Qe5+ (2. Qc3+ Kf2 3. Qb2+ Kxf3) 2... Kf1 (2... Kf2 3. fxg4 Rh6+ 4. Qh5 Rxh5+ 5. gxh5 Ke3 6. a5) 3. fxg4 Rh6+ 4. Qh5 (4. Qh2 Ne4 5. Qxh6 Nf2+ 6. Kh2 Nxg4+ 7. Kh1 Nf2+ 8. Kh2 Ng4+ 9. Kh3 Nxh6 10. a5 Nf7 11. a6 Ng5+ 12. Kg4 Ne6 13. a7 Nc7 14. Kf3 Kg1 15. Ke3 Kg2) 4... Ne4 5. Kh2 Nf6 6. Qh3+ Kf2 (6... Ke1 7. Qxh6 Nxg4+ 8. Kg1 Nxh6 9. a5 { [%cal Ga5a6,Ga6a7,Ga7a8] }) 7. Qxh6 Nxg4+ 8. Kh1 Nxh6 9. a5 { [%cal Ga5a6,Ga6a7,Ga7a8] } *
+
+
+[Event "Brilliant Chess Studies"]
+[Date "????.??.??"]
+[White "No. 149"]
+[Black "White to move"]
+[Result "*"]
+[Annotator "#445"]
+[FEN "4k3/N7/3pP2p/8/3bB1Kp/1b1N4/8/8 w - - 0 1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Endgame Studies 2"]
+[ChapterName "No. 149 - White to move"]
+[ChapterURL "https://lichess.org/study/VbJyUOvb/lWTzAVy2"]
+[FEN "4k3/N7/3pP2p/8/3bB1Kp/1b1N4/8/8 w - - 0 1"]
+[SetUp "1"]
+[ChapterMode "gamebook"]
+
+1. Bg6+ (1. Bc6+ Ke7) 1... Kf8 2. e7+ Kxe7 3. Nc6+ Kf6 4. Nxd4 Bd1+ 5. Kh3 (5. Kxh4 Kxg6 6. Nb2 Bh5 7. Na4 Bd1 8. Nc3 Bh5 9. Ncb5 Bd1 10. Nc3 Bh5) 5... Kxg6 6. Nb2 Bh5 7. Kxh4 d5 8. Na4 Bd1 9. Nc3 Bh5 10. Nc6 Bf3 (10... d4 11. Nxd4 Bg4 12. Kxg4 h5+ 13. Kh4) 11. Ne5+ Kf5 12. Nxf3 *
+
+
+[Event "Decoy Tactics: Decoy - basic concepts"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy - basic concepts"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/OAFnRYkX"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "3k4/3p4/3N1K2/7q/8/2B3P1/3P4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1. Ba5+ Qxa5 2. Nb7+ Kc7 *
+
+
+[Event "Decoy Tactics: Decoy - example 1"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy - example 1"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/R63DYPBy"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "r6k/p1q3p1/2pb1p1p/3p3N/3P2QP/1P4P1/P4PK1/2R5 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+{ A Decoy is the tactic to use when you want to get a piece onto a specific square, only it happens to be currently guarded by an enemy piece. What you do is launch your assault in TWO stages:
+1. Send your piece to a square (as a decoy) in the hope of coaxing the enemy guard.
+2. If the enemy takes the bait and leaves its guard spot, then you can implement stage 2, by sending your waiting piece to its target. }
+1. Rxc6 Qf7 (1... f5) 2. Rxd6 f5 3. Qf3 a5 4. Qxd5 Qxd5+ 5. Rxd5 g6 6. Nf4 Ra6 7. Kf3 Kg8 8. Rc5 g5 9. Nd3 Kf7 10. Rxf5+ Kg6 11. Ke4 Kg7 12. hxg5 Kh7 13. Rf6 Ra8 14. Rxh6+ Kg8 15. Nc5 a4 16. Nxa4 Kf7 17. Kd3 Re8 18. f4 Re1 19. Nc3 Rg1 20. Ne4 Rd1+ 21. Ke3 Re1+ 22. Kf3 Rd1 23. Rd6 Rf1+ 24. Kg4 Ke7 25. g6 Rc1 26. g7 Rc8 27. Ra6 Kd7 28. Nf6+ Kc7 29. g8=Q Rxg8+ 30. Nxg8 Kb7 31. Re6 Kc7 32. d5 Kb7 33. Rc6 Kb8 34. d6 Ka7 35. d7 Kb7 36. Rc4 Ka6 37. d8=Q Kb7 38. Qc7+ Ka6 39. Ra4+ Kb5 40. Qc4+ Kb6 41. Ra6+ Kb7 42. Qc6+ Kb8 43. Ra8# *
+
+
+[Event "Decoy Tactics: Decoy - example 2"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy - example 2"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/aBAH1GUg"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "r4rk1/2q1bp1p/p1b3pQ/1p2p3/4PnP1/P1NBB3/1PP4P/3RR1K1 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1... Bg5 2. Bxf4 (2. Qxg5 Nh3+) 2... Bxh6 3. Bxh6 *
+
+
+[Event "Decoy Tactics: Decoy - example 3"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy - example 3"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/FYoGBh4w"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "r4rk1/ppq2ppp/2p2b2/3p4/3P4/2PB1Q1P/PP3PP1/3R1RK1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1. Qf5 Rfd8 2. Qxh7+ Kf8 3. Rde1 g5 4. f4 gxf4 5. Qf5 Bg7 6. Rxf4 f6 7. Ref1 Rd6 8. Qh7 Qf7 9. Bg6 Qg8 10. Qh5 (10. Qh4 Qh8 11. Qg3 Re6 12. Rh4 Qg8 13. Rh7 Re7 14. Qh4 Re6 15. Qg3 Re7 16. Qh4 Re6 17. g4 a6 18. g5 Re4 19. Qg3 Re6 20. Qh4 Re4 21. Qh5 Ke7 22. gxf6+ Kd6 23. Rxg7 Qe6 24. Bf5 Re5 25. Rd7+ Qxd7 26. Bxd7 (26. dxe5+ Kc5 27. Bxd7 Rg8+ 28. Qg4 Rxg4+ 29. hxg4 a5 30. f7 Kb6 31. f8=Q Kb5 32. Qb8 d4 33. Qxb7+ Kc4 34. Qxc6+ Kd3 35. Bf5+ Kd2 36. Qg2+ Ke3 37. Qf2#) 26... Rxh5) *
+
+
+[Event "Decoy Tactics: Decoy - example 4"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy - example 4"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/K7zhhhaS"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "2r1r1k1/1p4bp/p2p1qp1/1n1P4/2P1B2P/1N1Q4/PP2R3/1K5R b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1... Rxc4 (1... Rxe4 2. Qxe4 Qxb2+ (2... Na3+ 3. bxa3) 3. Rxb2 Nc3+ 4. Kc2 Nxe4 5. Rbb1) (1... Na3+ 2. bxa3 (2. Ka1 Nxc4) 2... Qa1+ 3. Nxa1) (1... Qxb2+ 2. Rxb2 Na3+ 3. Kc1) 2. Qxc4 Qxb2+ 3. Rxb2 Na3+ 4. Kc1 Bxb2+ 5. Kd2 (5. Kxb2 Nxc4+ 6. Kc3 Rxe4 { [%csl Gb7,Gg6] }) 5... Nxc4+ { [%csl Gg6,Gb7] } 6. Kd3 Ne5+ 7. Kd2 Ng4 8. Bf3 Bc3+ 9. Kc2 Nf6 10. Kd3 Be5 11. Rc1 Bf4 12. Rc3 Re3+ 13. Kc2 Rxc3+ 14. Kxc3 *
+
+
+[Event "Decoy Tactics: Decoy - example 5"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy - example 5"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/Z1ZLZTp2"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1. Qd8+ Kxd8 2. Bg5+ Kc7 3. Bd8# *
+
+
+[Event "Decoy Tactics: Decoy / deflection - example 6"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy / deflection - example 6"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/M4wA9cgQ"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "r2bkb1r/ppp1q1pp/2n5/3Qpp2/8/1B1P4/PPP1PPPP/RNB1K1NR w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1. Bg5 *
+
+
+[Event "Decoy Tactics: Decoy / deflection - example 7"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy / deflection - example 7"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/bR52mQw4"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "3r2k1/p4ppp/1q6/8/8/2R1P3/P3QPPP/6K1 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1... Qb2 2. Qf1 Qxc3 3. h3 Rd2 4. Qa6 Qa1+ 5. Kh2 Qe5+ 6. f4 Qc5 *
+
+
+[Event "Decoy Tactics: Decoy / deflection - example 8"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy / deflection - example 8"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/7Y1re8QE"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "r4rk1/pp1bqpp1/1bn2n1p/4p1N1/8/P1N5/1PQBBPPP/R2R2K1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1. Nd5 *
+
+
+[Event "Decoy Tactics: Decoy / deflection - example 9"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Decoy / deflection - example 9"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/ht2hVGNB"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "2k1r2r/ppp3pq/b7/5p2/5Qn1/2N1B1P1/1P3PB1/2RR2K1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "07:13:18"]
+
+1. Qxc7+ Kxc7 2. Nb5+ Kb8 3. Bf4+ *
+
+
+[Event "Bundesliga 1989/90"]
+[Site "Germany"]
+[Date "1990.??.??"]
+[White "Funke M"]
+[Black "Kamp Christoph"]
+[Result "0-1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Decoy Tactics"]
+[ChapterName "Funke M - Kamp Christoph"]
+[ChapterURL "https://lichess.org/study/J3OJwYYa/3SDmhkRu"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "4r1k1/2pn2pp/1p1p1p2/7q/rPP1PP2/3QR3/6PP/2BR2K1 w - - 0 1"]
+[SetUp "1"]
+
+1. Qb3 (1. Rh3 Qg6 2. Qb3 Ra7 3. c5+ Qf7 4. cxd6 Rxe4 $10) (1. Qc2 Rea8 2. Qd3 Qf7 3. Bd2 Ra3 4. Qd4 Ra2 $10) (1. Qd2 Rxb4 2. e5 Rxc4 3. Qd5+ Kf8 4. Rf1 Rc2 $15) (1. e5 fxe5 2. Qd5+ Qf7 3. Qc6 Rxb4 4. Qxc7 Rxc4 $15) 1... Qd3 (1... Rxb4 2. Qxb4 (2. Qxd1+ Re1 3. Qd4+ Be3 4. Qxe4 Bf2 5. Qa8 $19) (2. Qc2 Qc5 3. Rd5 Qc6 4. Rd4 Nc5 5. Ba3 Qa4 $19) (2. Qd3 Nc5 3. Qd4 Rxe4 4. Rxe4 Nxe4 5. Re1 Qc5 $19) (2. Rd5 Rxb3 3. Rxh5 Rxe3 4. Bxe3 Rxe4 5. Bd2 Rxc4 $19) 2... Qxd1+ { 0-1 White resigns. } (2... Re1 3. Qd4+ Be3 4. Qxe4 Bf2 5. Qg6 g3 $19) (2... Nc5 3. Rde1 Ne6 4. f5 Nc5 5. Qb5 Qf7 6. Bb2 $18) (2... Qf7 3. Qb5 h6 4. Qd5 Re7 5. Bb2 Qxd5 6. cxd5 $18) (2... Qg4 3. Qa4 Rb8 4. Ree1 Nc5 5. Qc6 Qd7 6. Qd5+ $18)) (1... Rea8 2. c5+ Kf8 3. Rd5 Qg4 4. cxd6 Ra1 5. Qd1 $14) (1... Raa8 2. c5+ Qf7 3. Qxf7+ Kxf7 4. cxd6 c5 5. bxc5 $16) (1... Ra7 2. c5+ Qf7 3. Qxf7+ Kxf7 4. cxd6 c5 5. bxc5 $16) 2. Nc5 Qd4 3. Nxe4 Ba3 4. Ra4 Rde1 $19 0-1
+
+
+[Event "National Youth (Under -25) Chess"]
+[Site "Chennai"]
+[Date "2008"]
+[Result "1/2-1/2"]
+[WhiteElo "2163"]
+[BlackElo "2206"]
+[Variant "Standard"]
+[ECO "C30"]
+[Opening "King's Gambit"]
+[StudyName "Crazy Game!"]
+[ChapterName "2163 - 2206"]
+[ChapterURL "https://lichess.org/study/FuWOapMm/tkP7BZa5"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+
+1. f4?! { [%eval -0.37] } { Inaccuracy. e4 was best. } (1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6) 1... e5? { [%eval 0.69] } { Mistake. d5 was best. } (1... d5 2. Nf3 c5 3. g3 g6 4. Bg2 Nf6 5. O-O Bg7 6. d3) 2. e4? { [%eval -0.4] } { Mistake. fxe5 was best. } (2. fxe5 d6 3. exd6 Bxd6 4. Nf3 Nf6 5. g3 c5 6. Bg2 O-O) 2... Qe7? { [%eval 0.94] } { Mistake. exf4 was best. } (2... exf4 3. Nf3 Be7 4. Bc4 Nf6 5. d3 d5 6. exd5 Nxd5 7. Nc3) 3. fxe5?? { [%eval -5.61] } { Blunder. Nc3 was best. } (3. Nc3 exf4 4. d4 Qh4+ 5. Ke2 d6 6. Nf3 Qf6 7. Nd5 Qd8) 3... Qh4+ { [%eval -4.89] } 4. g3 { [%eval -5.04] } 4... Qxe4+ { [%eval -4.99] } 5. Qe2 { [%eval -4.77] } 5... Qxh1 { [%eval -4.77] } 6. Nf3 { [%eval -4.72] } 6... g5?! { [%eval -3.53] } { Inaccuracy. b6 was best. } (6... b6 7. d3 Bb7 8. Nbd2 Na6 9. Ne4 Nc5 10. Bg5 h6 11. O-O-O) 7. Nxg5?! { [%eval -4.53] } { Inaccuracy. d4 was best. } (7. d4 g4 8. Nh4 Nc6 9. Be3 Nge7 10. c4 d6 11. Nc3 dxe5 12. O-O-O exd4 13. Nb5 Qe4) 7... Qc6? { [%eval -2.25] } { Mistake. Nc6 was best. } (7... Nc6 8. d4) 8. Bg2?! { [%eval -3.32] } { Inaccuracy. Nc3 was best. } (8. Nc3) 8... Qc5? { [%eval -1.71] } { Mistake. Qg6 was best. } (8... Qg6) 9. Nc3?! { [%eval -2.86] } { Inaccuracy. d4 was best. } (9. d4 Qxd4) 9... Be7?? { [%eval 0.05] } { Blunder. Nc6 was best. } (9... Nc6 10. Nxf7 Qg1+ 11. Bf1 Kxf7 12. d4 Bb4 13. Be3 Bxc3+ 14. bxc3 Qh1 15. O-O-O Qe4 16. Bg2) 10. d3?? { [%eval -4.5] } { Blunder. d4 was best. } (10. d4 Qxd4 11. Nb5 Qg1+ 12. Bf1 Qb6 13. Qc4 Bxg5 14. Nxc7+ Kf8 15. Bxg5 Nc6 16. Nxa8 Qxb2) 10... Nc6 { [%eval -4.5] } 11. Nd5?! { [%eval -6.15] } { Inaccuracy. Nf3 was best. } (11. Nf3 d5) 11... Nd4 { [%eval -6.0] } 12. Qh5 { [%eval -4.26] } 12... Nxc2+?? { [%eval -1.12] } { Blunder. Bxg5 was best. } (12... Bxg5 13. Qxg5 Ne6 14. Qh5 Qg1+ 15. Bf1 Qd4 16. Bg2 d6 17. exd6 c6 18. Nc3 Nf6 19. Qf3) 13. Kf1 { [%eval -1.31] } 13... Bxg5 { [%eval -1.02] } 14. Bxg5?? { [%eval -9.21] } { Blunder. Qxg5 was best. } (14. Qxg5 d6) 14... Nxa1 { [%eval -7.53] } 15. Bf6 { [%eval -12.63] } 15... Nxf6 { [%eval -11.0] } 16. Nxf6+ { [%eval -11.0] } 16... Kd8 { [%eval -11.0] } 17. Nd5 { [%eval -12.85] } 17... h6 { [%eval -7.0] } 18. Qh4+ { [%eval -7.07] } 18... Ke8 { [%eval -6.87] } 19. Qf6 { [%eval -7.3] } 19... Rh7 { [%eval -6.77] } 20. Be4 { [%eval -5.83] } 20... Qc1+ { [%eval -6.1] } 21. Kg2 { [%eval -5.86] } 21... Qg5 { [%eval -6.0] } 22. Nxc7+ { [%eval -6.25] } 22... Kf8 { [%eval -6.04] } 23. Qd6+ { [%eval -6.24] } 23... Qe7 { [%eval -6.76] } 24. Qd4 { [%eval -6.33] } 24... Nc2 { [%eval -6.3] } 25. Qc3 { [%eval -6.83] } 25... Ne3+ { [%eval -7.13] } 26. Kf3 { [%eval -7.69] } 26... f5? { [%eval -4.28] } { Mistake. Nd1 was best. } (26... Nd1 27. Qd4) 27. exf6 { [%eval -4.28] } 27... Rf7 { [%eval -4.46] } 28. Kxe3 { [%eval -3.98] } 28... Qxf6 { [%eval -4.27] } 29. Qxf6 { [%eval -4.32] } 29... Rxf6 { [%eval -4.38] } 30. Nxa8 { [%eval -4.22] } 30... Rf1 { [%eval -3.52] } 31. Nc7 { [%eval -3.61] } 31... Rb1 { [%eval -3.6] } 32. b3 { [%eval -3.93] } 32... Rb2 { [%eval -3.35] } 33. Nb5 { [%eval -3.63] } 33... b6 { [%eval -3.6] } 34. h4 { [%eval -3.75] } 34... Rxa2 { [%eval -3.83] } 35. Kf4?! { [%eval -5.07] } { Inaccuracy. Nd6 was best. } (35. Nd6 Ba6) 35... Ke7 { [%eval -4.38] } 36. g4 { [%eval -4.38] } 36... d6 { [%eval -4.39] } 37. g5 { [%eval -4.68] } 37... hxg5+ { [%eval -4.52] } 38. hxg5 { [%eval -4.62] } 38... Be6 { [%eval -4.81] } 39. Nd4 { [%eval -4.46] } 39... Ra3 { [%eval -4.0] } 40. g6 { [%eval -4.17] } 40... Ra1 { [%eval -4.48] } 41. Kg5 { [%eval -5.37] } 41... Rg1+ { [%eval -5.36] } 42. Kh6 { [%eval -6.46] } 42... Kf6 { [%eval -6.25] } 43. Kh7 { [%eval -6.68] } 43... Rg3?! { [%eval -4.91] } { Inaccuracy. d5 was best. } (43... d5) 44. Nxe6 { [%eval -4.68] } 44... Rh3+?? { [%eval 0.0] } { Blunder. Kxe6 was best. } (44... Kxe6 45. g7 Kf6 46. g8=N+ Ke6 47. Kh8 a5 48. Bh7 d5 49. Nh6 Ke5 50. Ng8 Rg2 51. Ne7) 45. Kg8 { [%eval 0.0] } 45... Kxe6 { [%eval 0.0] } 46. g7 { [%eval -0.1] } 46... d5 { [%eval 0.0] } 47. Kf8 { [%eval 0.0] } 47... Rg3 { [%eval 0.0] } 48. Bh7 { [%eval 0.0] } 48... Ke5 { [%eval 0.0] } 49. g8=Q { [%eval 0.0] } 49... Rxg8+ { [%eval 0.0] } 50. Bxg8 { [%eval 0.0] } 50... a5 { [%eval 0.28] } 51. Bf7 { [%eval 0.0] } (51. Ke7 b5 52. Kd7 a4 53. bxa4 bxa4 54. Kc6 a3 55. Bxd5 Kd4 56. Bc4 a2) 51... Kd4 { [%eval 0.0] } 52. Ke7 { [%eval 0.0] } 52... Kxd3 { [%eval 0.0] } 53. Bxd5 { [%eval 0.0] } 53... Kc3 { [%eval 0.0] } 54. Kd6 { [%eval 0.0] } 54... Kb4 { [%eval 0.0] } { 1/2-1/2 The game is a draw. } (54... b5?? 55. Kc5 a4 56. b4 { [%csl Rb5][%cal Gd5a2,Gc5b5] }) 1/2-1/2
+
+
+[Event "Stalemate: Example"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Example"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/cv9uP6X2"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/8/8/2k5/1r6/K7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ [%cal Gb2a2,Gb2b1] }
+ *
+
+
+[Event "Stalemate: Queen Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Queen Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/BZEiXOTz"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/8/8/2k5/7q/K7 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Use the Black Queen to create a stalemate }
+1... Qc2 (1... Qb2#) *
+
+
+[Event "Stalemate: Queen Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Queen Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/abvGLI1b"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "3k4/8/4K3/8/2Q5/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Create a stalemate }
+1. Qc6 *
+
+
+[Event "Stalemate: Queen Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Queen Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/8G0HPmfp"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "2K1k3/Q7/8/8/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Create a Stalemate } { [%csl Ge8] }
+1. Qg7 *
+
+
+[Event "Stalemate: Queen Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Queen Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/70WC8Qt8"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/1p6/p7/K5k1/6P1/5q2/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Find the move that creates a stalemate }
+1... Qb2 *
+
+
+[Event "Stalemate: King Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "King Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/1PuLgf1P"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/6pp/8/7K/5k1P/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1... h6 (1... Kf5) 2. Kg6 *
+
+
+[Event "Stalemate: Check, Stalemate, or Neither ?"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Check, Stalemate, or Neither ?"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/YZsY79Jt"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "3k4/3p4/3K4/8/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Black to move: Is is Check, Stalemate, or Niether }
+1... Kc8 (1... Ke8) *
+
+
+[Event "Stalemate: Check, Stalemate, or Neither ?"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Check, Stalemate, or Neither ?"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/63TAWxP5"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/7p/5K1k/4R3/1p6/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Black to move: Is is Check, Stalemate, or Neither }
+1... b2 2. Re1 *
+
+
+[Event "Stalemate: Check, Stalemate, or Neither ?"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Check, Stalemate, or Neither ?"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/J5iaU9EB"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/8/8/3K4/6Q1/4k3 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ Black to move: Is is Check, Stalemate, or Neither }
+1... Kd1 *
+
+
+[Event "Stalemate: Checkmate in One"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Checkmate in One"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/XP8Cx8x0"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/8/8/3K4/6Q1/3k4 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Qd2# *
+
+
+[Event "Stalemate: Checkmate, Stalemate, or Neither ?"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Checkmate, Stalemate, or Neither ?"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/fIzvTVPJ"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/q7/8/K7/2k5/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+ *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/31a941s5"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "7k/4Q3/8/8/8/8/8/K7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Qf7 *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/ZvMIjBaT"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "4k3/4P3/8/4K3/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Ke6 *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/519A3OHG"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "k7/4P3/2K5/8/8/8/8/1R6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Rb7 *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/TM1hOpB4"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/5P1k/8/5K2/8/8/8/1R6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. f8=Q *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/aUxk2nyu"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "2k5/8/3Q4/3K4/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Kc6 *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/6zqaaLe5"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/8/8/5K2/7p/7k w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Kf2 *
+
+
+[Event "Stalemate: Find the stalemates"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the stalemates"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/UnroaX5I"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "7K/8/8/8/8/Q1Q5/8/3k4 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ [%cal Gc3c1,Gc3e1,Yd1e2] }
+1. Qab2 (1. Qa2) (1. Qe7) *
+
+
+[Event "Stalemate: Find the Stalemates"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemates"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/zJsv9vyS"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/6K1/3Q4/8/4k3/1B5R/8/3R4 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ [%cal Ge4f5] }
+1. Qf6 (1. Rf1) (1. Rd5) (1. Be6) (1. Kf6) (1. Kg6) *
+
+
+[Event "Stalemate: Check, Stalemate, or Neither ?"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Check, Stalemate, or Neither ?"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/n6L0qS0n"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "7k/5Q2/7n/p7/P7/8/8/2K4R b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+ *
+
+
+[Event "Stalemate: Black to move and Force Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Black to move and Force Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/knBHFZnh"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "2k5/1PN5/K7/8/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1... Kxc7 { You do not want to take the Knight because white will be able to promote and go on to win the game } (1... Kb8 2. Kb6 { [%cal Gb8a8,Gb8c8,Gb8a7,Gb8c7] } (2. Nd5 { [%csl Gc7][%cal Gb8c7] }) (2. Kb5 Kxb7 { [%csl Gc7] })) 2. Ka7 { [%cal Gb7b8] } *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/MyQm524S"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/8/8/4Kp2/7p/7k w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Kf2 *
+
+
+[Event "Stalemate: Force a Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Force a Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/rmqE3fi4"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/5R2/b3k3/4r3/1p1K4/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Re7+ (1. Rf6+ Kxf6 { [%cal Gf6e5,Ga6d3,Gb4c3,Ge5a5] } (1... Ke7 { If Black doesnt take the rook then White is winning } 2. Kxe5)) 1... Kd6 { [%cal Ge5d5] } *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/KDGRsuCN"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "5b2/8/8/4kB1K/7P/8/1p6/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1... Kxf5 *
+
+
+[Event "Stalemate: Find the Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Find the Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/XpP6Qnwg"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/1p6/1P6/8/8/5K1p/7k w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Kf1 *
+
+
+[Event "Stalemate: Force  Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Force  Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/PCdBLUFY"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/1k2b3/6p1/6p1/6K1/2R5/8/1q6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Rb3+ Qxb3 { [%csl Rg4][%cal Rg4f5,Rg4h5,Rg4f4,Rg4h4,Rg4f3,Rg4g3,Rg4h3] } *
+
+
+[Event "Stalemate: Force  Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Force  Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/jcqsZCS7"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "7k/7p/8/2b5/3n4/q7/b7/K5Q1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Qg8+ (1. Qg7+) 1... Kxg8 (1... Bxg8+) *
+
+
+[Event "Stalemate: Avoid Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Avoid Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/9ZFm7dKw"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "k7/1RK5/1Pn5/8/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Ra7+ Nxa7 2. b7# *
+
+
+[Event "Stalemate: Force  Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Force  Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/syAQXeGr"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "5n1K/6R1/4k3/8/8/8/5p2/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Rf7 Kxf7 *
+
+
+[Event "Stalemate: Avoid Stalemate"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Avoid Stalemate"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/DL0zgpI8"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "2B3Q1/6r1/8/7k/8/6K1/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Bg4+ *
+
+
+[Event "Stalemate: Chapter 31"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Chapter 31"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/5JpsF5DT"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "4k3/8/4K3/8/2Q5/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Qc8# *
+
+
+[Event "Stalemate: Chapter 32"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Chapter 32"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/0nRzjlBk"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/8/5k2/8/3K4/8/4R3 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. Rf1+ { [%cal Bf2f8,Bf2f6] } (1. Re4) (1. Re3 { [%cal Ge3e8,Ge3h3] } 1... Kf4 2. Re4+ (2. Kd4 Kf5 3. Re4 { [%cal Ge8e4,Ge4h4] } 3... Kg6 4. Rf4 Kg5 5. Ke5 Kg6 6. Rf5 Kg7 7. Rg5+ (7. Rf6 { [%cal Gg8g7,Gg7h7,Gh7h8,Gh8g8] } 7... Kg8 { [%csl Ge5] } 8. Rf7 (8. Ke6 { [%csl Ge6] }) (8. Kf5 Kg7 9. Kg5 Kh8 { [%cal Gh8h6] } 10. Kg6 (10. Kh6 { [%cal Gf6f8,Gf8h8] } 10... Kg8 { [%cal Gf5f1] } 11. Rf7 (11. Kg6 Kh8 12. Rf8# { [%cal Gf8h8,Gh8g6,Gg6f8] }) (11. Rf4) (11. Rf2 Kh8 12. Rf8#) 11... Kxf7) 10... Kg8)) 7... Kh6 (7... Kf8) (7... Kf7 8. Rg4)) 2... Kf5 (2... Kf3)) 1... Ke5 *
+
+
+[Event "Stalemate: Chapter 33"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Chapter 33"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/6VT88Ef8"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/8/3k4/8/8/8/8/K6R w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+{ [%cal Ge1e8,Ge1a1] }
+1. Re1 { [%cal Ge1e8,Ge1a1] } (1. Rh5 { [%cal Gh5a5] } 1... Ke6 2. Rg5 (2. Kb2 { [%csl Gb2] } 2... Kf6 3. Kc3 Kg6 4. Rh4 (4. Re5 { [%cal Ge8e5,Ge5h5] } 4... Kf6 { [%csl Gc3][%cal Ge8e5,Ge5h5] } 5. Kd4 { [%cal Ge5e8,Ge5h5] } 5... Kg6 6. Rf5 (6. Ke4 Kf6 7. Kf4 { [%csl Gf5][%cal Gf4f6] } 7... Kg6 8. Re6+ { [%cal Gf4g5] } (8. Rf5 { [%cal Gf5f8,Gf5h5] } 8... Kh6 9. Rg5 Kh7 10. Kf5 Kh6 11. Kf6 { [%csl Gg6] } 11... Kh7 12. Rg6 Kh8 13. Rg7 (13. Rh6+ { [%cal Gh8h6,Gh6f6,Gf6h8] } 13... Kg8 14. Rh5 Kf8 15. Rh8#) (13. Kf7 Kh7 { [%csl Gh8] } 14. Rg4 (14. Rf6 { [%cal Gh8g7] } 14... Kh8 15. Rh6# { [%cal Gh6f7,Gf7h8,Gh8h6] }) 14... Kh6)) 8... Kh5) 6... Kxf5) 4... Kg5 { [%cal Gg5h4] }) 2... Kf6) *
+
+
+[Event "Stalemate: Chapter 34"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Stalemate"]
+[ChapterName "Chapter 34"]
+[ChapterURL "https://lichess.org/study/cOWKzjnG/NMrjFsbF"]
+[Annotator "https://lichess.org/@/LampardFan08"]
+[FEN "8/p2p1p1P/3P1P2/1p6/kp6/1p4p1/1P4P1/1K6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.14"]
+[UTCTime "05:40:46"]
+
+1. h8=N a5 2. Ng6 fxg6 3. f7 g5 4. f8=N g4 5. Ne6 dxe6 6. d7 e5 7. d8=N e4 8. Ne6 e3 9. Nc5# *
+
+

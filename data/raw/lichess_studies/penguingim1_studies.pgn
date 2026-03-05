@@ -1,0 +1,232 @@
+[Event "penguingim1's Study: Chapter 1"]
+[Date "2025.05.15"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "penguingim1's Study"]
+[ChapterName "Chapter 1"]
+[ChapterURL "https://lichess.org/study/RyTddZDU/FLWWLOxm"]
+[Annotator "https://lichess.org/@/penguingim1"]
+[UTCDate "2025.05.15"]
+[UTCTime "17:23:17"]
+
+ *
+
+
+[Event "penguingim1's Study: Brodsky - Fins Old"]
+[Date "2018.01.15"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "penguingim1's Study"]
+[ChapterName "Brodsky - Fins Old"]
+[ChapterURL "https://lichess.org/study/0w3KWaEB/duP3cw0G"]
+[Annotator "https://lichess.org/@/penguingim1"]
+[FEN "7r/3bkp1p/4pp2/p1r5/3p1P2/1PbB1R2/P1P3PP/1KR1B3 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2018.01.15"]
+[UTCTime "23:48:19"]
+
+ *
+
+
+[Event "penguingim1's Study: Brodsky - Fins Updated"]
+[Date "2018.01.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "penguingim1's Study"]
+[ChapterName "Brodsky - Fins Updated"]
+[ChapterURL "https://lichess.org/study/0w3KWaEB/747OdgkJ"]
+[Annotator "https://lichess.org/@/penguingim1"]
+[FEN "3r4/4kp1p/2b1pp2/p1r5/3p1P2/1P1B4/P1PR2PP/1K2R3 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2018.01.16"]
+[UTCTime "00:15:52"]
+
+{ Fins needs to win to make his 2nd GM norm. our man on the ground says fins is down a clean pawn in a rook ending. 1/2-1/2 }
+ *
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2017.02.11"]
+[White "penguingm1"]
+[Black "swayamsm"]
+[Result "1-0"]
+[WhiteElo "2465"]
+[BlackElo "2471"]
+[TimeControl "900+2"]
+[Termination "penguingm1 won by checkmate"]
+[Variant "Standard"]
+[ECO "E32"]
+[Opening "Nimzo-Indian Defense: Classical Variation"]
+[StudyName "penguingim1's Study"]
+[ChapterName "penguingm1 - swayamsm"]
+[ChapterURL "https://lichess.org/study/PlPAbixd/K78PNXTP"]
+[Annotator "https://lichess.org/@/penguingim1"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. Nf3 b6 6. e4 d5 7. cxd5 exd5 8. e5 Ne4 9. Bd3 Bb7 10. O-O Bxc3 11. bxc3 Nd7 12. Ne1 (12. c4 f5) 12... h6 13. c4 Ng5 14. f4 Ne6 15. Qf2 c5 16. f5 Nxd4 17. Bxh6 Nxe5 18. Bxg7 Nxd3 19. Nxd3 Qg5 20. Bxf8 Rxf8 21. Rae1 dxc4 22. Ne5 c3 23. Re3 Nxf5 24. Rxc3 Re8 25. Rg3 Qxg3 26. hxg3 Rxe5 27. g4 Nd6 28. Qf4 Re6 29. Rd1 Ne4 30. Rd8+ Kg7 31. Rd7 Rf6 32. Qe5 Bc6 33. Rc7 Kg6 34. Rc8 Bb7 35. Qh5+ Kg7 36. Qh8+ Kg6 37. Rg8# 1-0
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2017.01.18"]
+[White "penguingm1"]
+[Black "superblysse"]
+[Result "1/2-1/2"]
+[WhiteElo "2465"]
+[BlackElo "2550"]
+[TimeControl "900+2"]
+[Termination "Game drawn by agreement"]
+[Variant "Standard"]
+[ECO "E81"]
+[Opening "King's Indian Defense: Sämisch Variation, Bobotsov-Korchnoi-Petrosian Variation"]
+[StudyName "penguingim1's Study"]
+[ChapterName "penguingm1 - superblysse"]
+[ChapterURL "https://lichess.org/study/z6HCZBMN/eNY8l4dV"]
+[Annotator "https://lichess.org/@/penguingim1"]
+
+1. d4 d6 2. c4 Nf6 3. Nc3 g6 4. e4 Bg7 5. f3 O-O 6. Nge2 a6 7. Be3 c6 8. c5 Nbd7 9. cxd6 exd6 10. Nf4 b5 11. Be2 Re8 12. Qd2 b4 13. Na4 Qa5 14. b3 c5 15. O-O d5 16. e5 cxd4 17. Bxd4 Rxe5 18. Bxe5 Nxe5 19. Rac1 Bf5 20. Rc5 Qd8 21. Nxd5 Nh5 22. g4 Qh4 23. gxf5 Re8 24. f4 (24. f6 Nxf6 25. Nxf6+ Bxf6) 24... Ng4 25. Ne7+ (25. Bxg4 Bd4+ 26. Kh1 (26. Kg2 Qxg4+ 27. Kh1 Ng3+ 28. hxg3 Qh3+ 29. Qh2 Qxf1+ 30. Qg1 Qxg1#) 26... Ng3+ 27. Kg2 Nxf1 28. Kxf1 Qxg4 29. Qxd4 Qf3+ 30. Qf2 Qh1+ 31. Qg1) 25... Rxe7 26. Rc8+ Bf8 27. Bxg4 Qxg4+ 28. Qg2 Qxf5 29. Rc5 Qd3 30. Rxh5 Re2 31. Qg4 Qe3+ 32. Kh1 Qe4+ 33. Kg1 Qd4+ 34. Kh1 Qe4+ 35. Kg1 { ½-½ The game is a draw. } 1/2-1/2
+
+
+[Event "Casual game"]
+[Site "https://lichess.org/E0jJX2B0"]
+[Date "2016.06.18"]
+[White "gmmitkov"]
+[Black "penguingim1"]
+[Result "1/2-1/2"]
+[Termination "Normal"]
+[WhiteElo "1574"]
+[BlackElo "1976"]
+[TimeControl "1800+0"]
+[Variant "Standard"]
+[ECO "E61"]
+[Opening "King's Indian Defense"]
+[StudyName "Game study"]
+[ChapterName "gmmitkov vs IM penguingim1"]
+[ChapterURL "https://lichess.org/study/GfGJp6Im/4A1NYl1s"]
+[Annotator "https://lichess.org/@/penguingim1"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e3 d6 5. e4 O-O 6. Be3 c6 7. Qc2 c5 8. d5 a5 9. Nf3 h6 10. Be2 Na6 11. O-O Ne8 12. Ne1 e5 13. Qd1 Bh3 14. Qc1 Bg4 15. Qc2 Bd7 16. Qd2 Kh7 17. f4 Qe7 18. Nf3 Bg4 19. Rae1 exf4 20. Bxf4 Bxf3 21. Rxf3 Nf6 22. Rh3 Ng8 23. Nb5 Rad8 24. Bg4 Nc7 25. Nxd6 (25. Bg5 f6 26. Nxc7 Qxc7 27. Bf4 f5 28. exf5 gxf5 29. Qd3) 25... Rxd6 26. e5 1/2-1/2
+
+
+[Event "penguingim1's Study: Chapter 1"]
+[Date "2025.05.15"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "penguingim1's Study"]
+[ChapterName "Chapter 1"]
+[ChapterURL "https://lichess.org/study/RyTddZDU/FLWWLOxm"]
+[Annotator "https://lichess.org/@/penguingim1"]
+[UTCDate "2025.05.15"]
+[UTCTime "17:23:17"]
+
+ *
+
+
+[Event "penguingim1's Study: Brodsky - Fins Old"]
+[Date "2018.01.15"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "penguingim1's Study"]
+[ChapterName "Brodsky - Fins Old"]
+[ChapterURL "https://lichess.org/study/0w3KWaEB/duP3cw0G"]
+[Annotator "https://lichess.org/@/penguingim1"]
+[FEN "7r/3bkp1p/4pp2/p1r5/3p1P2/1PbB1R2/P1P3PP/1KR1B3 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2018.01.15"]
+[UTCTime "23:48:19"]
+
+ *
+
+
+[Event "penguingim1's Study: Brodsky - Fins Updated"]
+[Date "2018.01.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "penguingim1's Study"]
+[ChapterName "Brodsky - Fins Updated"]
+[ChapterURL "https://lichess.org/study/0w3KWaEB/747OdgkJ"]
+[Annotator "https://lichess.org/@/penguingim1"]
+[FEN "3r4/4kp1p/2b1pp2/p1r5/3p1P2/1P1B4/P1PR2PP/1K2R3 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2018.01.16"]
+[UTCTime "00:15:52"]
+
+{ Fins needs to win to make his 2nd GM norm. our man on the ground says fins is down a clean pawn in a rook ending. 1/2-1/2 }
+ *
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2017.02.11"]
+[White "penguingm1"]
+[Black "swayamsm"]
+[Result "1-0"]
+[WhiteElo "2465"]
+[BlackElo "2471"]
+[TimeControl "900+2"]
+[Termination "penguingm1 won by checkmate"]
+[Variant "Standard"]
+[ECO "E32"]
+[Opening "Nimzo-Indian Defense: Classical Variation"]
+[StudyName "penguingim1's Study"]
+[ChapterName "penguingm1 - swayamsm"]
+[ChapterURL "https://lichess.org/study/PlPAbixd/K78PNXTP"]
+[Annotator "https://lichess.org/@/penguingim1"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. Nf3 b6 6. e4 d5 7. cxd5 exd5 8. e5 Ne4 9. Bd3 Bb7 10. O-O Bxc3 11. bxc3 Nd7 12. Ne1 (12. c4 f5) 12... h6 13. c4 Ng5 14. f4 Ne6 15. Qf2 c5 16. f5 Nxd4 17. Bxh6 Nxe5 18. Bxg7 Nxd3 19. Nxd3 Qg5 20. Bxf8 Rxf8 21. Rae1 dxc4 22. Ne5 c3 23. Re3 Nxf5 24. Rxc3 Re8 25. Rg3 Qxg3 26. hxg3 Rxe5 27. g4 Nd6 28. Qf4 Re6 29. Rd1 Ne4 30. Rd8+ Kg7 31. Rd7 Rf6 32. Qe5 Bc6 33. Rc7 Kg6 34. Rc8 Bb7 35. Qh5+ Kg7 36. Qh8+ Kg6 37. Rg8# 1-0
+
+
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2017.01.18"]
+[White "penguingm1"]
+[Black "superblysse"]
+[Result "1/2-1/2"]
+[WhiteElo "2465"]
+[BlackElo "2550"]
+[TimeControl "900+2"]
+[Termination "Game drawn by agreement"]
+[Variant "Standard"]
+[ECO "E81"]
+[Opening "King's Indian Defense: Sämisch Variation, Bobotsov-Korchnoi-Petrosian Variation"]
+[StudyName "penguingim1's Study"]
+[ChapterName "penguingm1 - superblysse"]
+[ChapterURL "https://lichess.org/study/z6HCZBMN/eNY8l4dV"]
+[Annotator "https://lichess.org/@/penguingim1"]
+
+1. d4 d6 2. c4 Nf6 3. Nc3 g6 4. e4 Bg7 5. f3 O-O 6. Nge2 a6 7. Be3 c6 8. c5 Nbd7 9. cxd6 exd6 10. Nf4 b5 11. Be2 Re8 12. Qd2 b4 13. Na4 Qa5 14. b3 c5 15. O-O d5 16. e5 cxd4 17. Bxd4 Rxe5 18. Bxe5 Nxe5 19. Rac1 Bf5 20. Rc5 Qd8 21. Nxd5 Nh5 22. g4 Qh4 23. gxf5 Re8 24. f4 (24. f6 Nxf6 25. Nxf6+ Bxf6) 24... Ng4 25. Ne7+ (25. Bxg4 Bd4+ 26. Kh1 (26. Kg2 Qxg4+ 27. Kh1 Ng3+ 28. hxg3 Qh3+ 29. Qh2 Qxf1+ 30. Qg1 Qxg1#) 26... Ng3+ 27. Kg2 Nxf1 28. Kxf1 Qxg4 29. Qxd4 Qf3+ 30. Qf2 Qh1+ 31. Qg1) 25... Rxe7 26. Rc8+ Bf8 27. Bxg4 Qxg4+ 28. Qg2 Qxf5 29. Rc5 Qd3 30. Rxh5 Re2 31. Qg4 Qe3+ 32. Kh1 Qe4+ 33. Kg1 Qd4+ 34. Kh1 Qe4+ 35. Kg1 { ½-½ The game is a draw. } 1/2-1/2
+
+
+[Event "Casual game"]
+[Site "https://lichess.org/E0jJX2B0"]
+[Date "2016.06.18"]
+[White "gmmitkov"]
+[Black "penguingim1"]
+[Result "1/2-1/2"]
+[Termination "Normal"]
+[WhiteElo "1574"]
+[BlackElo "1976"]
+[TimeControl "1800+0"]
+[Variant "Standard"]
+[ECO "E61"]
+[Opening "King's Indian Defense"]
+[StudyName "Game study"]
+[ChapterName "gmmitkov vs IM penguingim1"]
+[ChapterURL "https://lichess.org/study/GfGJp6Im/4A1NYl1s"]
+[Annotator "https://lichess.org/@/penguingim1"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e3 d6 5. e4 O-O 6. Be3 c6 7. Qc2 c5 8. d5 a5 9. Nf3 h6 10. Be2 Na6 11. O-O Ne8 12. Ne1 e5 13. Qd1 Bh3 14. Qc1 Bg4 15. Qc2 Bd7 16. Qd2 Kh7 17. f4 Qe7 18. Nf3 Bg4 19. Rae1 exf4 20. Bxf4 Bxf3 21. Rxf3 Nf6 22. Rh3 Ng8 23. Nb5 Rad8 24. Bg4 Nc7 25. Nxd6 (25. Bg5 f6 26. Nxc7 Qxc7 27. Bf4 f5 28. exf5 gxf5 29. Qd3) 25... Rxd6 26. e5 1/2-1/2
+
+
