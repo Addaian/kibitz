@@ -13,6 +13,8 @@
    - 4.1 [Sourcing PGN Games](#41-sourcing-pgn-games)
    - 4.2 [Parsing PGN Files](#42-parsing-pgn-files)
    - 4.3 [Generating Training Pairs](#43-generating-training-pairs)
+     - 4.3.1 [Enrichment (`features.py`)](#431-enrichment-featurespy)
+     - 4.3.2 [Filtering & Shaping (`build_dataset.py`)](#432-filtering--shaping-build_datasetpy)
    - 4.4 [Dataset Format](#44-dataset-format)
 5. [Feature Engineering](#5-feature-engineering)
    - 5.1 [Position Evaluation](#51-position-evaluation)
@@ -99,7 +101,8 @@ The key insight is that **raw PGN is not enough context** for an LLM to produce 
 kibitz/
 ├── data/
 │   ├── raw/                  # Raw PGN files (not committed)
-│   ├── processed/            # Parsed & feature-enriched JSONL
+│   ├── processed/            # Parser output: one JSONL per PGN source
+│   ├── enriched/             # Feature-enriched JSONL (after features.py)
 │   └── datasets/             # Final train/val/test splits
 │
 ├── kibitz/
@@ -134,6 +137,15 @@ kibitz/
 ---
 
 ## 4. Data Pipeline
+
+Data enhancement happens in two distinct stages with different purposes:
+
+```
+PGN → parser.py → data/processed/ → features.py → data/enriched/ → build_dataset.py → data/datasets/
+```
+
+- **`features.py`** — enrichment: adds computed chess features that aren't in the PGN
+- **`build_dataset.py`** — cleaning & shaping: filters, normalizes, and formats records into training pairs
 
 ### 4.1 Sourcing PGN Games
 
@@ -178,33 +190,67 @@ Use the [`python-chess`](https://python-chess.readthedocs.io/) library. It handl
 - Encoding issues in older PGN files (Latin-1 vs UTF-8)
 - Malformed PGN — wrap reads in try/except and log failures
 
+**What the parser already gives you (no engine needed):**
+- `san`, `uci`, `fen_before`, `fen_after` per move
+- `comment` — the human annotation (training target)
+- `nags` — NAG codes (`!`, `?`, `!!`, etc.)
+- `eval` — centipawn score if the PGN includes `%eval` tags (common in Lichess exports)
+- Game metadata: players, event, date, ECO, opening name
+
+This is stored in `data/processed/`. The next step (`features.py`) reads these files and computes additional features that the PGN does not contain.
+
 ---
 
 ### 4.3 Generating Training Pairs
 
-Each training example should capture:
+Training pairs are produced in two sequential stages.
+
+#### 4.3.1 Enrichment (`features.py`)
+
+This is the primary enhancement stage. It reads from `data/processed/` and writes enriched records to `data/enriched/`. It adds computed features that the PGN does not contain:
+
+- **Game phase** — opening / middlegame / endgame via material count heuristic
+- **Move classification** — brilliant / best / good / inaccuracy / mistake / blunder / sacrifice / forcing, derived from eval delta thresholds
+- **Tactical motifs** — fork, pin, skewer, discovery, etc., detected via board geometry
+- **Stockfish evals** — `eval_before`, `eval_after`, `eval_delta` if not already present as `%eval` tags in the PGN
+
+After enrichment, each record looks like:
 
 ```python
 {
   "game_id": "...",
   "move_number": 12,
-  "side": "white",           # or "black"
-  "san": "Nxf7",             # Standard Algebraic Notation
-  "uci": "g5f7",             # UCI format
-  "fen_before": "...",       # FEN string before this move
-  "fen_after": "...",        # FEN string after this move
-  "eval_before": -0.3,       # Centipawn eval before move (from engine or PGN)
-  "eval_after": 1.4,         # Centipawn eval after move
-  "eval_delta": 1.7,         # Change in eval
-  "nags": [1],               # NAG codes (1 = !, 2 = ?, 3 = !!, etc.)
+  "side": "white",
+  "san": "Nxf7",
+  "uci": "g5f7",
+  "fen_before": "...",
+  "fen_after": "...",
+  "eval_before": -0.3,
+  "eval_after": 1.4,
+  "eval_delta": 1.7,
+  "nags": [1],
   "game_phase": "middlegame",
   "opening_name": "Sicilian Defense, Najdorf Variation",
   "move_classification": "sacrifice",
-  "comment": "A stunning sacrifice that tears open the king's defenses."  # TARGET
+  "tactical_motifs": ["fork"],
+  "comment": "A stunning sacrifice that tears open the king's defenses."
 }
 ```
 
-The `comment` field is your **training target**. Everything else is your **input context**.
+The `comment` field is the **training target**. Everything else is **input context**.
+
+#### 4.3.2 Filtering & Shaping (`build_dataset.py`)
+
+This stage reads from `data/enriched/` and writes final splits to `data/datasets/`. Its responsibilities are cleaning and formatting — not adding chess knowledge:
+
+- **Drop low-quality annotations** — comments that are too short, too generic, or purely engine output
+- **Normalize comment text** — strip leading/trailing whitespace, collapse duplicate spaces, remove engine PV noise
+- **Balance across move classifications** — prevent the dataset from being dominated by `good` / `best` moves at the expense of blunders and tactics
+- **Format as Claude Messages API pairs:**
+  ```json
+  {"messages": [{"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]}
+  ```
+- **Split by game** (not move) into `train.jsonl`, `val.jsonl`, `test.jsonl` to avoid data leakage
 
 ---
 
@@ -221,6 +267,8 @@ Split **by game**, not by move, to avoid data leakage (consecutive moves from th
 ---
 
 ## 5. Feature Engineering
+
+The parser captures what is *written* in the PGN. `features.py` computes what must be *derived* — things that require chess logic or an engine. It reads from `data/processed/` and writes enriched records to `data/enriched/`. A second stage, `build_dataset.py`, then reads those enriched records and applies filtering and shaping to produce the final training pairs in `data/datasets/`.
 
 Raw move notation alone is insufficient. The model needs to understand *why* a move is interesting. These features provide that signal.
 
