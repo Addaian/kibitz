@@ -139,21 +139,20 @@ kibitz/
 
 You need games that already have **human-written annotations** — not just raw moves. Annotation quality directly determines commentary quality.
 
-**Recommended sources (free):**
+**Source: Lichess Studies**
 
-| Source | URL | Notes |
-|---|---|---|
-| Lichess Open Database | https://database.lichess.org | Millions of games; filter for annotated ones |
-| PGN Mentor | https://www.pgnmentor.com | Tournament collections, some annotated |
-| Chess Tempo | https://chesstempo.com/pgn-viewer | GM game collections |
-| TWIC (This Week in Chess) | https://theweekinchess.com/twic | Weekly releases since 1994 |
-| ChessBase CBN archives | Various | Requires conversion tooling |
+All training data is sourced from public [Lichess Studies](https://lichess.org/study) — annotated collections created by titled players, coaches, and prolific community contributors. Studies are exported via the Lichess API with human comments and Stockfish evaluations included.
 
-**Filtering criteria for your dataset:**
-- Prefer games with `%eval` annotations in comments (Lichess-style engine evals)
-- Prefer games with human text comments (look for `{ ... }` blocks in PGN)
-- Filter by Elo range if you want a specific level of commentary
-- Deduplicate by game hash (Zobrist hash of final position or simply Event+White+Black+Date)
+```
+GET https://lichess.org/api/study/by/{username}/export.pgn?comments=true&variations=true&clocks=true
+```
+
+Studies were selected from known annotators including GMs, IMs, and FMs with large public study libraries. Raw PGN files are stored in `data/raw/lichess_studies/`.
+
+**Why Lichess Studies:**
+- Human-written commentary on moves (the training target)
+- Stockfish `%eval` scores embedded alongside human annotations
+- Free, programmatically downloadable, CC-licensed
 
 **Target dataset size:**
 - Minimum viable: ~5,000 annotated move pairs
