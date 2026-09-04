@@ -1,0 +1,16 @@
+# Pipeline intermediates — regenerate with parser.py / features.py
+data/processed/
+data/enriched/
+data/datasets/
+*.jsonl.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store

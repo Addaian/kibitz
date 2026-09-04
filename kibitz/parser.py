@@ -48,12 +48,24 @@ def parse_pgn(pgnfile: str) -> None:
 
     game_id = 0
     written = 0
+    read_failures = 0
 
     with open(pgnfile) as pgn, open(out_path, "w") as out_f:
         while True:
-            game = chess.pgn.read_game(pgn)
+            # read_game() itself can raise on malformed PGN. Left unguarded it
+            # aborts the whole file part-written, so recover and keep going.
+            try:
+                game = chess.pgn.read_game(pgn)
+            except Exception as e:
+                read_failures += 1
+                print(f"error reading game after {game_id} in {Path(pgnfile).name}: {e}")
+                if read_failures > 50:
+                    print(f"  too many read failures in {Path(pgnfile).name}, stopping early")
+                    break
+                continue
             if game is None:
                 break
+            read_failures = 0
 
             game_id += 1
             board = game.board()
@@ -71,6 +83,7 @@ def parse_pgn(pgnfile: str) -> None:
                     "date":      game.headers.get("Date"),
                     "eco":       game.headers.get("ECO"),
                     "opening":   game.headers.get("Opening"),
+                    "variant":   game.headers.get("Variant"),
                 },
                 "moves": [],
             }
