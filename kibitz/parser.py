@@ -1,6 +1,11 @@
+import argparse
 import chess
 import chess.pgn
 import json
+import multiprocessing as mp
+import os
+import sys
+import time
 from pathlib import Path
 
 # here, we use the chess package. This allows us to parse a PGN finely.
@@ -110,3 +115,50 @@ def parse_pgn(pgnfile: str) -> None:
                 continue
 
     print(f"parsed {written} games into {out_path}")
+
+
+RAW_DIR = Path(__file__).parent.parent / "data" / "raw"
+
+
+def _parse_one(pgnfile: str) -> tuple[str, str | None]:
+    try:
+        parse_pgn(pgnfile)
+        return Path(pgnfile).name, None
+    except Exception as exc:
+        return Path(pgnfile).name, f"{type(exc).__name__}: {exc}"
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(
+        description="Parse every PGN under data/raw into data/processed as JSONL.")
+    ap.add_argument("--input", type=Path, default=RAW_DIR,
+                    help="Directory of source folders, or a single .pgn file.")
+    ap.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 4) - 2))
+    args = ap.parse_args()
+
+    if args.input.is_file():
+        files = [args.input]
+    else:
+        # parse_pgn derives the source name from the parent folder, so PGNs are
+        # expected one directory deep (data/raw/<source>/*.pgn).
+        files = sorted(args.input.glob("*/*.pgn"))
+    if not files:
+        sys.exit(f"no .pgn files found under {args.input}")
+
+    print(f"parsing {len(files)} file(s) on {args.workers} workers")
+    started = time.time()
+    failures = 0
+    with mp.Pool(args.workers) as pool:
+        for name, error in pool.imap_unordered(_parse_one, [str(f) for f in files]):
+            if error:
+                failures += 1
+                print(f"  FAILED {name}: {error}")
+
+    print(f"done: {len(files) - failures}/{len(files)} files -> {PROCESSED_DIR} "
+          f"in {time.time() - started:.0f}s")
+    if failures:
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

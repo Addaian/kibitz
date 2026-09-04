@@ -71,19 +71,29 @@ def test_detect_phase_endgame():
     (0, "good"),
 ])
 def test_classify_move_thresholds(delta, expected):
-    assert F.classify_move(delta, is_best=False, is_sacrifice=False) == expected
+    assert F.classify_move(delta, is_best=False) == expected
 
 
-def test_classify_move_best_and_brilliant():
-    assert F.classify_move(10, is_best=True, is_sacrifice=False) == "best"
-    assert F.classify_move(200, is_best=False, is_sacrifice=False) == "brilliant"
-    # A big gain that was simply the engine's top choice is "best", not brilliant.
-    assert F.classify_move(200, is_best=True, is_sacrifice=False) == "best"
+def test_classify_move_best_and_good():
+    assert F.classify_move(10, is_best=True) == "best"
+    assert F.classify_move(200, is_best=True) == "best"
+    # A large gain that was not the engine's choice is just a good move.
+    assert F.classify_move(200, is_best=False) == "good"
 
 
-def test_classify_move_sacrifice_outranks_good_but_not_blunder():
-    assert F.classify_move(0, is_best=False, is_sacrifice=True) == "sacrifice"
-    assert F.classify_move(-400, is_best=False, is_sacrifice=True) == "blunder"
+@pytest.mark.parametrize("delta", [-500, -100, 0, 100, 500])
+@pytest.mark.parametrize("is_best", [True, False])
+def test_classification_is_only_ever_a_quality_tier(delta, is_best):
+    """Orthogonal properties belong in their own fields, not this enum."""
+    assert F.classify_move(delta, is_best) in {
+        "blunder", "mistake", "inaccuracy", "good", "best"}
+
+
+def test_a_sacrifice_keeps_its_quality_tier():
+    """Regression: the sacrifice label used to overwrite "best", losing the
+    fact that 78% of detected sacrifices are the engine's own top move."""
+    assert F.classify_move(0, is_best=True) == "best"
+    assert F.classify_move(-400, is_best=False) == "blunder"
 
 
 # --------------------------------------------------------------------------- #

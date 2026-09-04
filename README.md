@@ -33,6 +33,8 @@
 11. [Stretch Goals](#11-stretch-goals)
 12. [Recommended Libraries](#12-recommended-libraries)
 13. [Reference Material](#13-reference-material)
+14. [Appendix A — Decision Log](#appendix-a--decision-log)
+15. [Appendix B — Running the Pipeline](#appendix-b--running-the-pipeline)
 
 ---
 
@@ -171,6 +173,19 @@ Studies were selected from known annotators including GMs, IMs, and FMs with lar
 - Comfortable: ~50,000–100,000 move pairs
 - Diminishing returns above ~500,000 for a single-domain fine-tune
 
+**What the corpus actually yielded** (33 study collections, 52 MB of PGN):
+
+| stage | count |
+|---|---:|
+| games parsed | 42,252 |
+| plies | 1,205,315 |
+| moves with a real prose comment | 82,175 |
+| after cleaning and filtering | **47,520 training pairs** |
+
+Note the attrition: only **6.8%** of plies carry human prose. Of the brace comments in
+the raw PGN, **71% are `[%clk]` / `[%eval]` tags with no text at all** — sizing the job
+off a raw `grep` for `{...}` overestimates the corpus by roughly 6x.
+
 ---
 
 ### 4.2 Parsing PGN Files
@@ -185,10 +200,15 @@ Use the [`python-chess`](https://python-chess.readthedocs.io/) library. It handl
 - `node.nags` — set of NAG values (see `chess.pgn.NAG_*` constants)
 - `node.board()` — the `chess.Board` after this move is played
 
+**Decision — variations are stripped.** The parser walks `game.mainline()` only, so
+sideline commentary is discarded. Sidelines describe moves that were never played, so
+their comments do not pair with a real position in the game. This costs some annotated
+moves and could be revisited if the corpus ever needs to be larger.
+
 **Watch out for:**
-- Variations (sidelines) — decide upfront whether to include them or strip them
 - Encoding issues in older PGN files (Latin-1 vs UTF-8)
-- Malformed PGN — wrap reads in try/except and log failures
+- Malformed PGN — `read_game()` itself raises on some files; unguarded, it aborts the
+  whole file part-written. Guard the read, not just the move loop.
 
 **What the parser already gives you (no engine needed):**
 - `san`, `uci`, `fen_before`, `fen_after` per move
@@ -210,7 +230,7 @@ Training pairs are produced in two sequential stages.
 This is the primary enhancement stage. It reads from `data/processed/` and writes enriched records to `data/enriched/`. It adds computed features that the PGN does not contain:
 
 - **Game phase** — opening / middlegame / endgame via material count heuristic
-- **Move classification** — brilliant / best / good / inaccuracy / mistake / blunder / sacrifice / forcing, derived from eval delta thresholds
+- **Move classification** — best / good / inaccuracy / mistake / blunder, derived from eval delta thresholds. Anything orthogonal to *quality* stays its own field (`is_sacrifice`, `is_forcing`, `tactical_motifs`), since a move can be a sacrifice **and** the best move on the board
 - **Tactical motifs** — fork, pin, skewer, discovery, etc., detected via board geometry
 - **Stockfish evals** — `eval_before`, `eval_after`, `eval_delta` if not already present as `%eval` tags in the PGN
 
@@ -218,24 +238,37 @@ After enrichment, each record looks like:
 
 ```python
 {
-  "game_id": "...",
-  "move_number": 12,
-  "side": "white",
-  "san": "Nxf7",
-  "uci": "g5f7",
-  "fen_before": "...",
-  "fen_after": "...",
-  "eval_before": -0.3,
-  "eval_after": 1.4,
-  "eval_delta": 1.7,
-  "nags": [1],
+  "move_number": 24, "color": "white", "ply": 46,
+  "san": "cxb6", "uci": "c5b6",
+  "fen_before": "...", "fen_after": "...",
+  "nags": [],
+
+  # engine (White's point of view, pawns)
+  "eval_before": 1.30, "eval_after": 2.79,
+  "best_move": "d2c2", "is_best": False,
+  "mate_in": None, "is_mate_threat": False,
+
+  # derived judgement
+  "eval_delta": 1.49,                 # MOVER's point of view, pawns
+  "move_classification": "good",
   "game_phase": "middlegame",
-  "opening_name": "Sicilian Defense, Najdorf Variation",
-  "move_classification": "sacrifice",
   "tactical_motifs": ["fork"],
-  "comment": "A stunning sacrifice that tears open the king's defenses."
+  "is_forcing": True,
+  "is_sacrifice": False, "material_offered": -1.0,
+
+  # target
+  "comment": "A\nsurprising but not very...",   # raw, as written in the PGN
+  "comment_text": "A surprising but not very..."  # [%clk]/[%eval] tags stripped
 }
 ```
+
+Game-level fields (`game_id`, `source`, `metadata.white/black/event/eco/opening/variant`,
+`total_plies`) live on the enclosing game record, not repeated per move.
+
+**Point-of-view gotcha.** `eval_before` / `eval_after` are White-relative, the engine
+convention. `eval_delta` is **mover-relative**, so positive always means "this move
+helped the side that played it". Mixing the two up silently scores every strong Black
+move as a blunder.
 
 The `comment` field is the **training target**. Everything else is **input context**.
 
@@ -243,13 +276,28 @@ The `comment` field is the **training target**. Everything else is **input conte
 
 This stage reads from `data/enriched/` and writes final splits to `data/datasets/`. Its responsibilities are cleaning and formatting — not adding chess knowledge:
 
-- **Drop low-quality annotations** — comments that are too short, too generic, or purely engine output
-- **Normalize comment text** — strip leading/trailing whitespace, collapse duplicate spaces, remove engine PV noise
-- **Balance across move classifications** — prevent the dataset from being dominated by `good` / `best` moves at the expense of blunders and tactics
-- **Format as Claude Messages API pairs:**
+- **Strip Lichess auto-analysis.** Roughly one annotated move in ten carries machine
+  text — `"Inaccuracy. Best move was Qb6."` — often repeated verbatim several times.
+  It is *stripped, not dropped*: a minority of those comments have real human prose
+  behind the machine prefix, and dropping the record would lose it.
+- **Strip the result before measuring length.** `"Checkmate! (1-0)"` is sixteen
+  characters that say nothing about the position. The length bar applies to the
+  analysis, not to punctuation.
+- **Normalize whitespace** — collapse the newlines PGN wrapping introduces mid-sentence
+- **Balance across move classifications** — available as `--max-per-class`, applied to
+  **train only**. Validation and test keep the corpus's real distribution, because a
+  metric measured on a rebalanced set does not describe behaviour on real games.
+  Off by default: the right cap is a modelling decision, not a pipeline one.
+- **Format as Messages pairs:**
   ```json
   {"messages": [{"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]}
   ```
+  This is a **neutral interchange format**, not a commitment to a provider. `trl`'s
+  `SFTTrainer` consumes it directly and applies the base model's chat template at
+  training time, so the same file trains Mistral, Llama or Qwen without regeneration.
+  The prompt *content* is built by `kibitz/prompt.py`; the chat *markup* (§7.1) belongs
+  to whichever base model §6 selects. Keeping those two separate is what stops the
+  dataset from being welded to one model family.
 - **Split by game** (not move) into `train.jsonl`, `val.jsonl`, `test.jsonl` to avoid data leakage
 
 ---
@@ -288,8 +336,13 @@ engine.quit()
 **Derived features:**
 - `eval_before`, `eval_after` — raw centipawn scores
 - `eval_delta` — the swing; large positive = good move, large negative = blunder
-- `is_mate_threat` — boolean, does this move create a forced mate sequence?
-- `depth_of_mate` — if mate is found, in how many moves?
+- `mate_in` — signed mate distance from White's point of view, else `None`
+- `is_mate_threat` — boolean, is the forced mate *in the mover's favour*?
+
+**Mate scores are not centipawns.** They are clamped to ±20.00 pawns before any
+arithmetic, so an eval delta stays a meaningful number. About 5% of annotated moves sit
+on a mate score, and their `eval_delta` is therefore saturated — `mate_in` carries the
+real information for those.
 
 **Performance note:** Engine analysis is slow. Pre-compute and cache all evals during the data pipeline stage, not at inference time. At inference, you can optionally run a quick shallow analysis (depth 10–12) if real-time evals are desired.
 
@@ -301,16 +354,19 @@ Classify each move into one of these categories based on eval delta thresholds:
 
 | Classification | Criteria |
 |---|---|
-| `brilliant` | Large eval gain + non-obvious (engine's top move wasn't the played move) |
 | `best` | Matches engine's top choice |
 | `good` | Small positive or neutral eval delta |
 | `inaccuracy` | Eval drops by ~0.3–0.5 pawns |
 | `mistake` | Eval drops by ~0.5–1.5 pawns |
 | `blunder` | Eval drops by >1.5 pawns |
-| `sacrifice` | Material is given up but eval stays stable or improves |
 | `forcing` | Check, capture, or forced-reply move |
 
 These can be derived from Stockfish output. NAGs from the PGN source provide human-assigned labels that can supplement or override.
+
+**Classification is one axis: quality.** Two labels from the table above are deliberately not part of it.
+
+- `brilliant` — a chess.com construct with no counterpart in Lichess studies. It means "hard to spot", a property of the player rather than the position, which an eval delta cannot measure.
+- `sacrifice` and `forcing` — both real and objective, but statements about *material* and *forcedness*, not about quality. They live in `is_sacrifice` / `material_offered` and `is_forcing`. 78% of detected sacrifices are also the engine's top move; folding them into the classification would discard that.
 
 ---
 
@@ -346,8 +402,13 @@ These are harder but valuable. Consider detecting:
 - **Pin** — a piece is pinned to a more valuable piece behind it
 - **Skewer** — like a pin, but the more valuable piece is in front
 - **Discovery** — moving a piece reveals an attack from another piece
-- **Zwischenzug** — an "in-between move" that disrupts the expected sequence
-- **Promotion threat** — pawn is within striking distance of the back rank
+- **Promotion** — the move promotes; **Promotion threat** — a pawn reaches the 7th
+
+**Not implemented: Zwischenzug.** It is defined by what the opponent was *expected* to
+play, so detecting it needs a search over the expected sequence rather than board
+geometry. Every other motif here is a static property of the resulting position.
+
+Motifs are a **list**, not a category — a move can fork and threaten promotion at once.
 
 python-chess gives you full board access to implement these as geometric checks. Start simple — fork and pin detection are the most tractable.
 
@@ -621,4 +682,68 @@ Install Stockfish separately as a system binary — it is not a Python package.
 
 ---
 
-*Good luck. The position is yours.*
+*Good luck. The position is yours.
+
+---
+
+## Appendix A — Decision Log
+
+**Rule: a deviation from this document is not done until it appears in this table.**
+Every row below was a silent deviation first and got caught later by someone reading the
+output and asking why. The cost of a silent deviation is that the same mistake stays
+invisible in the rows next to it — `forcing` was demoted for exactly the reason
+`sacrifice` should have been, and the gap between the two went unnoticed for a full day.
+
+| # | The plan said | What we do | Why |
+|---|---|---|---|
+| 1 | `brilliant` classification | dropped | A chess.com construct with no Lichess counterpart. It means "hard to spot" — a property of the player, not the position, which an eval delta cannot measure. |
+| 2 | `sacrifice` classification | `is_sacrifice` + `material_offered` | Orthogonal to quality. 78% of detected sacrifices are also the engine's top move, and the label was overwriting `best`. |
+| 3 | `forcing` classification | `is_forcing` | Same reason: a move can be forcing *and* a blunder. |
+| 4 | `side` | `color` | Naming only. |
+| 5 | `depth_of_mate` | `mate_in` | Signed and White-relative, so it composes with the eval fields. |
+| 6 | `opening_name` per move | `metadata.opening` per game | It is a property of the game, not the move. |
+| 7 | Zwischenzug detection | not implemented | Defined by the opponent's *expected* reply, so it needs a search rather than board geometry. |
+| 8 | "decide whether to include variations" | stripped | Sidelines comment on moves that were never played, so they have no real position to pair with. |
+| 9 | balance across classifications | opt-in, train split only | A metric measured on a rebalanced val/test set does not describe behaviour on real games. |
+| 10 | "Claude Messages API pairs" | Messages as neutral interchange | Decouples the dataset from any one model family; the chat template is applied at training time. |
+
+**Fields we added that the plan never specified:** `is_best`, `best_move` (both free from
+the same engine call), `material_offered`, `comment_text`, `ply`, `total_plies`.
+
+**Classification is one axis: move quality.** `best` / `good` / `inaccuracy` / `mistake` /
+`blunder`. Anything orthogonal to quality is its own field. When a new label needs a
+precedence rule against an existing one, that is the signal it belongs on a different
+axis — not that it needs a tie-break.
+
+---
+
+## Appendix B — Running the Pipeline
+
+```bash
+python3 scripts/download_data.py                      # -> data/raw/        (~52 MB)
+python3 -m kibitz.parser                              # -> data/processed/  (~3 min)
+python3 -m kibitz.features --depth 14 --workers 8     # -> data/enriched/   (~40 min)
+python3 scripts/build_dataset.py                      # -> data/datasets/
+python3 scripts/inspect.py stats                      # look at what you got
+```
+
+**Stockfish exits on illegal positions, and stays dead.** A kingless pawn diagram — which
+studies contain as teaching material — makes it terminate with SIGSEGV, after which every
+later analysis in that worker fails. `analyse()` therefore refuses any position failing
+`board.is_valid()`, and restarts the engine if it dies anyway. Without both, one bad
+diagram silently poisons every game a worker touches afterwards, and the run still exits 0.
+
+**Variant games are skipped** (478 of them: Chess960, Crazyhouse, Antichess, Horde,
+Racing Kings, Three-check, King of the Hill, Atomic). A standard engine's evaluation of
+an Antichess position is meaningless, and its commentary describes different tactics.
+
+**Only prose-commented moves are analysed.** A move with no comment has no training
+target, so evaluating it is wasted engine time — this is a ~25x saving.
+
+**Depth 14, not 18.** Five times cheaper, and the classification thresholds (0.3 / 0.5 /
+1.5 pawns) are far coarser than the difference between the two depths.
+
+**Changing a label does not need the engine.** `python3 -m kibitz.features --relabel`
+replays classification, phase, motifs and the sacrifice test against the evals already on
+disk — 10 seconds for the whole corpus instead of 40 minutes. Re-freeze the golden fixture
+(`scripts/inspect.py freeze`) and rebuild the datasets afterwards.

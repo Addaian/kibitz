@@ -52,7 +52,7 @@ def set_color(enabled: bool) -> None:
     DIM = "\x1b[2m" if enabled else ""
     CLASS_COLOR = {
         "blunder": fg(196), "mistake": fg(208), "inaccuracy": fg(220),
-        "good": fg(250), "best": fg(84), "brilliant": fg(51), "sacrifice": fg(207),
+        "good": fg(250), "best": fg(84),
     }
 
 

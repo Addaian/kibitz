@@ -57,8 +57,8 @@ def replay(rec, monkeypatch):
 def test_the_fixture_covers_the_whole_judgement_space():
     classes = {r["move"]["move_classification"] for r in RECORDS}
     motifs = {m for r in RECORDS for m in r["move"]["tactical_motifs"]}
-    assert classes == {"best", "good", "inaccuracy", "mistake",
-                       "blunder", "sacrifice", "brilliant"}
+    assert classes == {"best", "good", "inaccuracy", "mistake", "blunder"}
+    assert any(r["move"]["is_sacrifice"] for r in RECORDS)
     assert motifs == {"fork", "pin", "skewer", "discovery",
                       "promotion", "promotion_threat"}
     assert any(r["move"]["mate_in"] is not None for r in RECORDS)

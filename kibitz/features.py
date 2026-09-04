@@ -43,7 +43,6 @@ DEFAULT_DEPTH = 14
 BLUNDER_CP = -150
 MISTAKE_CP = -50
 INACCURACY_CP = -30
-BRILLIANT_CP = 100
 SACRIFICE_CP = 100        # material offered before we call it a sacrifice
 SACRIFICE_TOLERANCE = -50  # ...and the eval may not drop more than this
 
@@ -244,18 +243,30 @@ def detect_phase(board: chess.Board) -> str:
     return "middlegame" if total > 20 else "endgame"
 
 
-def classify_move(delta_cp: int, is_best: bool, is_sacrifice: bool) -> str:
-    """Label a move from its eval swing (mover's POV, centipawns)."""
+def classify_move(delta_cp: int, is_best: bool) -> str:
+    """
+    Label a move from its eval swing (mover's POV, centipawns).
+
+    This is deliberately a single axis: how good the move was. Properties that
+    are orthogonal to quality stay as their own fields — `is_sacrifice`,
+    `is_forcing`, `tactical_motifs`, `mate_in` — because a move can be a
+    sacrifice *and* the best move on the board, and collapsing those into one
+    enum throws the second fact away.
+
+    Two labels are deliberately absent:
+
+    * "brilliant" — a chess.com construct with no counterpart in Lichess
+      studies. It means "hard to spot", a property of the player rather than
+      the position, which an eval delta cannot measure.
+    * "sacrifice" — real and objective, but a statement about material, not
+      about quality. It lives in `is_sacrifice` / `material_offered`.
+    """
     if delta_cp <= BLUNDER_CP:
         return "blunder"
     if delta_cp <= MISTAKE_CP:
         return "mistake"
     if delta_cp <= INACCURACY_CP:
         return "inaccuracy"
-    if is_sacrifice:
-        return "sacrifice"
-    if delta_cp >= BRILLIANT_CP and not is_best:
-        return "brilliant"
     if is_best:
         return "best"
     return "good"
@@ -400,15 +411,22 @@ def detect_motifs(board_before: chess.Board, board_after: chess.Board,
 # per-move enrichment
 # --------------------------------------------------------------------------- #
 
-def enrich_move(move: dict) -> dict:
-    """Add derived features to one parsed move record, in place."""
+def enrich_move(move: dict, analyse_fn=None) -> dict:
+    """
+    Add derived features to one parsed move record, in place.
+
+    `analyse_fn` defaults to the engine. Passing a function that returns frozen
+    scores replays the whole judgement layer without Stockfish, which is how
+    --relabel and the golden tests work.
+    """
+    analyse_fn = analyse_fn or analyse
     board_before = chess.Board(move["fen_before"])
     board_after = chess.Board(move["fen_after"])
     mover = board_before.turn
     uci = chess.Move.from_uci(move["uci"])
 
-    cp_before, mate_before, best_uci = analyse(board_before)
-    cp_after, mate_after, _ = analyse(board_after)
+    cp_before, mate_before, best_uci = analyse_fn(board_before)
+    cp_after, mate_after, _ = analyse_fn(board_after)
 
     # White-POV centipawns -> mover-POV swing.
     delta_cp = (cp_after - cp_before) if mover == chess.WHITE else (cp_before - cp_after)
@@ -438,7 +456,7 @@ def enrich_move(move: dict) -> dict:
         (mate_after > 0) if mover == chess.WHITE else (mate_after < 0)
     )
     move["game_phase"] = detect_phase(board_before)
-    move["move_classification"] = classify_move(delta_cp, is_best, is_sacrifice)
+    move["move_classification"] = classify_move(delta_cp, is_best)
     move["tactical_motifs"] = detect_motifs(board_before, board_after, uci)
     move["comment_text"] = strip_annotations(move.get("comment"))
 
@@ -542,6 +560,43 @@ def enrich_file(path: Path, pool: mp.pool.Pool, min_chars: int) -> dict:
     return stats
 
 
+def relabel_file(path: Path) -> collections.Counter:
+    """
+    Re-derive every judgement field from the engine scores already on disk.
+
+    Classification, phase, motifs and the sacrifice test are pure functions of
+    the position plus the stored evals, so changing any of them costs a pass
+    over the JSONL rather than another run of Stockfish.
+    """
+    tmp = path.with_suffix(".jsonl.tmp")
+    changed = collections.Counter()
+
+    with open(path) as f, open(tmp, "w") as out:
+        for line in f:
+            game = json.loads(line)
+            for move in game["moves"]:
+                before_cp = round(move["eval_before"] * 100)
+                after_cp = round(move["eval_after"] * 100)
+                best_uci, mate = move["best_move"], move["mate_in"]
+                calls = []
+
+                def frozen(board):
+                    calls.append(1)
+                    if len(calls) == 1:
+                        return before_cp, None, best_uci
+                    return after_cp, mate, None
+
+                was = move["move_classification"]
+                enrich_move(move, analyse_fn=frozen)
+                now = move["move_classification"]
+                if now != was:
+                    changed[f"{was} -> {now}"] += 1
+            out.write(json.dumps(game) + "\n")
+
+    tmp.replace(path)
+    return changed
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Enrich parsed games with engine and tactical features.")
     ap.add_argument("--input", type=Path, default=PROCESSED_DIR,
@@ -554,7 +609,24 @@ def main() -> None:
     ap.add_argument("--min-comment-chars", type=int, default=1,
                     help="Skip moves whose prose comment is shorter than this.")
     ap.add_argument("--force", action="store_true", help="Re-enrich files that already have output.")
+    ap.add_argument("--relabel", action="store_true",
+                    help="Re-derive labels from existing data/enriched output, no engine.")
     args = ap.parse_args()
+
+    if args.relabel:
+        files = sorted(ENRICHED_DIR.glob("*.jsonl"))
+        if not files:
+            sys.exit(f"nothing to relabel in {ENRICHED_DIR}")
+        changed = collections.Counter()
+        started = time.time()
+        for path in files:
+            changed.update(relabel_file(path))
+        total = sum(changed.values())
+        print(f"relabelled {len(files)} files in {time.time() - started:.0f}s; "
+              f"{total:,} moves changed class")
+        for transition, n in changed.most_common():
+            print(f"  {n:>7,}  {transition}")
+        return
 
     if not Path(args.stockfish).exists():
         sys.exit(f"Stockfish not found at {args.stockfish} (set --stockfish or $STOCKFISH_PATH)")

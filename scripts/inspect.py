@@ -24,6 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from kibitz import review, tui
+from kibitz.dataset import split_for
 from kibitz.tui import box, sparkbar
 
 # NB: read R / BOLD / DIM through the module — tui.set_color() rebinds them.
@@ -67,7 +68,11 @@ def cmd_show(args):
     rng = random.Random(args.seed)
     picked, seen = [], 0
     # Reservoir sample so the whole corpus never has to be held in memory.
-    for meta, move, label, _uid in iter_moves(args.source):
+    for meta, move, label, uid in iter_moves(args.source):
+        # Reviewing a model on games it trained on flatters it. The split is a
+        # pure function of the game id, so no dataset file is needed here.
+        if args.split and split_for(uid) != args.split:
+            continue
         if not matches(move, args):
             continue
         seen += 1
@@ -158,7 +163,7 @@ def cmd_stats(args):
 # freeze
 # --------------------------------------------------------------------------- #
 
-CLASSES = ["best", "good", "inaccuracy", "mistake", "blunder", "sacrifice", "brilliant"]
+CLASSES = ["best", "good", "inaccuracy", "mistake", "blunder"]
 MOTIFS = ["fork", "pin", "skewer", "discovery", "promotion", "promotion_threat"]
 
 
@@ -225,6 +230,8 @@ def main():
     s.add_argument("--min-comment", type=int, default=40, help="skip very short comments")
     s.add_argument("--seed", type=int, help="reproducible sampling")
     s.add_argument("--unicode", action="store_true", help="chess glyphs instead of letters")
+    s.add_argument("--split", choices=["train", "val", "test"],
+                   help="only games from this split (use test when judging a model)")
     s.set_defaults(func=cmd_show)
 
     s = sub.add_parser("stats", help="corpus dashboard")
