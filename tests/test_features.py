@@ -51,6 +51,19 @@ def test_detect_phase_middlegame():
     assert F.detect_phase(board) == "middlegame"
 
 
+def test_a_study_ending_set_up_at_move_one_is_an_endgame():
+    """Regression: FEN chapters restart at move 1, which read as 'opening'."""
+    board = chess.Board("8/5pk1/6p1/3K4/5PP1/8/8/8 b - - 0 1")
+    assert F.detect_phase(board) == "endgame"
+
+
+def test_a_puzzle_set_up_from_a_fen_is_never_the_opening():
+    """Regression: middlegame puzzles restart at move 1 too; material alone misses them."""
+    board = chess.Board("r1r3k1/pp3pp1/2n1b2p/q2p4/3N4/2P1B3/PPQ2PPP/R4RK1 w - - 0 1")
+    assert F.detect_phase(board, from_position=True) == "middlegame"
+    assert F.detect_phase(board) == "opening"         # a real game at move 1
+
+
 def test_detect_phase_endgame():
     board = chess.Board("8/5pk1/6p1/8/8/6P1/5PK1/8 w - - 0 40")
     assert F.detect_phase(board) == "endgame"
@@ -89,9 +102,14 @@ def test_classification_is_only_ever_a_quality_tier(delta, is_best):
         "blunder", "mistake", "inaccuracy", "good", "best"}
 
 
+def test_the_engines_own_move_is_best_whatever_the_delta():
+    """Regression: depth noise between two searches labelled engine moves 'blunder'."""
+    assert F.classify_move(-200, is_best=True) == "best"
+
+
 def test_a_sacrifice_keeps_its_quality_tier():
     """Regression: the sacrifice label used to overwrite "best", losing the
-    fact that 78% of detected sacrifices are the engine's own top move."""
+    fact that 76% of detected sacrifices are the engine's own top move."""
     assert F.classify_move(0, is_best=True) == "best"
     assert F.classify_move(-400, is_best=False) == "blunder"
 
@@ -117,6 +135,32 @@ def test_see_declines_a_losing_capture():
     # Qxe5 wins a pawn but hangs the queen; the exchange is declined, so 0.
     board = chess.Board("k7/8/3p4/4p3/8/8/8/K3Q3 w - - 0 1")
     assert F.see_gain(board, chess.E5, chess.WHITE) == 0
+
+
+def test_winnable_pieces_lists_loose_pieces_most_valuable_first():
+    # Black: undefended rook on a5 and knight on e5, both attacked by pawns.
+    board = chess.Board("k7/8/8/r3n3/1P1P4/8/8/7K w - - 0 1")
+    assert F.winnable_pieces(board, chess.BLACK) == ["rook on a5", "knight on e5"]
+
+
+def test_winnable_pieces_sees_recaptures_when_the_capturer_is_not_to_move():
+    """Regression: after 3.Bb5 (Black to move) the defended c6 knight and e5 pawn
+    were listed as White threats, because the capture was played in Black's colour."""
+    board = chess.Board()
+    for san in "e4 e5 Nf3 Nc6 Bb5".split():
+        board.push_san(san)
+    assert F.winnable_pieces(board, chess.BLACK) == []
+
+
+def test_see_gain_leaves_the_side_to_move_alone():
+    board = chess.Board("k7/8/8/4n3/3P4/8/8/K7 b - - 0 1")
+    F.see_gain(board, chess.E5, chess.WHITE)
+    assert board.turn == chess.BLACK
+
+
+def test_winnable_pieces_ignores_defended_pieces_and_kings():
+    board = chess.Board("k7/8/3p4/4n3/8/8/8/K7 w - - 0 1")   # nothing attacks e5
+    assert F.winnable_pieces(board, chess.BLACK) == []
 
 
 def test_see_returns_zero_on_an_empty_square():
@@ -177,10 +221,21 @@ def test_detect_discovery_is_false_for_an_ordinary_move():
     assert not F.detect_discovery(board, move)
 
 
-def test_detect_promotion_threat_on_the_seventh():
-    assert F.detect_promotion_threat(chess.Board("k7/P7/8/8/8/8/8/K7 w - - 0 1"), chess.WHITE)
-    assert not F.detect_promotion_threat(chess.Board("k7/8/P7/8/8/8/8/K7 w - - 0 1"), chess.WHITE)
-    assert F.detect_promotion_threat(chess.Board("k7/8/8/8/8/8/7p/K7 w - - 0 1"), chess.BLACK)
+def test_detect_promotion_threat_when_the_pawn_reaches_the_seventh():
+    before = chess.Board("k7/8/P7/8/8/8/8/K7 w - - 0 1")
+    after = chess.Board("k7/P7/8/8/8/8/8/K7 b - - 0 1")
+    assert F.detect_promotion_threat(before, after, chess.WHITE)
+    assert not F.detect_promotion_threat(before, before, chess.WHITE)
+    black_before = chess.Board("k7/8/8/8/8/7p/8/K7 b - - 0 1")
+    black_after = chess.Board("k7/8/8/8/8/8/7p/K7 w - - 0 1")
+    assert F.detect_promotion_threat(black_before, black_after, chess.BLACK)
+
+
+def test_a_pawn_already_on_the_seventh_is_not_a_new_threat():
+    """Regression: every move made while a pawn waited on a7 was tagged."""
+    before = chess.Board("k7/P7/8/8/8/8/8/K6R w - - 0 1")
+    after = chess.Board("k7/P7/8/8/8/8/8/K5R1 b - - 1 1")      # Rg1, pawn unchanged
+    assert not F.detect_promotion_threat(before, after, chess.WHITE)
 
 
 # --------------------------------------------------------------------------- #
@@ -188,7 +243,7 @@ def test_detect_promotion_threat_on_the_seventh():
 # --------------------------------------------------------------------------- #
 
 WHITE_MOVE = {
-    "uci": "e2e4",
+    "uci": "e2e4", "san": "e4", "color": "white", "move_number": 1,
     "fen_before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
     "fen_after": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
     "comment": "The King's Pawn. [%clk 0:03:00]",
@@ -196,7 +251,7 @@ WHITE_MOVE = {
 }
 
 BLACK_MOVE = {
-    "uci": "e7e5",
+    "uci": "e7e5", "san": "e5", "color": "black", "move_number": 1,
     "fen_before": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
     "fen_after": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
     "comment": "Meeting it head on.",
@@ -263,11 +318,147 @@ def test_enrich_move_drops_the_ambiguous_eval_key(monkeypatch):
     assert out["comment_text"] == "The King's Pawn."
 
 
+def test_delivering_checkmate_is_not_a_blunder(monkeypatch):
+    """Regression: the game-over score of 0 made every mating move a -20 'blunder'."""
+    _stub_analyse(monkeypatch, before_cp=-2000, after_cp=0, best_uci="d8h4")
+    mate = {   # 1.f3 e5 2.g4 Qh4#
+        "uci": "d8h4",
+        "fen_before": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+        "fen_after": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+        "comment": "Fool's mate.",
+    }
+    out = F.enrich_move(mate)
+    assert out["eval_after"] == -20.0          # White-POV: Black has mated
+    assert out["eval_delta"] == 0.0
+    assert out["move_classification"] == "best"
+
+
+def test_any_checkmate_counts_as_the_best_move(monkeypatch):
+    """When two moves mate, the one played is as good as the engine's."""
+    _stub_analyse(monkeypatch, before_cp=-2000, after_cp=0, best_uci="f8c5")
+    mate = {
+        "uci": "d8h4",
+        "fen_before": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+        "fen_after": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+        "comment": "Fool's mate.",
+    }
+    out = F.enrich_move(mate)
+    assert out["is_best"] is True
+    assert out["move_classification"] == "best"
+
+
+def test_an_even_trade_does_not_leave_the_capturer_hanging(monkeypatch):
+    """Nxd5 exd5-style trades: the knight can be taken back, but it took a knight."""
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
+    trade = {    # White Nc3xd5, Black recaptures with the e6 pawn
+        "uci": "c3d5",
+        "fen_before": "k7/8/4p3/3n4/8/2N5/8/K7 w - - 0 1",
+        "fen_after": "k7/8/4p3/3N4/8/8/8/K7 b - - 0 1",
+        "comment": "Trading.",
+    }
+    assert F.enrich_move(trade)["left_hanging"] == []
+
+
+def test_a_pawn_attacking_two_pawns_is_not_a_fork():
+    board = chess.Board("k7/8/2p1p3/8/3P4/8/8/K7 w - - 0 1")
+    move = chess.Move.from_uci("d4d5")
+    board.push(move)
+    assert not F.detect_fork(board, move)
+
+
+def test_bishop_for_knight_is_an_even_trade(monkeypatch):
+    """B=330, N=320: a 10cp 'gain' is not a loose piece. 3.Bb5 a6 4.Bxc6."""
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
+    board = chess.Board()
+    for san in "e4 e5 Nf3 Nc6 Bb5 a6".split():
+        board.push_san(san)
+    before = board.fen()
+    board.push_san("Bxc6")
+    out = F.enrich_move({"uci": "b5c6", "fen_before": before, "fen_after": board.fen(),
+                         "comment": "Giving up the bishop pair."})
+    assert out["left_hanging"] == []
+
+
+def test_promoting_into_a_recapture_is_not_a_sacrifice(monkeypatch):
+    """e8=Q+ Rxe8 Rxe8: White wins a rook for the pawn, but valuing the new
+    queen made it a +4 'sacrifice' with the queen 'left hanging'."""
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
+    out = F.enrich_move({"uci": "e7e8q", "fen_before": "r6k/4P3/8/8/8/8/8/4R2K w - - 0 1",
+                         "fen_after": "r3Q2k/8/8/8/8/8/8/4R2K b - - 0 1", "comment": "Promoting."})
+    assert out["is_sacrifice"] is False
+    assert out["material_offered"] <= 0
+    assert out["left_hanging"] == []
+
+
+def test_a_finished_game_has_no_threats(monkeypatch):
+    _stub_analyse(monkeypatch, before_cp=-2000, after_cp=0, best_uci="d8h4")
+    out = F.enrich_move({
+        "uci": "d8h4",
+        "fen_before": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+        "fen_after": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+        "comment": "Mate."})
+    assert out["threatens"] == [] and out["left_hanging"] == []
+    assert out["is_sacrifice"] is False
+
+
+def test_a_piece_that_cannot_legally_be_taken_is_not_hanging(monkeypatch):
+    """Regression: after a check the opponent must answer it, so a loose piece
+    elsewhere is not 'left hanging' this move. Re1+ with the d2 knight en prise
+    to the b4 bishop: ...Bxd2 does not answer the check."""
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
+    out = F.enrich_move({"uci": "a1e1", "fen_before": "4k3/8/8/8/1b6/8/3N4/R5K1 w - - 0 1",
+                         "fen_after": "4k3/8/8/8/1b6/8/3N4/4R1K1 b - - 1 1",
+                         "comment": "Check."})
+    assert out["left_hanging"] == []
+
+
+def test_only_new_threats_are_listed(monkeypatch):
+    """A target the mover could already win before the move is not a new threat."""
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
+    # Black knight on e5 already loose to the d4 pawn; White plays a quiet king move.
+    out = F.enrich_move({"uci": "a1b1", "fen_before": "k7/8/8/4n3/3P4/8/8/K7 w - - 0 1",
+                         "fen_after": "k7/8/8/4n3/3P4/8/8/1K6 b - - 1 1", "comment": "Waiting."})
+    assert out["threatens"] == []
+
+
+def test_the_engine_move_is_also_recorded_in_san(monkeypatch):
+    _stub_analyse(monkeypatch, before_cp=20, after_cp=25, best_uci="g1f3")
+    assert F.enrich_move(dict(WHITE_MOVE))["best_move_san"] == "Nf3"
+
+
+def test_threats_and_hanging_pieces_are_seen_from_the_mover(monkeypatch):
+    """Black's ...exd4: the capture is recorded, Black threatens nothing, and
+    the d4 pawn is not "hanging": Qxd4 only trades it back."""
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
+    move = {
+        "uci": "e5d4",
+        "fen_before": "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2",
+        "fen_after": "rnbqkbnr/pppp1ppp/8/8/3p4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 3",
+        "comment": "Taking.",
+    }
+    out = F.enrich_move(move)
+    assert out["captured"] == "pawn"
+    assert out["left_hanging"] == []      # Qxd4 only wins back the pawn it took
+    assert out["threatens"] == []
+
+
+def test_a_piece_moved_en_prise_is_left_hanging(monkeypatch):
+    _stub_analyse(monkeypatch, before_cp=0, after_cp=-300)
+    blunder = {    # Nc3-e4?? walks into ...dxe4
+        "uci": "c3e4",
+        "fen_before": "k7/8/8/3p4/8/2N5/8/K7 w - - 0 1",
+        "fen_after": "k7/8/8/3p4/4N3/8/8/K7 b - - 1 1",
+        "comment": "Oops.",
+    }
+    assert F.enrich_move(blunder)["left_hanging"] == ["knight on e4"]
+
+
 def test_enrich_move_populates_every_documented_field(monkeypatch):
     _stub_analyse(monkeypatch, before_cp=0, after_cp=0)
     out = F.enrich_move(dict(WHITE_MOVE))
 
-    for field in ("eval_before", "eval_after", "eval_delta", "best_move", "is_best",
+    for field in ("eval_before", "eval_after", "eval_delta", "best_move",
+                  "best_move_san", "is_best", "captured", "threatens", "left_hanging",
                   "is_forcing", "is_sacrifice", "material_offered", "mate_in",
                   "is_mate_threat", "game_phase", "move_classification",
                   "tactical_motifs", "comment_text"):
@@ -373,3 +564,33 @@ def test_analyse_uses_the_cache_before_the_engine():
         assert F.analyse(board) == (42, None, "e2e4")
     finally:
         F._cache.clear()
+
+
+# --------------------------------------------------------------------------- #
+# engine line and game history, as the prompt shows them
+# --------------------------------------------------------------------------- #
+
+def test_line_san_numbers_moves_like_an_annotator():
+    board = chess.Board()
+    assert F.line_san(board, "e2e4 e7e5 g1f3 b8c6 f1b5") == "1.e4 e5 2.Nf3 Nc6"
+    board.push_uci("e2e4")
+    assert F.line_san(board, "c7c5 g1f3") == "1...c5 2.Nf3"
+
+
+def test_line_san_stops_at_an_illegal_move():
+    assert F.line_san(chess.Board(), "e2e4 e2e4") == "1.e4"
+
+
+def test_previous_moves_are_the_last_few_plies_before_the_move():
+    moves = [{"san": s, "color": c, "move_number": n} for s, c, n in
+             [("e4", "white", 1), ("e5", "black", 1), ("Nf3", "white", 2), ("Nc6", "black", 2)]]
+    assert F.previous_moves(moves, 0) is None
+    assert F.previous_moves(moves, 3) == "1.e4 e5 2.Nf3"
+    assert F.previous_moves(moves, 3, plies=2) == "1...e5 2.Nf3"
+
+
+def test_enrich_move_keeps_the_engine_line(monkeypatch):
+    monkeypatch.setattr(F, "analyse", lambda board: (0, None, "d2d4 d7d5 c2c4"))
+    move = F.enrich_move(dict(WHITE_MOVE))
+    assert move["best_move_san"] == "d4" and not move["is_best"]
+    assert move["best_line_san"] == "1.d4 d5 2.c4"

@@ -1,0 +1,9 @@
+# For scripts/train_cuda.py on an NVIDIA GPU (see README Appendix C).
+# Pinned to the versions the CPU smoke test and tests/test_convert_adapter.py ran on.
+torch==2.10.0
+transformers==5.16.1
+peft==0.21.2
+trl==1.16.0
+accelerate==1.15.0
+datasets==5.1.0
+pyyaml

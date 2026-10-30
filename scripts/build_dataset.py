@@ -20,7 +20,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from kibitz.dataset import build_record, clean_comment, is_usable, split_for
+from kibitz.dataset import (build_record, clean_comment, is_usable, merge_duplicate_keys,
+                            non_prose_reason, split_for, split_key, ungrounded_reason)
 
 ROOT = Path(__file__).parent.parent
 ENRICHED_DIR = ROOT / "data" / "enriched"
@@ -48,13 +49,17 @@ def main():
     seen = Counter()
     dropped = Counter()
     games = defaultdict(set)
+    studies = defaultdict(set)
 
+    # First pass: every usable pair, with the study it belongs to. Splitting
+    # waits until all studies are seen, because duplicates join studies together.
+    candidates = []
     for path in sorted(ENRICHED_DIR.glob("*.jsonl")):
         source = path.stem.replace("_studies", "")
         for line in path.open():
             game = json.loads(line)
             uid = f"{source}:{game['game_id']}"
-            split = split_for(uid, args.val, args.test)
+            key = split_key(source, game["metadata"], uid)
             for move in game["moves"]:
                 seen["total"] += 1
                 raw = move.get("comment_text") or ""
@@ -64,8 +69,19 @@ def main():
                 if not is_usable(target, args.min_comment):
                     dropped["too short or boilerplate"] += 1
                     continue
-                splits[split].append(build_record(game["metadata"], move, source, uid, target))
-                games[split].add(uid)
+                reason = non_prose_reason(target) or ungrounded_reason(target)
+                if reason:
+                    dropped[reason] += 1
+                    continue
+                candidates.append((key, uid, source, game["metadata"], move, target))
+
+    group = merge_duplicate_keys((key, f"{move['fen_before']}|{target}")
+                                 for key, _, _, _, move, target in candidates)
+    for key, uid, source, meta, move, target in candidates:
+        split = split_for(group[key], args.val, args.test)
+        splits[split].append(build_record(meta, move, source, uid, target))
+        games[split].add(uid)
+        studies[split].add(group[key])
 
     # Balance the training split only.
     if args.max_per_class:
@@ -103,13 +119,14 @@ def main():
               f"({share:4.1f}%)  -> {out.relative_to(ROOT)}")
         print(f"       {dict(classes.most_common())}")
 
-    # A game must never appear in two splits, or the test score is fiction.
+    # A study (or a group of studies sharing content) must never appear in two
+    # splits, or the test score is fiction.
     for a in ("train", "val", "test"):
         for b in ("train", "val", "test"):
             if a < b:
-                overlap = games[a] & games[b]
-                assert not overlap, f"{a}/{b} share {len(overlap)} games"
-    print(f"\nwrote {total_written:,} pairs; no game appears in two splits.")
+                overlap = studies[a] & studies[b]
+                assert not overlap, f"{a}/{b} share {len(overlap)} studies"
+    print(f"\nwrote {total_written:,} pairs; no study appears in two splits.")
 
 
 if __name__ == "__main__":

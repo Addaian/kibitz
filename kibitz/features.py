@@ -8,7 +8,8 @@ motifs.
 Only moves carrying a real prose comment are enriched. A comment is the training
 target, so a move without one is not a training example, and ~71% of the brace
 comments in the Lichess exports are pure [%clk]/[%eval] tags with no prose.
-Skipping those cuts the engine work by roughly 25x.
+Skipping those cuts the engine work by roughly 8x (1.24M positions in the
+corpus vs at most two per annotated move, 164k).
 
 UNITS: every eval field written to disk is in PAWNS (float, 2dp), White's point
 of view, EXCEPT `eval_delta`, which is in pawns from the MOVER's point of view
@@ -45,9 +46,15 @@ MISTAKE_CP = -50
 INACCURACY_CP = -30
 SACRIFICE_CP = 100        # material offered before we call it a sacrifice
 SACRIFICE_TOLERANCE = -50  # ...and the eval may not drop more than this
+WIN_CP = 100              # least gain worth calling a threat; B=330 vs N=320 is not one
 
 # Mate scores are not centipawns. Clamp them so eval arithmetic stays meaningful.
 MATE_CLAMP_CP = 2000
+# Plies of the engine's line shown when the played move was not its choice, and
+# of the game before the move. Deeper engine lines are less reliable, and
+# annotators rarely quote more.
+BEST_LINE_PLIES = 4
+PREVIOUS_PLIES = 6
 
 PIECE_VALUE = {
     chess.PAWN: 100,
@@ -141,11 +148,12 @@ def _close_worker() -> None:
 
 def analyse(board: chess.Board) -> tuple[int, int | None, str | None]:
     """
-    Return (cp_white, mate_white, best_move_uci) for `board`.
+    Return (cp_white, mate_white, line_uci) for `board`.
 
     cp_white  - centipawns, White's point of view, clamped to +/-MATE_CLAMP_CP
     mate_white- signed mate distance from White's POV, or None
-    best_uci  - the engine's preferred move in this position, or None
+    line_uci  - the engine's principal variation as space-separated UCI, its
+                first move the preferred one; or None
     """
     # Stockfish segfaults on positions that are not legal standard chess -- a
     # kingless pawn diagram, or Chess960 castling rights on standard squares --
@@ -177,15 +185,15 @@ def analyse(board: chess.Board) -> tuple[int, int | None, str | None]:
         cp = max(-MATE_CLAMP_CP, min(MATE_CLAMP_CP, score.score()))
 
     pv = info.get("pv")
-    best = pv[0].uci() if pv else None
+    line = " ".join(m.uci() for m in pv) if pv else None
 
-    result = (cp, mate, best)
+    result = (cp, mate, line)
     _cache[key] = result
     return result
 
 
 # --------------------------------------------------------------------------- #
-# static exchange evaluation (approximate; ignores pins and x-rays)
+# static exchange evaluation (approximate; ignores pins)
 # --------------------------------------------------------------------------- #
 
 def _least_valuable_attacker(board: chess.Board, square: int, color: bool):
@@ -202,8 +210,8 @@ def see_gain(board: chess.Board, square: int, color: bool) -> int:
     Material (centipawns) that `color` wins by starting a capture sequence on
     `square`, assuming both sides recapture with their least valuable piece.
 
-    Approximate: attackers that are pinned still participate, and x-ray
-    attackers behind a capturer are not revealed.
+    Approximate: attackers that are pinned still participate. X-ray attackers
+    behind a capturer are found, because attackers are recomputed after each push.
     """
     victim = board.piece_at(square)
     if victim is None or victim.color == color:
@@ -214,25 +222,61 @@ def see_gain(board: chess.Board, square: int, color: bool) -> int:
         return 0
 
     captured_value = PIECE_VALUE[victim.piece_type]
+    # push() moves a piece of the side to move, so `color` must be to move or
+    # the capturer changes colour — and every recapture is then missed.
+    turn = board.turn
+    board.turn = color
     board.push(chess.Move(attacker_sq, square))
     try:
         gain = captured_value - see_gain(board, square, not color)
     finally:
         board.pop()
+        board.turn = turn
 
     # The side to move may decline the capture, so the exchange is never negative.
     return max(0, gain)
+
+
+def can_capture_on(board: chess.Board, square: int, color: bool) -> bool:
+    """`color` has a legal capture onto `square`, as if it were `color` to move.
+
+    see_gain only asks who attacks a square; this asks whether the first capture
+    is allowed at all — after a check, usually nothing is.
+    """
+    b = board.copy(stack=False)
+    b.turn = color
+    return any(m.to_square == square and b.is_capture(m) for m in b.legal_moves)
+
+
+def winnable_pieces(board: chess.Board, color: bool) -> list[str]:
+    """
+    `color`'s pieces the other side could win by a capture sequence, most
+    valuable first, as ["knight on e5", ...]. The first capture must be legal;
+    the rest inherit see_gain's approximations.
+    """
+    found = []
+    for square, piece in board.piece_map().items():
+        if piece.color != color or piece.piece_type == chess.KING:
+            continue
+        if not can_capture_on(board, square, not color):
+            continue
+        if see_gain(board.copy(stack=False), square, not color) >= WIN_CP:
+            found.append((PIECE_VALUE[piece.piece_type],
+                          f"{chess.piece_name(piece.piece_type)} on {chess.square_name(square)}"))
+    return [name for _, name in sorted(found, key=lambda f: -f[0])]
 
 
 # --------------------------------------------------------------------------- #
 # derived features
 # --------------------------------------------------------------------------- #
 
-def detect_phase(board: chess.Board) -> str:
-    """opening / middlegame / endgame from move number and remaining material."""
-    if board.fullmove_number <= 10:
-        return "opening"
+def detect_phase(board: chess.Board, from_position: bool = False) -> str:
+    """
+    opening / middlegame / endgame from remaining material, then move number.
 
+    A game set up from a FEN (`from_position`) is never in the opening: study
+    chapters restart at "move 1" for endgames and middlegame puzzles alike.
+    """
     total = 0
     for color in chess.COLORS:
         total += len(board.pieces(chess.QUEEN, color)) * 9
@@ -240,7 +284,11 @@ def detect_phase(board: chess.Board) -> str:
         total += len(board.pieces(chess.BISHOP, color)) * 3
         total += len(board.pieces(chess.KNIGHT, color)) * 3
 
-    return "middlegame" if total > 20 else "endgame"
+    if total <= 20:
+        return "endgame"
+    if board.fullmove_number <= 10 and not from_position:
+        return "opening"
+    return "middlegame"
 
 
 def classify_move(delta_cp: int, is_best: bool) -> str:
@@ -261,21 +309,26 @@ def classify_move(delta_cp: int, is_best: bool) -> str:
     * "sacrifice" — real and objective, but a statement about material, not
       about quality. It lives in `is_sacrifice` / `material_offered`.
     """
+    # The engine's own choice cannot be an error; an apparent drop is noise
+    # between the two separate searches that score before and after.
+    if is_best:
+        return "best"
     if delta_cp <= BLUNDER_CP:
         return "blunder"
     if delta_cp <= MISTAKE_CP:
         return "mistake"
     if delta_cp <= INACCURACY_CP:
         return "inaccuracy"
-    if is_best:
-        return "best"
     return "good"
 
 
 def _is_valuable_target(target: chess.Piece, attacker: chess.Piece) -> bool:
-    """A target worth forking/attacking: the king, or a piece worth at least as much."""
+    """A target worth forking/attacking: the king, or a piece worth at least as
+    much. Pawns never count: a pawn hitting two pawns is not a fork."""
     if target.piece_type == chess.KING:
         return True
+    if target.piece_type == chess.PAWN:
+        return False
     return PIECE_VALUE[target.piece_type] >= PIECE_VALUE[attacker.piece_type]
 
 
@@ -378,11 +431,17 @@ def detect_discovery(board_after: chess.Board, move: chess.Move) -> bool:
     return False
 
 
-def detect_promotion_threat(board_after: chess.Board, color: bool) -> bool:
-    """A friendly pawn stands one square from promoting."""
+def detect_promotion_threat(board_before: chess.Board, board_after: chess.Board,
+                            color: bool) -> bool:
+    """This move put a friendly pawn one square from promoting.
+
+    Only a pawn that was not already there counts; otherwise every move made
+    while a pawn waits on the seventh would be tagged.
+    """
     rank = 6 if color == chess.WHITE else 1
-    return any(chess.square_rank(sq) == rank
-               for sq in board_after.pieces(chess.PAWN, color))
+    on_seventh = lambda b: {sq for sq in b.pieces(chess.PAWN, color)
+                            if chess.square_rank(sq) == rank}
+    return bool(on_seventh(board_after) - on_seventh(board_before))
 
 
 def detect_motifs(board_before: chess.Board, board_after: chess.Board,
@@ -401,7 +460,7 @@ def detect_motifs(board_before: chess.Board, board_after: chess.Board,
         motifs.append("discovery")
     if move.promotion:
         motifs.append("promotion")
-    elif detect_promotion_threat(board_after, mover):
+    elif detect_promotion_threat(board_before, board_after, mover):
         motifs.append("promotion_threat")
 
     return motifs
@@ -411,7 +470,7 @@ def detect_motifs(board_before: chess.Board, board_after: chess.Board,
 # per-move enrichment
 # --------------------------------------------------------------------------- #
 
-def enrich_move(move: dict, analyse_fn=None) -> dict:
+def enrich_move(move: dict, analyse_fn=None, from_position: bool = False) -> dict:
     """
     Add derived features to one parsed move record, in place.
 
@@ -425,8 +484,14 @@ def enrich_move(move: dict, analyse_fn=None) -> dict:
     mover = board_before.turn
     uci = chess.Move.from_uci(move["uci"])
 
-    cp_before, mate_before, best_uci = analyse_fn(board_before)
+    cp_before, mate_before, best_line = analyse_fn(board_before)
+    best_uci = best_line.split()[0] if best_line else None
     cp_after, mate_after, _ = analyse_fn(board_after)
+    # analyse() scores every finished game 0, which is right for stalemate but
+    # turned every mating move into a 20-pawn "blunder". Mate is the best score
+    # the mover can get.
+    if board_after.is_checkmate():
+        cp_after = MATE_CLAMP_CP if mover == chess.WHITE else -MATE_CLAMP_CP
 
     # White-POV centipawns -> mover-POV swing.
     delta_cp = (cp_after - cp_before) if mover == chess.WHITE else (cp_before - cp_after)
@@ -439,15 +504,42 @@ def enrich_move(move: dict, analyse_fn=None) -> dict:
     else:
         captured_value = PIECE_VALUE[captured.piece_type] if captured else 0
 
-    offered = see_gain(board_after.copy(stack=False), uci.to_square, not mover) - captured_value
+    recapture = (see_gain(board_after.copy(stack=False), uci.to_square, not mover)
+                 if can_capture_on(board_after, uci.to_square, not mover) else 0)
+    offered = recapture - captured_value
+    if uci.promotion:
+        # The mover only staked a pawn; the rest of the new piece's value was free.
+        offered -= PIECE_VALUE[uci.promotion] - PIECE_VALUE[chess.PAWN]
+    if board_after.is_game_over():
+        # Nothing can be won back, or threatened, in a finished game.
+        offered = -captured_value
     is_sacrifice = offered >= SACRIFICE_CP and delta_cp >= SACRIFICE_TOLERANCE
-    is_best = best_uci is not None and best_uci == move["uci"]
+    # Any mate is as good as the engine's mate, even when it chose another one.
+    is_best = (best_uci is not None and best_uci == move["uci"]) or board_after.is_checkmate()
 
     move["eval_before"] = round(cp_before / 100, 2)
     move["eval_after"] = round(cp_after / 100, 2)
     move["eval_delta"] = round(delta_cp / 100, 2)
     move["best_move"] = best_uci
+    move["best_move_san"] = board_before.san(chess.Move.from_uci(best_uci)) if best_uci else None
+    move["best_line"] = best_line
+    move["best_line_san"] = line_san(board_before, best_line) if best_line else None
     move["is_best"] = is_best
+    move["captured"] = (chess.piece_name(captured.piece_type) if captured
+                        else "pawn" if captured_value else None)
+    # What the position after the move offers each side, so commentary about
+    # threats and loose pieces has something true to stand on.
+    # Only threats this move creates: a target the mover could already win is
+    # not news, the same rule as for promotion_threat.
+    standing = set(winnable_pieces(board_before, not mover))
+    move["threatens"] = [p for p in winnable_pieces(board_after, not mover) if p not in standing]
+    # A capturing piece that can be taken back is an even trade, not a loose
+    # piece, unless the exchange actually loses material.
+    landed = f" on {chess.square_name(uci.to_square)}"
+    move["left_hanging"] = [p for p in winnable_pieces(board_after, mover)
+                            if not p.endswith(landed) or offered >= WIN_CP]
+    if board_after.is_game_over():
+        move["threatens"], move["left_hanging"] = [], []
     move["is_forcing"] = board_before.gives_check(uci) or board_before.is_capture(uci)
     move["is_sacrifice"] = is_sacrifice
     move["material_offered"] = round(offered / 100, 2)
@@ -455,7 +547,7 @@ def enrich_move(move: dict, analyse_fn=None) -> dict:
     move["is_mate_threat"] = mate_after is not None and (
         (mate_after > 0) if mover == chess.WHITE else (mate_after < 0)
     )
-    move["game_phase"] = detect_phase(board_before)
+    move["game_phase"] = detect_phase(board_before, from_position)
     move["move_classification"] = classify_move(delta_cp, is_best)
     move["tactical_motifs"] = detect_motifs(board_before, board_after, uci)
     move["comment_text"] = strip_annotations(move.get("comment"))
@@ -464,6 +556,34 @@ def enrich_move(move: dict, analyse_fn=None) -> dict:
     # eval_before/eval_after, so drop it rather than leave two meanings on one key.
     move.pop("eval", None)
     return move
+
+
+def line_san(board: chess.Board, line_uci: str, plies: int = BEST_LINE_PLIES) -> str:
+    """'d2d4 d7d5' from the start -> '1.d4 d5', as annotators write lines."""
+    board = board.copy(stack=False)
+    parts = []
+    for i, uci in enumerate(line_uci.split()[:plies]):
+        move = chess.Move.from_uci(uci)
+        if not board.is_legal(move):
+            break
+        san = board.san(move)
+        if board.turn == chess.WHITE:
+            parts.append(f"{board.fullmove_number}.{san}")
+        else:
+            parts.append(f"{board.fullmove_number}...{san}" if i == 0 else san)
+        board.push(move)
+    return " ".join(parts)
+
+
+def previous_moves(moves: list[dict], index: int, plies: int = PREVIOUS_PLIES) -> str | None:
+    """The game's last few moves before moves[index], numbered: '11...a6 12.Ba4 Nf6'."""
+    parts = []
+    for i, m in enumerate(moves[max(0, index - plies):index]):
+        if m["color"] == "white":
+            parts.append(f"{m['move_number']}.{m['san']}")
+        else:
+            parts.append(f"{m['move_number']}...{m['san']}" if i == 0 else m["san"])
+    return " ".join(parts) or None
 
 
 def enrich_game(payload: tuple[str, int]) -> dict:
@@ -492,8 +612,10 @@ def enrich_game(payload: tuple[str, int]) -> dict:
             if not has_prose(move.get("comment"), min_chars):
                 continue
             move["ply"] = index
+            move["previous_moves"] = previous_moves(game["moves"], index)
             try:
-                keep.append(enrich_move(move))
+                keep.append(enrich_move(
+                    move, from_position=bool((game.get("metadata") or {}).get("from_position"))))
             except (UnanalysablePosition, ValueError):
                 # Malformed or non-standard position (Crazyhouse FEN, kingless
                 # diagram, ...). Drop the move, keep the rest of the game.
@@ -577,17 +699,18 @@ def relabel_file(path: Path) -> collections.Counter:
             for move in game["moves"]:
                 before_cp = round(move["eval_before"] * 100)
                 after_cp = round(move["eval_after"] * 100)
-                best_uci, mate = move["best_move"], move["mate_in"]
+                best_line, mate = move.get("best_line") or move["best_move"], move["mate_in"]
                 calls = []
 
                 def frozen(board):
                     calls.append(1)
                     if len(calls) == 1:
-                        return before_cp, None, best_uci
+                        return before_cp, None, best_line
                     return after_cp, mate, None
 
                 was = move["move_classification"]
-                enrich_move(move, analyse_fn=frozen)
+                enrich_move(move, analyse_fn=frozen,
+                            from_position=bool((game.get("metadata") or {}).get("from_position")))
                 now = move["move_classification"]
                 if now != was:
                     changed[f"{was} -> {now}"] += 1

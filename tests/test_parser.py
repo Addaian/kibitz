@@ -73,6 +73,25 @@ def test_missing_variant_header_is_none(parse):
     assert games[0]["metadata"]["variant"] is None
 
 
+def test_study_id_is_lifted_from_the_chapter_url(parse):
+    """build_dataset splits by study, so every chapter must know its study."""
+    url = '[ChapterURL "https://lichess.org/study/RoBvWqfx/FncZMPtk"]\n'
+    games = parse(HEADERS + url + '\n1. e4 e5 *\n')
+    assert games[0]["metadata"]["study"] == "RoBvWqfx"
+
+
+def test_a_game_set_up_from_a_fen_is_marked(parse):
+    fen = '[SetUp "1"]\n[FEN "8/5pk1/6p1/3K4/5PP1/8/8/8 w - - 0 1"]\n'
+    games = parse(HEADERS + fen + '\n1. Ke5 *\n')
+    assert games[0]["metadata"]["from_position"] is True
+    assert parse(HEADERS + '\n1. e4 e5 *\n', name="other")[0]["metadata"]["from_position"] is False
+
+
+def test_missing_chapter_url_means_no_study(parse):
+    games = parse(HEADERS + '\n1. e4 e5 *\n')
+    assert games[0]["metadata"]["study"] is None
+
+
 def test_each_game_becomes_one_json_line(parse):
     two = HEADERS + '\n1. e4 e5 1/2-1/2\n\n' + HEADERS + '\n1. d4 d5 1/2-1/2\n'
     games = parse(two)

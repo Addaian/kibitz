@@ -73,3 +73,29 @@ def test_the_decision_log_exists_and_is_populated():
 def test_dropped_classifications_are_explained_not_just_removed(label):
     block = re.search(r"## Appendix A.*?(?=\n## |\Z)", README, re.S).group(0)
     assert label in block, f"{label} was removed from the enum without a recorded reason"
+
+
+# --------------------------------------------------------------------------- #
+# import hygiene
+# --------------------------------------------------------------------------- #
+
+@pytest.mark.parametrize("path", sorted((ROOT / "scripts").glob("*.py")),
+                         ids=lambda p: p.name)
+def test_no_script_shadows_a_stdlib_module(path):
+    """
+    Running `python3 scripts/foo.py` puts scripts/ on sys.path[0], so a file
+    named like a standard-library module hijacks it for every later import.
+    scripts/inspect.py did exactly that and broke huggingface_hub's import of
+    `inspect` deep inside mlx-lm.
+    """
+    assert path.stem not in sys.stdlib_module_names, (
+        f"scripts/{path.name} shadows the stdlib module '{path.stem}'")
+
+
+@pytest.mark.parametrize("path", sorted((ROOT / "kibitz").glob("*.py")),
+                         ids=lambda p: p.name)
+def test_no_package_module_shadows_a_stdlib_module(path):
+    if path.stem == "__init__":
+        return
+    assert path.stem not in sys.stdlib_module_names, (
+        f"kibitz/{path.name} shadows the stdlib module '{path.stem}'")

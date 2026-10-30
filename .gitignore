@@ -1,3 +1,13 @@
+# Trained adapters and model artefacts
+adapters/
+runs/
+
+# mlx-lm expects train/valid/test.jsonl; scripts/train.py symlinks them here
+data/datasets/mlx/
+
+# Raw PGNs — re-download with scripts/download_data.py
+data/raw/
+
 # Pipeline intermediates — regenerate with parser.py / features.py
 data/processed/
 data/enriched/

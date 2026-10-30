@@ -1,13 +1,13 @@
 """
 Regression tests against a frozen set of real enriched moves.
 
-tests/fixtures/golden.jsonl holds 64 records covering every move
+tests/fixtures/golden.jsonl holds 72 records covering every move
 classification, every tactical motif, mates and sacrifices — with the engine's
 numbers frozen alongside them. That means the whole judgement layer (delta sign,
 classification thresholds, phase, motifs, SEE) can be replayed here exactly,
 with no Stockfish process and no network, in milliseconds.
 
-Regenerate after an intentional change:  python3 scripts/inspect.py freeze
+Regenerate after an intentional change:  python3 scripts/inspect_dataset.py freeze
 """
 
 import json
@@ -51,7 +51,7 @@ def replay(rec, monkeypatch):
         "fen_after": stored["fen_after"],
         "comment": stored.get("comment"),
     }
-    return F.enrich_move(fresh)
+    return F.enrich_move(fresh, from_position=bool(rec["meta"].get("from_position")))
 
 
 def test_the_fixture_covers_the_whole_judgement_space():
@@ -71,7 +71,8 @@ def test_derived_features_are_unchanged(rec, monkeypatch):
     want = rec["move"]
     for field in ("eval_delta", "move_classification", "game_phase",
                   "tactical_motifs", "is_best", "is_forcing",
-                  "is_sacrifice", "material_offered", "is_mate_threat"):
+                  "is_sacrifice", "material_offered", "is_mate_threat",
+                  "best_move_san", "captured", "threatens", "left_hanging"):
         assert got[field] == want[field], (
             f"{field}: {got[field]!r} != frozen {want[field]!r}")
 

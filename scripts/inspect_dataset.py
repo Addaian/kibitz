@@ -2,12 +2,12 @@
 """
 Review harness for the kibitz pipeline.
 
-    inspect.py show                         a random annotated move
-    inspect.py show -n 5 --class blunder    five blunders
-    inspect.py show --motif fork --phase endgame
-    inspect.py show --source AbasovN --seed 7 --unicode
-    inspect.py stats                        corpus dashboard
-    inspect.py freeze                       refresh the golden regression set
+    inspect_dataset.py show                         a random annotated move
+    inspect_dataset.py show -n 5 --class blunder    five blunders
+    inspect_dataset.py show --motif fork --phase endgame
+    inspect_dataset.py show --source AbasovN --seed 7 --unicode
+    inspect_dataset.py stats                        corpus dashboard
+    inspect_dataset.py freeze                       refresh the golden regression set
 
 `show` renders a position beside everything the pipeline decided about it, then
 one panel per source of commentary. Today that is the human annotator; in phase
@@ -24,7 +24,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from kibitz import review, tui
-from kibitz.dataset import split_for
 from kibitz.tui import box, sparkbar
 
 # NB: read R / BOLD / DIM through the module — tui.set_color() rebinds them.
@@ -68,10 +67,17 @@ def cmd_show(args):
     rng = random.Random(args.seed)
     picked, seen = [], 0
     # Reservoir sample so the whole corpus never has to be held in memory.
+    # Reviewing a model on games it trained on flatters it. Membership is read
+    # from the built split, because build_dataset groups studies that share
+    # content before splitting, so no per-game function reproduces it.
+    in_split = None
+    if args.split:
+        path = ROOT / "data" / "datasets" / f"{args.split}.jsonl"
+        if not path.exists():
+            sys.exit(f"{path} missing — run: python3 scripts/build_dataset.py")
+        in_split = {json.loads(line)["meta"]["uid"] for line in path.open()}
     for meta, move, label, uid in iter_moves(args.source):
-        # Reviewing a model on games it trained on flatters it. The split is a
-        # pure function of the game id, so no dataset file is needed here.
-        if args.split and split_for(uid) != args.split:
+        if in_split is not None and uid not in in_split:
             continue
         if not matches(move, args):
             continue
@@ -184,7 +190,8 @@ def cmd_freeze(args):
                 buckets[key].append({
                     "source": label, "uid": uid, "ply": move["ply"],
                     "meta": {k: meta.get(k) for k in
-                             ("white", "black", "event", "date", "eco", "opening", "variant")},
+                             ("white", "black", "event", "date", "eco", "opening", "variant",
+                              "from_position")},
                     "move": move,
                 })
 
@@ -247,7 +254,7 @@ def main():
     argv = [a for a in sys.argv[1:] if a != "--no-color"]
     no_color = len(argv) != len(sys.argv[1:])
 
-    # Bare filters still work: "inspect.py --class blunder" means "show".
+    # Bare filters still work: "inspect_dataset.py --class blunder" means "show".
     commands = {"show", "stats", "freeze"}
     if not ({"-h", "--help"} & set(argv)) and not (commands & set(argv)):
         argv = ["show"] + argv

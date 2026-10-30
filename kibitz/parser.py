@@ -4,6 +4,7 @@ import chess.pgn
 import json
 import multiprocessing as mp
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -41,6 +42,56 @@ Nf2 42.g4 Bd3 43.Re6 1/2-1/2
 PROCESSED_DIR = Path(__file__).parent.parent / "data" / "processed"
 
 
+def study_id(chapter_url: str | None) -> str | None:
+    """'https://lichess.org/study/RoBvWqfx/FncZMPtk' -> 'RoBvWqfx'."""
+    match = re.search(r"/study/([^/#?]+)", chapter_url or "")
+    return match.group(1) if match else None
+
+
+def game_record(game: chess.pgn.Game, game_id: int, source: str) -> dict:
+    '''
+    One game as the JSON record the rest of the pipeline reads. The CLI builds
+    its records here too, so inference sees exactly what training saw.
+    Raises if a mainline move is illegal.
+    '''
+    board = game.board()
+    game_json = {
+        "game_id": game_id,
+        "source": source,
+        "metadata": {
+            "white":     game.headers.get("White"),
+            "black":     game.headers.get("Black"),
+            "result":    game.headers.get("Result"),
+            "white_elo": game.headers.get("WhiteElo"),
+            "black_elo": game.headers.get("BlackElo"),
+            "event":     game.headers.get("Event"),
+            "date":      game.headers.get("Date"),
+            "eco":       game.headers.get("ECO"),
+            "opening":   game.headers.get("Opening"),
+            "variant":   game.headers.get("Variant"),
+            "study":     study_id(game.headers.get("ChapterURL")),
+            # Set up from a FEN (a study position), not the start position.
+            "from_position": bool(game.headers.get("FEN")),
+        },
+        "moves": [],
+    }
+    for node in game.mainline():
+        move = {}
+        move["move_number"] = board.fullmove_number
+        move["color"]       = "white" if board.turn == chess.WHITE else "black"
+        move["san"]         = board.san(node.move)
+        move["uci"]         = node.move.uci()
+        move["fen_before"]  = board.fen()
+        board.push(node.move)
+        move["fen_after"]   = board.fen()
+        move["comment"]     = node.comment.strip() or None
+        move["nags"]        = list(node.nags)
+        ev = node.eval()
+        move["eval"]        = ev.white().score(mate_score=10000) / 100 if ev else None
+        game_json["moves"].append(move)
+    return game_json
+
+
 def parse_pgn(pgnfile: str) -> None:
     '''
     Parses a full .pgn file and writes each game as a JSON line to
@@ -73,42 +124,8 @@ def parse_pgn(pgnfile: str) -> None:
             read_failures = 0
 
             game_id += 1
-            board = game.board()
-
-            game_json = {
-                "game_id": game_id,
-                "source": pgn_source,
-                "metadata": {
-                    "white":     game.headers.get("White"),
-                    "black":     game.headers.get("Black"),
-                    "result":    game.headers.get("Result"),
-                    "white_elo": game.headers.get("WhiteElo"),
-                    "black_elo": game.headers.get("BlackElo"),
-                    "event":     game.headers.get("Event"),
-                    "date":      game.headers.get("Date"),
-                    "eco":       game.headers.get("ECO"),
-                    "opening":   game.headers.get("Opening"),
-                    "variant":   game.headers.get("Variant"),
-                },
-                "moves": [],
-            }
             try:
-                for node in game.mainline():
-                    move = {}
-                    move["move_number"] = board.fullmove_number
-                    move["color"]       = "white" if board.turn == chess.WHITE else "black"
-                    move["san"]         = board.san(node.move)
-                    move["uci"]         = node.move.uci()
-                    move["fen_before"]  = board.fen()
-                    board.push(node.move)
-                    move["fen_after"]   = board.fen()
-                    move["comment"]     = node.comment.strip() or None
-                    move["nags"]        = list(node.nags)
-                    ev = node.eval()
-                    move["eval"]        = ev.white().score(mate_score=10000) / 100 if ev else None
-                    game_json["moves"].append(move)
-
-                out_f.write(json.dumps(game_json) + "\n")
+                out_f.write(json.dumps(game_record(game, game_id, pgn_source)) + "\n")
                 written += 1
             except Exception as e:
                 print(f"error, skipping game {game_id}: {e}")

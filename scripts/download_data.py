@@ -48,6 +48,12 @@ DEFAULT_STUDY_USERS = [
     "Mr_Penings",            # Caro-Kann, Nimzo/Bogo Indian repertoires (Lichess Staff Picks)
     "chessentialsBLOG",      # CM — French Defence, methodical opening comparisons
     "TonyRo",                # LM — regular tournament annotator
+    # Found via links and [Annotator] credits in the studies above; mostly opening tutorials
+    "Juggernaunt",           # Sicilian, Danish Gambit — explains move orders
+    "Sack_o_Potatoes",       # Gambit and trap tutorials
+    "WassimBerbar",          # Opening repertoires (Scandinavian, anti-e4)
+    "BenedictChessman",      # Opening explainers
+    "SarahLongson",          # Coaching studies (pins, stalemate)
 ]
 
 

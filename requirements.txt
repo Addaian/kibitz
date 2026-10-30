@@ -2,3 +2,7 @@ chess
 requests
 tqdm
 pytest
+pyyaml
+mlx-lm
+sacrebleu
+rouge-score

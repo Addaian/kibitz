@@ -1,0 +1,36 @@
+# Training hyperparameters.  Consumed by scripts/train.py, which merges this
+# with configs/model.yaml into an mlx-lm config.
+
+# Loss is computed on the assistant turn only. Without this the model spends
+# most of its gradient learning to reproduce the feature block it is given.
+mask_prompt: true
+
+batch_size: 4
+grad_accumulation_steps: 4     # effective batch 16
+iters: 8860                    # micro-batches, not updates: 8860 x 4 = 1 epoch over
+                               # 35.4k pairs, i.e. 2215 optimizer updates
+max_seq_length: 512            # measured, not guessed: prompts are templated so
+                               # token counts are tight — median 249, p95 322
+                               # (Mistral tokenizer), and 512 truncates 0.19%.
+                               # Re-check with: scripts/train.py --measure
+
+optimizer: adamw
+learning_rate: 1.0e-5           # mlx-lm's default, tuned for scale 20. 1.0e-4 (a peft-style
+                               # rate, for alpha/r = 2) diverged: loss climbed with the
+                               # warmup, blew up at ~120 updates and was NaN by ~195.
+lr_schedule:
+  name: cosine_decay
+  warmup: 100                  # optimizer updates (= 400 iters)
+  arguments: [1.0e-5, 2215, 1.0e-7]   # horizon in updates; train.py recomputes it
+
+# Reporting and checkpoints
+steps_per_report: 25
+steps_per_eval: 200
+val_batches: 25
+save_every: 200
+adapter_path: "adapters"
+
+seed: 0
+grad_checkpoint: false         # measured on the M1 Max with 7B: off is ~25% faster
+                               # (0.125 vs 0.10 it/s) at 18.7 GB peak vs 7.2 GB.
+                               # Turn on if the run swaps.
