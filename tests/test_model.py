@@ -163,7 +163,7 @@ def test_gguf_prompts_tokenize_exactly_as_in_training(monkeypatch):
     from kibitz import prompt
 
     monkeypatch.setattr(M, "_hub_file", cached_hub_file)
-    repo = M._model_config()["tokenizer_repo"]
+    repo = M.TOKENIZER_REPO
     ours = M.ChatTokenizer(repo)
     cached_hub_file(repo, "tokenizer_config.json")
     hf = transformers.AutoTokenizer.from_pretrained(repo, local_files_only=True)
@@ -180,6 +180,23 @@ def test_gguf_prompts_tokenize_exactly_as_in_training(monkeypatch):
 def test_a_missing_gguf_adapter_is_refused(tmp_path):
     with pytest.raises(FileNotFoundError):
         M.GGUFCommentator(adapter_path=tmp_path / "nope.gguf")
+
+
+def test_the_runtime_tokenizer_is_the_one_trained_with():
+    assert M.TOKENIZER_REPO == M.default_base_model()
+
+
+def test_an_unpublished_adapter_says_so(monkeypatch):
+    httpx = pytest.importorskip("httpx")
+    from huggingface_hub.errors import RepositoryNotFoundError
+
+    def missing(repo, filename):
+        raise RepositoryNotFoundError("401", response=httpx.Response(
+            401, request=httpx.Request("GET", f"https://huggingface.co/{repo}")))
+
+    monkeypatch.setattr(M, "_hub_file", missing)
+    with pytest.raises(FileNotFoundError, match="--gguf PATH"):
+        M.released_adapter()
 
 
 def test_gguf_generation_stops_at_eos_or_the_token_cap():

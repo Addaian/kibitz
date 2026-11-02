@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kibitz"
+version = "0.1.0"
+description = "Move-by-move chess commentary in the voice of Lichess study annotators"
+readme = "README.md"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+# What `kibitz game.pgn` needs. Training, evaluation and the data pipeline
+# need requirements.txt, from a checkout.
+dependencies = [
+    "chess",
+    "llama-cpp-python",
+    "tokenizers",
+    "jinja2",
+    "huggingface-hub",
+    "certifi",
+]
+
+[project.optional-dependencies]
+mlx = ["mlx-lm", "pyyaml"]      # --model: run an MLX adapter (Apple silicon)
+
+[project.scripts]
+kibitz = "kibitz.cli:main"
+
+[tool.setuptools]
+packages = ["kibitz"]

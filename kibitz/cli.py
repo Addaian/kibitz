@@ -1,9 +1,9 @@
 """
 Commentary for every move of a PGN, from the fine-tuned model. README §8–9.
 
-    python3 -m kibitz.cli game.pgn
-    python3 -m kibitz.cli game.pgn --format pgn --moves 15-30 > annotated.pgn
-    cat game.pgn | python3 -m kibitz.cli -
+    kibitz game.pgn
+    kibitz game.pgn --format pgn --moves 15-30 > annotated.pgn
+    cat game.pgn | kibitz -
 
 Each move goes through the same steps as the training data: `parser.game_record`,
 `features.enrich_move` at the training depth, then `prompt.build_prompt` with the
@@ -21,7 +21,7 @@ from pathlib import Path
 
 import chess.pgn
 
-from kibitz import features, parser, prompt
+from kibitz import features, parser, prompt, stockfish
 
 
 def parse_range(spec: str | None) -> tuple[int, int] | None:
@@ -124,14 +124,17 @@ def main() -> None:
     ap.add_argument("pgn", help="PGN file, or - for stdin")
     ap.add_argument("--format", "--output-format", dest="format", default="text",
                     choices=("text", "pgn", "json"))
-    ap.add_argument("--stockfish", default=features.DEFAULT_STOCKFISH,
-                    help="Stockfish binary (default: $STOCKFISH_PATH or Homebrew's)")
+    ap.add_argument("--stockfish",
+                    help="Stockfish binary (default: $STOCKFISH_PATH, else stockfish on PATH, "
+                         "else Stockfish 19, downloaded once)")
     ap.add_argument("--depth", type=int, default=features.DEFAULT_DEPTH,
                     help=f"engine depth (default: {features.DEFAULT_DEPTH}, the training depth)")
-    ap.add_argument("--model", default=None,
-                    help="adapter directory (default: adapters/)")
-    ap.add_argument("--gguf", default=None,
-                    help="run through llama.cpp with this GGUF adapter instead of MLX")
+    backend = ap.add_mutually_exclusive_group()
+    backend.add_argument("--gguf", default=None,
+                         help="GGUF adapter for llama.cpp (default: the released Kibitz "
+                              "adapter, downloaded once)")
+    backend.add_argument("--model", default=None,
+                         help="MLX adapter directory, run through mlx-lm instead (Apple silicon)")
     ap.add_argument("--moves", help='only comment on these move numbers, e.g. "15-30"')
     # Greedy decoding collapses to "White is threatening..."; sampling reads like
     # a person but invents more, so keep the first of N with no detectable fault.
@@ -146,8 +149,8 @@ def main() -> None:
         moves = parse_range(args.moves)
     except ValueError as exc:
         sys.exit(str(exc))
-    if not Path(args.stockfish).exists():
-        sys.exit(f"Stockfish not found at {args.stockfish} (set --stockfish or $STOCKFISH_PATH)")
+    if args.stockfish and not Path(args.stockfish).exists():
+        sys.exit(f"Stockfish not found at {args.stockfish}")
     games = list(read_games(args.pgn))
     if not games:
         sys.exit(f"no games found in {args.pgn}")
@@ -155,17 +158,21 @@ def main() -> None:
         if game.headers.get("Variant") not in features.STANDARD_VARIANTS:
             sys.exit(f"unsupported variant: {game.headers.get('Variant')}")
 
-    from kibitz.model import DEFAULT_ADAPTER, GGUFCommentator, KibitzCommentator
+    from kibitz.model import GGUFCommentator, KibitzCommentator, released_adapter
     try:
-        if args.gguf:
-            commentator = GGUFCommentator(adapter_path=args.gguf, temp=args.temp,
-                                          samples=args.samples)
+        if args.model:
+            commentator = KibitzCommentator(adapter_path=args.model, temp=args.temp,
+                                            samples=args.samples)
         else:
-            commentator = KibitzCommentator(adapter_path=args.model or DEFAULT_ADAPTER,
-                                            temp=args.temp, samples=args.samples)
+            commentator = GGUFCommentator(adapter_path=args.gguf or released_adapter(),
+                                          temp=args.temp, samples=args.samples)
     except FileNotFoundError as exc:
-        sys.exit(f"{exc} — train one with: python3 scripts/train.py")
-    features._init_worker(args.stockfish, args.depth)
+        sys.exit(f"{exc} — train one with: python3 scripts/train.py" if args.model else str(exc))
+    try:
+        engine = args.stockfish or stockfish.locate()
+    except (RuntimeError, OSError) as exc:
+        sys.exit(f"could not get Stockfish: {exc}")
+    features._init_worker(engine, args.depth)
 
     collected = []
     try:

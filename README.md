@@ -115,7 +115,8 @@ kibitz/
 │   ├── features.py           # Feature extraction (Stockfish, heuristics)
 │   ├── dataset.py            # Cleaning, filtering and splitting training pairs
 │   ├── prompt.py             # Prompt construction, shared by training and inference
-│   ├── model.py              # Model loading and generation (mlx-lm)
+│   ├── model.py              # Model loading and generation (llama.cpp, or mlx-lm)
+│   ├── stockfish.py          # Finds Stockfish, or downloads the official build
 │   ├── grounding.py          # Checks commentary claims against the board
 │   ├── review.py             # Side-by-side review panels (human vs model)
 │   ├── tui.py                # Shared terminal rendering
@@ -137,8 +138,8 @@ kibitz/
 ├── adapters/                 # Trained LoRA adapters (not committed)
 ├── runs/                     # Evaluation generations (not committed)
 ├── notebooks/                # Exploratory work (not production)
-├── requirements.txt
-├── setup.py                  # empty placeholder
+├── requirements.txt          # everything, for a checkout
+├── pyproject.toml            # the installable `kibitz` command (§9)
 └── README.md
 ```
 
@@ -966,10 +967,10 @@ Training is unchanged; only inference moves.
 ```bash
 python3 scripts/convert_gguf.py adapters/cuda-v2 adapters/kibitz.gguf --base <base>.gguf
 python3 scripts/evaluate.py --gguf adapters/kibitz.gguf --out runs/eval-gguf.jsonl
-python3 -m kibitz.cli game.pgn --gguf adapters/kibitz.gguf
+kibitz game.pgn --gguf adapters/kibitz.gguf
 ```
 
-The model is a stock GGUF of the base (`gguf_base` in `configs/model.yaml`, 4.4 GB at
+The model is a stock GGUF of the base (`GGUF_BASE` in `kibitz/model.py`, 4.4 GB at
 Q4_K_M) plus the converted adapter (84 MB), applied at load time, so nothing is merged
 and an adapter update is a small download. Three things had to be right:
 
@@ -1021,14 +1022,16 @@ changed between that run and the commit. Compare against reruns, not that log.
 `prompt.build_prompt` with `Length:` from `length_for_move`.
 
 ```
-python3 -m kibitz.cli [OPTIONS] <pgn_file | ->
+kibitz [OPTIONS] <pgn_file | ->
 
 Options:
   --format, --output-format [text|pgn|json]   Output format (default: text)
-  --stockfish PATH        Stockfish binary (default: $STOCKFISH_PATH or Homebrew's)
+  --stockfish PATH        Stockfish binary (default: $STOCKFISH_PATH, else stockfish
+                          on PATH, else Stockfish 19, downloaded once)
   --depth INT             Engine depth (default: 14, the training depth)
-  --model PATH            Adapter directory (default: adapters/)
-  --gguf PATH             Run through llama.cpp with this GGUF adapter instead of MLX
+  --gguf PATH             GGUF adapter for llama.cpp (default: the released adapter,
+                          downloaded once)
+  --model PATH            MLX adapter directory, run through mlx-lm instead (Apple silicon)
   --moves RANGE           Only comment on these move numbers, e.g. "15-30" or "17"
   --temp FLOAT            Sampling temperature (default: 0.8)
   --samples INT           Sample up to N per move; keep the first that passes the
@@ -1036,18 +1039,49 @@ Options:
   --verbose               Show the features each comment was conditioned on
 
 Examples:
-  python3 -m kibitz.cli game.pgn
-  python3 -m kibitz.cli game.pgn --format pgn > annotated.pgn
-  python3 -m kibitz.cli game.pgn --moves 15-30 --verbose
-  cat game.pgn | python3 -m kibitz.cli -
+  kibitz game.pgn
+  kibitz game.pgn --format pgn > annotated.pgn
+  kibitz game.pgn --moves 15-30 --verbose
+  cat game.pgn | kibitz -
 ```
+
+From a checkout, `python3 -m kibitz.cli` is the same command.
+
+### Installing
+
+```bash
+# Mac (Apple silicon)
+pip install "kibitz @ git+https://github.com/Addaian/kibitz" \
+    --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/metal
+# Windows and Linux, CPU
+pip install "kibitz @ git+https://github.com/Addaian/kibitz" \
+    --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+```
+
+The extra index has prebuilt `llama-cpp-python` wheels; without it pip compiles llama.cpp,
+which needs a C++ compiler and CMake (about a minute on the M1 Max). The install pulls in
+neither PyTorch nor MLX: `pyproject.toml` lists only what `kibitz game.pgn` needs, and
+`requirements.txt` the rest, for a checkout. `pip install "kibitz[mlx]"` adds `--model`.
+
+The first run downloads, once, into the usual caches:
+- **the model**: the base GGUF (4.4 GB) and its tokenizer files from Hugging Face, and the
+  Kibitz adapter (84 MB) from `huggingface.co/Addaian/kibitz`. That repo is not published
+  until every annotator whose comments trained the model has agreed, so for now pass
+  `--gguf PATH`; without it the CLI says so and stops.
+- **Stockfish**, only if there is none on `$STOCKFISH_PATH` or PATH: the official
+  Stockfish 19 build for the OS and CPU (~80 MB), checked against the release's SHA-256,
+  into `$KIBITZ_HOME` (default `~/.cache/kibitz`). Stockfish is GPL-3, so it is fetched
+  rather than bundled. Training features came from Stockfish 18, but 18 has no build for
+  Linux on ARM and no build that picks the CPU's instruction set at run time; on 400
+  enriched moves, Stockfish 19 agrees with the stored classification as often as
+  Stockfish 18 itself does on a rerun (75% and 76%, Decision Log row 22).
 
 How it differs from the original sketch:
 - **argparse, not click or typer.** It matches the other scripts and adds no dependency.
 - **No `--stream` flag.** Text output prints each comment as soon as it is generated,
   so streaming is the default. PGN and JSON need the whole game and print at the end.
-- **No `kibitz` command.** There is no packaging (`setup.py` is a placeholder), so it
-  runs as a module.
+- **llama.cpp by default.** MLX remains for checking a training run on the Mac
+  (`--model`), Decision Log row 23.
 
 The output formats:
 - **PGN** replaces the comments on the moves in range and keeps the headers and any
@@ -1173,6 +1207,8 @@ invisible in the rows next to it — `forcing` was demoted for exactly the reaso
 | 19 | (unstated) — NAGs were in the prompt | Removed from the prompt | The annotator's `!`/`?` is hindsight from the target's author, present in 22% of training prompts and absent from every live game. |
 | 20 | "~1 epoch" at 2,400 iters | One epoch in iters (8,860 now), cosine horizon in updates | mlx-lm counts iters in micro-batches; 2,400 was 0.27 epoch and the LR never decayed (§7.2). |
 | 21 | Inference through MLX (§7.3) | llama.cpp: a stock base GGUF plus the converted adapter, prompts tokenized by the base's own tokenizer | Kibitz is to be downloaded and run locally, and MLX runs only on Apple Silicon. llama.cpp runs on Mac, Windows and Linux; same quality on the test split and 40% faster on the M1 Max (§8). |
+| 22 | Stockfish from Homebrew (`$STOCKFISH_PATH`) | `$STOCKFISH_PATH`, else PATH, else the official Stockfish 19 build, downloaded and checksum-verified | Users on Windows and Linux have no Homebrew path, and Stockfish's GPL-3 rules out bundling it. 19 rather than the training engine (18) because only 19 has one self-selecting build per OS, Linux ARM included. The features barely notice: rerunning depth 14 on 400 enriched moves, 18 reproduces the stored classification 75.8% of the time and 19 75.2% (best move 77.0% and 77.5%) — hash history moves them more than the version does. The eval itself shifts more (90th-percentile difference 2.1 pawns against 0.45). |
+| 23 | `python3 -m kibitz.cli`, MLX (§9) | An installable `kibitz` command (`pyproject.toml`), llama.cpp by default, `--model` for MLX | A download must run on any OS without MLX or a checkout; the runtime's model settings moved from `configs/model.yaml` into `kibitz/model.py` because an installed package has no `configs/`. |
 
 **Fields we added that the plan never specified:** `is_best`, `best_move`,
 `best_move_san` (all free from the same engine call), `material_offered`, `captured`,
@@ -1199,7 +1235,7 @@ python3 scripts/inspect_dataset.py stats               # look at what you got
 python3 scripts/train.py --measure                    # token lengths for this corpus
 python3 scripts/train.py                              # LoRA fine-tune -> adapters/
 python3 scripts/evaluate.py --limit 200 --baseline    # score against held-out test
-python3 -m kibitz.cli game.pgn                        # comment on a game (§9)
+python3 -m kibitz.cli game.pgn --model adapters      # comment on a game (§9)
 ```
 
 **Read the output, do not just read the loss.** The review harness puts the model

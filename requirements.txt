@@ -12,3 +12,4 @@ tokenizers
 jinja2
 huggingface-hub
 safetensors
+certifi

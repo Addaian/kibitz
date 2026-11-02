@@ -26,21 +26,23 @@ from kibitz.dataset import ungrounded_reason
 
 ROOT = Path(__file__).parent.parent
 DEFAULT_ADAPTER = ROOT / "adapters"
-DEFAULT_GGUF_ADAPTER = ROOT / "adapters" / "kibitz.gguf"
+
+# What the llama.cpp runtime loads, as (Hugging Face repo, file). Here rather
+# than in configs/model.yaml because an installed Kibitz has no configs/.
+GGUF_BASE = ("bartowski/Mistral-7B-Instruct-v0.3-GGUF", "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf")
+TOKENIZER_REPO = "mlx-community/Mistral-7B-Instruct-v0.3-4bit"   # the base_model trained on
+RELEASED_ADAPTER = ("Addaian/kibitz", "kibitz.gguf")
 
 # Commentary is 1-3 sentences; the corpus median target is ~40 tokens. A tight
 # cap keeps generation fast and discourages rambling.
 DEFAULT_MAX_TOKENS = 160
 
 
-def _model_config() -> dict:
-    import yaml
-    return yaml.safe_load((ROOT / "configs" / "model.yaml").read_text())
-
-
 def default_base_model() -> str:
     """The base model recorded in configs/model.yaml."""
-    return _model_config()["base_model"]
+    import yaml
+    config = yaml.safe_load((ROOT / "configs" / "model.yaml").read_text())
+    return config["base_model"]
 
 
 def resolve_adapter(adapter_path) -> Path | None:
@@ -153,6 +155,17 @@ def _hub_file(repo: str, filename: str) -> Path:
     return Path(hf_hub_download(repo, filename))
 
 
+def released_adapter() -> Path:
+    """The published Kibitz adapter, downloaded on first use."""
+    from huggingface_hub.errors import RemoteEntryNotFoundError, RepositoryNotFoundError
+    try:
+        return _hub_file(*RELEASED_ADAPTER)
+    except (RepositoryNotFoundError, RemoteEntryNotFoundError):
+        raise FileNotFoundError(
+            f"no Kibitz adapter published at huggingface.co/{RELEASED_ADAPTER[0]} yet; "
+            "pass --gguf PATH (convert one with scripts/convert_gguf.py)") from None
+
+
 class ChatTokenizer:
     """
     The base model's own tokenizer and chat template, without transformers.
@@ -201,7 +214,7 @@ class GGUFCommentator(KibitzCommentator):
     from the same distribution.
     """
 
-    def __init__(self, adapter_path: str | Path | None = DEFAULT_GGUF_ADAPTER,
+    def __init__(self, adapter_path: str | Path | None,
                  base_gguf: str | Path | None = None,
                  max_tokens: int = DEFAULT_MAX_TOKENS,
                  temp: float = 0.7,
@@ -213,15 +226,13 @@ class GGUFCommentator(KibitzCommentator):
                 f"no GGUF adapter at {adapter_path} (convert one with scripts/convert_gguf.py)")
         from llama_cpp import Llama
 
-        config = _model_config()
         self.name = name
         self.adapter_path = Path(adapter_path) if adapter_path else None
-        self.base_model = str(base_gguf or _hub_file(config["gguf_base"]["repo"],
-                                                     config["gguf_base"]["file"]))
+        self.base_model = str(base_gguf or _hub_file(*GGUF_BASE))
         self.max_tokens = max_tokens
         self.temp = temp
         self.samples = samples
-        self.tokenizer = ChatTokenizer(config["tokenizer_repo"])
+        self.tokenizer = ChatTokenizer(TOKENIZER_REPO)
         self.model = Llama(self.base_model,
                            lora_path=str(self.adapter_path) if self.adapter_path else None,
                            n_ctx=1024, n_gpu_layers=-1, verbose=False)
