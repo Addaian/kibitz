@@ -6,3 +6,9 @@ pyyaml
 mlx-lm
 sacrebleu
 rouge-score
+llama-cpp-python
+gguf
+tokenizers
+jinja2
+huggingface-hub
+safetensors

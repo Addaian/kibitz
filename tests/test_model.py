@@ -140,3 +140,64 @@ def test_with_no_clean_sample_the_least_bad_is_kept(monkeypatch):
 def test_one_sample_is_returned_unchecked(monkeypatch):
     c = sampling_commentator(monkeypatch, ["The knight on e4 is strong."], samples=1)
     assert c.comment({}, E4) == "The knight on e4 is strong."
+
+
+# --------------------------------------------------------------------------- #
+# the llama.cpp backend
+# --------------------------------------------------------------------------- #
+
+def cached_hub_file(repo, filename):
+    """_hub_file, but skip rather than download in a test run."""
+    from huggingface_hub import hf_hub_download
+    try:
+        return Path(hf_hub_download(repo, filename, local_files_only=True))
+    except Exception:
+        pytest.skip(f"{repo}/{filename} is not in the Hugging Face cache")
+
+
+def test_gguf_prompts_tokenize_exactly_as_in_training(monkeypatch):
+    """llama.cpp's own tokenizer splits the spaces around [INST] differently."""
+    import json
+    pytest.importorskip("tokenizers")
+    transformers = pytest.importorskip("transformers")
+    from kibitz import prompt
+
+    monkeypatch.setattr(M, "_hub_file", cached_hub_file)
+    repo = M._model_config()["tokenizer_repo"]
+    ours = M.ChatTokenizer(repo)
+    cached_hub_file(repo, "tokenizer_config.json")
+    hf = transformers.AutoTokenizer.from_pretrained(repo, local_files_only=True)
+
+    golden = Path(__file__).parent / "fixtures" / "golden.jsonl"
+    for line in golden.read_text().splitlines():
+        rec = json.loads(line)
+        content = prompt.build_prompt(rec["meta"], rec["move"])
+        expected = hf.apply_chat_template([{"role": "user", "content": content}],
+                                          add_generation_prompt=True, tokenize=True, return_dict=False)
+        assert ours.encode(content) == list(expected)
+
+
+def test_a_missing_gguf_adapter_is_refused(tmp_path):
+    with pytest.raises(FileNotFoundError):
+        M.GGUFCommentator(adapter_path=tmp_path / "nope.gguf")
+
+
+def test_gguf_generation_stops_at_eos_or_the_token_cap():
+    class FakeLlama:
+        def __init__(self, tokens):
+            self.tokens = tokens
+        def token_eos(self):
+            return 2
+        def generate(self, ids, **kwargs):
+            yield from self.tokens
+
+    class FakeTokenizer:
+        def decode(self, ids):
+            return " ".join(map(str, ids))
+
+    c = object.__new__(M.GGUFCommentator)
+    c.tokenizer, c.temp, c.max_tokens = FakeTokenizer(), 0.0, 3
+    c.model = FakeLlama([7, 8, 2, 9])
+    assert c._generate([1]) == "7 8"
+    c.model = FakeLlama([7, 8, 9, 10, 11])
+    assert c._generate([1]) == "7 8 9"

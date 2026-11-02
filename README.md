@@ -956,6 +956,62 @@ the 3B smoke adapter took about 7 s per move, but with a training run sharing th
 - `--format pgn` — valid PGN with `{ ... }` comment blocks
 - `--format json` — structured output for programmatic use
 
+### Runtime: llama.cpp
+
+Kibitz is meant to be downloaded and run on the user's own machine, and MLX runs only
+on Apple Silicon. The shipped runtime is therefore [llama.cpp](https://github.com/ggml-org/llama.cpp)
+through `llama-cpp-python` (Decision Log row 21): Mac, Windows and Linux, GPU or CPU.
+Training is unchanged; only inference moves.
+
+```bash
+python3 scripts/convert_gguf.py adapters/cuda-v2 adapters/kibitz.gguf --base <base>.gguf
+python3 scripts/evaluate.py --gguf adapters/kibitz.gguf --out runs/eval-gguf.jsonl
+python3 -m kibitz.cli game.pgn --gguf adapters/kibitz.gguf
+```
+
+The model is a stock GGUF of the base (`gguf_base` in `configs/model.yaml`, 4.4 GB at
+Q4_K_M) plus the converted adapter (84 MB), applied at load time, so nothing is merged
+and an adapter update is a small download. Three things had to be right:
+
+- **Row order of q/k.** llama.cpp's converter permutes the rows of `q_proj` and `k_proj`
+  for its rotary layout, so `lora_b` of those modules must be permuted the same way.
+  Getting it wrong is nearly invisible: on the full adapter, the correlation between the
+  adapter's effect on next-token logits in MLX and in llama.cpp only drops from 0.97 to
+  0.96, because most of the adapter acts through the other modules. On an adapter
+  restricted to q/k, it is 0.89–0.92 with the permutation and −0.18 to +0.08 without.
+  `tests/test_convert_gguf.py` checks names, alpha and the permutation.
+- **Tokenization.** llama.cpp's tokenizer splits the spaces around `[INST]` differently
+  from the Hugging Face tokenizer the model was trained with (`<s> ␣␣ [INST] ␣ Open…`
+  against `<s> ␣ [INST] Open…`). `GGUFCommentator` tokenizes with the base's own
+  `tokenizer.json` and chat template and hands llama.cpp the ids;
+  `tests/test_model.py` asserts the ids equal training's on all 72 golden prompts.
+- **Sampling.** llama.cpp filters with top-k, top-p and min-p by default; mlx-lm does
+  not. They are switched off so both draw from the same distribution.
+
+**MLX against llama.cpp**, the same adapter (`mistral7b-cuda-v2`) on the same 200 test
+moves, greedy, same day:
+
+| | MLX | llama.cpp | human |
+|---|---:|---:|---:|
+| BLEU | 1.04 | 1.29 | |
+| ROUGE-L | 13.9 | 14.0 | |
+| distinct-2 | 0.35 | 0.39 | |
+| words | 13.4 | 12.1 | 16.9 |
+| false placement % | 1.5 | 4.5 | 2.5 |
+| unplayable move % | 17.5 | 12.5 | 3.0 |
+| ungrounded talk % | 0.5 | 1.0 | 0.0 |
+| comments per second (M1 Max) | 0.7 | 1.0 | |
+
+The two 4-bit quantizations differ, so greedy outputs diverge after a few tokens and
+only 29 of 200 comments are identical. The board checks move in opposite directions by
+3 and 5 points (6 and 10 comments), within noise at n=200. Nothing here says the port
+lost quality, and it is 40% faster.
+
+An earlier greedy run of the same adapter on this split (`runs/eval-v2prompt-greedy`,
+30 Oct, 10.5% unplayable) does not reproduce: only 28 of its 200 comments match a rerun,
+with the environment, adapter and enriched data ruled out. The prompt code most likely
+changed between that run and the commit. Compare against reruns, not that log.
+
 ---
 
 ## 9. CLI Design
@@ -972,6 +1028,7 @@ Options:
   --stockfish PATH        Stockfish binary (default: $STOCKFISH_PATH or Homebrew's)
   --depth INT             Engine depth (default: 14, the training depth)
   --model PATH            Adapter directory (default: adapters/)
+  --gguf PATH             Run through llama.cpp with this GGUF adapter instead of MLX
   --moves RANGE           Only comment on these move numbers, e.g. "15-30" or "17"
   --temp FLOAT            Sampling temperature (default: 0.8)
   --samples INT           Sample up to N per move; keep the first that passes the
@@ -1115,6 +1172,7 @@ invisible in the rows next to it — `forcing` was demoted for exactly the reaso
 | 18 | (unstated) | `captured`, `threatens`, `left_hanging` features | A 7B model cannot read a FEN; whatever the prompt does not state, it invents (§5.5). |
 | 19 | (unstated) — NAGs were in the prompt | Removed from the prompt | The annotator's `!`/`?` is hindsight from the target's author, present in 22% of training prompts and absent from every live game. |
 | 20 | "~1 epoch" at 2,400 iters | One epoch in iters (8,860 now), cosine horizon in updates | mlx-lm counts iters in micro-batches; 2,400 was 0.27 epoch and the LR never decayed (§7.2). |
+| 21 | Inference through MLX (§7.3) | llama.cpp: a stock base GGUF plus the converted adapter, prompts tokenized by the base's own tokenizer | Kibitz is to be downloaded and run locally, and MLX runs only on Apple Silicon. llama.cpp runs on Mac, Windows and Linux; same quality on the test split and 40% faster on the M1 Max (§8). |
 
 **Fields we added that the plan never specified:** `is_best`, `best_move`,
 `best_move_san` (all free from the same engine call), `material_offered`, `captured`,

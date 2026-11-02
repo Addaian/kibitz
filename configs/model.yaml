@@ -10,6 +10,15 @@ base_model: "mlx-community/Mistral-7B-Instruct-v0.3-4bit"
 # Gated: accept the licence on Hugging Face and set HF_TOKEN.
 hf_base_model: "mistralai/Mistral-7B-Instruct-v0.3"
 
+# The runtime Kibitz ships with: llama.cpp, on Mac, Windows and Linux. A stock
+# GGUF of the same base, with the adapter converted by scripts/convert_gguf.py
+# applied at load time (kibitz/model.py GGUFCommentator). Prompts are tokenized
+# with the base's own tokenizer files, as in training, not llama.cpp's.
+gguf_base:
+  repo: "bartowski/Mistral-7B-Instruct-v0.3-GGUF"
+  file: "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf"
+tokenizer_repo: "mlx-community/Mistral-7B-Instruct-v0.3-4bit"
+
 # Alternatives, all pre-quantised for MLX:
 #   mlx-community/Qwen2.5-7B-Instruct-4bit          strong technical prose
 #   mlx-community/Meta-Llama-3.1-8B-Instruct-4bit   README's second choice

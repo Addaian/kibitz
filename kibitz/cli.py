@@ -130,6 +130,8 @@ def main() -> None:
                     help=f"engine depth (default: {features.DEFAULT_DEPTH}, the training depth)")
     ap.add_argument("--model", default=None,
                     help="adapter directory (default: adapters/)")
+    ap.add_argument("--gguf", default=None,
+                    help="run through llama.cpp with this GGUF adapter instead of MLX")
     ap.add_argument("--moves", help='only comment on these move numbers, e.g. "15-30"')
     # Greedy decoding collapses to "White is threatening..."; sampling reads like
     # a person but invents more, so keep the first of N with no detectable fault.
@@ -153,10 +155,14 @@ def main() -> None:
         if game.headers.get("Variant") not in features.STANDARD_VARIANTS:
             sys.exit(f"unsupported variant: {game.headers.get('Variant')}")
 
-    from kibitz.model import DEFAULT_ADAPTER, KibitzCommentator
+    from kibitz.model import DEFAULT_ADAPTER, GGUFCommentator, KibitzCommentator
     try:
-        commentator = KibitzCommentator(adapter_path=args.model or DEFAULT_ADAPTER,
-                                        temp=args.temp, samples=args.samples)
+        if args.gguf:
+            commentator = GGUFCommentator(adapter_path=args.gguf, temp=args.temp,
+                                          samples=args.samples)
+        else:
+            commentator = KibitzCommentator(adapter_path=args.model or DEFAULT_ADAPTER,
+                                            temp=args.temp, samples=args.samples)
     except FileNotFoundError as exc:
         sys.exit(f"{exc} — train one with: python3 scripts/train.py")
     features._init_worker(args.stockfish, args.depth)

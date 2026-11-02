@@ -135,6 +135,8 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--model", help="base model override")
     ap.add_argument("--adapter", default="adapters", help="adapter directory")
+    ap.add_argument("--gguf", type=Path,
+                    help="score through llama.cpp with this GGUF adapter instead of MLX")
     ap.add_argument("--baseline", action="store_true",
                     help="also score the un-tuned base model for comparison")
     ap.add_argument("--max-tokens", type=int, default=160)
@@ -164,13 +166,22 @@ def main():
         sys.exit("could not match test rows back to data/enriched")
     print(f"scoring {len(rows)} held-out examples\n")
 
-    from kibitz.model import BaselineCommentator, KibitzCommentator
-    commentators = [KibitzCommentator(base_model=args.model, adapter_path=args.adapter,
-                                      max_tokens=args.max_tokens, temp=args.temp,
-                                      samples=args.samples)]
-    if args.baseline:
-        commentators.append(BaselineCommentator(base_model=args.model,
-                                                max_tokens=args.max_tokens, temp=args.temp))
+    from kibitz.model import BaselineCommentator, GGUFCommentator, KibitzCommentator
+    if args.gguf:
+        commentators = [GGUFCommentator(adapter_path=args.gguf, base_gguf=args.model,
+                                        max_tokens=args.max_tokens, temp=args.temp,
+                                        samples=args.samples)]
+        if args.baseline:
+            commentators.append(GGUFCommentator(adapter_path=None, base_gguf=args.model,
+                                                max_tokens=args.max_tokens, temp=args.temp,
+                                                name="BASELINE (no fine-tune)"))
+    else:
+        commentators = [KibitzCommentator(base_model=args.model, adapter_path=args.adapter,
+                                          max_tokens=args.max_tokens, temp=args.temp,
+                                          samples=args.samples)]
+        if args.baseline:
+            commentators.append(BaselineCommentator(base_model=args.model,
+                                                    max_tokens=args.max_tokens, temp=args.temp))
 
     references = [r["reference"] for r in rows]
     moves = [r["move"] for r in rows]
