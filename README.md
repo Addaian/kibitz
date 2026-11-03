@@ -427,6 +427,18 @@ checkmated position as ±20 for the side that mated. Any mating move also counts
 `is_best`, since the engine's choice is often a different mate. The move's SAN carries
 the `#`; `mate_in` stays None, since there is no mate left to count.
 
+**Features are a function of the position alone.** `analyse()` clears the engine's hash
+(`ucinewgame`) before every search. A depth-limited search reuses whatever the hash
+holds, so it used to depend on which positions the worker had searched before — and
+the pool hands games to workers in a different order on every run. Re-analysing 300
+positions in two orders gave the same eval for 37 of them; rerunning enrichment on 400
+training moves reproduced the stored classification for 76% and the best move for 77%.
+With the hash cleared, all 300 match, at about 10% more time per position. The hash
+size is fixed at 64 MB for the same reason: a fresh 16 MB table disagrees on 7% of
+positions. And the in-process cache keys a position by its halfmove clock too, since
+Stockfish scales its eval by it: without the clock, the first game to reach a position
+decided the features for every other, which exposed 5% of annotated moves.
+
 **Performance note:** Engine analysis is slow. Pre-compute and cache all evals during the data pipeline stage, not at inference time. At inference, features must be computed at the training depth (14): labels, `is_best` and `Engine preferred` all shift with depth, and the model has only seen depth-14 values. A shallower live search is an option only after measuring how often its labels agree with depth 14.
 
 ---
@@ -1209,6 +1221,7 @@ invisible in the rows next to it — `forcing` was demoted for exactly the reaso
 | 21 | Inference through MLX (§7.3) | llama.cpp: a stock base GGUF plus the converted adapter, prompts tokenized by the base's own tokenizer | Kibitz is to be downloaded and run locally, and MLX runs only on Apple Silicon. llama.cpp runs on Mac, Windows and Linux; same quality on the test split and 40% faster on the M1 Max (§8). |
 | 22 | Stockfish from Homebrew (`$STOCKFISH_PATH`) | `$STOCKFISH_PATH`, else PATH, else the official Stockfish 19 build, downloaded and checksum-verified | Users on Windows and Linux have no Homebrew path, and Stockfish's GPL-3 rules out bundling it. 19 rather than the training engine (18) because only 19 has one self-selecting build per OS, Linux ARM included. The features barely notice: rerunning depth 14 on 400 enriched moves, 18 reproduces the stored classification 75.8% of the time and 19 75.2% (best move 77.0% and 77.5%) — hash history moves them more than the version does. The eval itself shifts more (90th-percentile difference 2.1 pawns against 0.45). |
 | 23 | `python3 -m kibitz.cli`, MLX (§9) | An installable `kibitz` command (`pyproject.toml`), llama.cpp by default, `--model` for MLX | A download must run on any OS without MLX or a checkout; the runtime's model settings moved from `configs/model.yaml` into `kibitz/model.py` because an installed package has no `configs/`. |
+| 24 | (unstated) | Every search from a cleared hash; the analysis cache keyed with the halfmove clock | Depth-limited search reused whatever the hash held and the cache answered every clock with the first one seen, so features depended on the order the pool happened to process games: a rerun reproduced 77% of the stored classifications. Re-enriching changed 22.6% of classifications and best moves; class shares moved under a point, and the pairs, splits and targets are unchanged. Reruns with different worker counts are now byte-identical. Adapters trained before this saw the noisy labels (§5.1). |
 
 **Fields we added that the plan never specified:** `is_best`, `best_move`,
 `best_move_san` (all free from the same engine call), `material_offered`, `captured`,

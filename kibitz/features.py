@@ -104,14 +104,21 @@ _stockfish_path: str = DEFAULT_STOCKFISH
 
 
 def _cache_key(board: chess.Board) -> str:
-    """Position identity without halfmove/fullmove counters, for better hit rates."""
-    return board.board_fen() + " " + str(int(board.turn)) + " " + board.castling_xfen() + " " + str(board.ep_square)
+    """
+    Position identity without the fullmove number, which Stockfish ignores. The
+    halfmove clock stays: Stockfish scales its eval toward a draw as the clock
+    runs, and without it the first clock analysed answered for every other.
+    """
+    return (board.board_fen() + " " + str(int(board.turn)) + " " + board.castling_xfen()
+            + " " + str(board.ep_square) + " " + str(board.halfmove_clock))
 
 
 def _start_engine() -> None:
     global _engine
     _engine = chess.engine.SimpleEngine.popen_uci(_stockfish_path)
-    # One thread each: the pool already saturates the cores.
+    # One thread each: the pool already saturates the cores. Hash size is part of
+    # the result, not just speed: a fresh 16 MB table disagrees with 64 MB on 7%
+    # of positions.
     _engine.configure({"Threads": 1, "Hash": 64})
 
 
@@ -171,12 +178,16 @@ def analyse(board: chess.Board) -> tuple[int, int | None, str | None]:
         _cache[key] = result
         return result
 
+    # A new `game` each call sends ucinewgame, clearing the hash. A depth-limited
+    # search reuses whatever the hash holds, so without this the result depended
+    # on which positions the worker happened to search before: two orders of the
+    # same 300 positions agreed on 37 evals, against 300 with it (README §5.1).
     try:
-        info = _engine.analyse(board, chess.engine.Limit(depth=_depth))
+        info = _engine.analyse(board, chess.engine.Limit(depth=_depth), game=object())
     except chess.engine.EngineTerminatedError:
         # Defence in depth: recover the worker rather than lose every game after this one.
         _restart_engine()
-        info = _engine.analyse(board, chess.engine.Limit(depth=_depth))
+        info = _engine.analyse(board, chess.engine.Limit(depth=_depth), game=object())
     score = info["score"].white()
     mate = score.mate()
     if mate is not None:

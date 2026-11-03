@@ -146,3 +146,21 @@ def test_real_engine_finds_the_blunder():
     by_san = {m["san"]: m for _, m, _ in results}
     assert by_san["Nf6"]["move_classification"] == "blunder"
     assert by_san["Qxf7#"]["is_best"] and by_san["Qxf7#"]["mate_in"] is None
+
+
+@pytest.mark.skipif(not Path(features.DEFAULT_STOCKFISH).exists(), reason="no Stockfish")
+def test_real_engine_analysis_does_not_depend_on_what_came_before():
+    """The CLI analyses a range of moves, the pipeline only annotated ones, the
+    pool in any order: a position must get the same features either way."""
+    games = ["1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 *",
+             "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 c5 7. O-O dxc4 *"]
+    boards = [node.board() for pgn in games
+              for node in chess.pgn.read_game(io.StringIO(pgn)).mainline()]
+    features._init_worker(features.DEFAULT_STOCKFISH, 14)
+    try:
+        forward = [features.analyse(b) for b in boards]
+        features._cache.clear()
+        backward = [features.analyse(b) for b in reversed(boards)][::-1]
+    finally:
+        features._close_worker()
+    assert forward == backward

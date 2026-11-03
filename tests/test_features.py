@@ -566,6 +566,15 @@ def test_analyse_uses_the_cache_before_the_engine():
         F._cache.clear()
 
 
+def test_the_cache_keeps_positions_with_different_halfmove_clocks_apart():
+    """Stockfish's eval depends on the clock; one cache entry would make the
+    result depend on which game reached the position first."""
+    fen = "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq - {} {}"
+    a, b, c = (chess.Board(fen.format(*clocks)) for clocks in ((3, 3), (1, 3), (3, 9)))
+    assert F._cache_key(a) != F._cache_key(b)
+    assert F._cache_key(a) == F._cache_key(c)     # the fullmove number does not matter
+
+
 # --------------------------------------------------------------------------- #
 # engine line and game history, as the prompt shows them
 # --------------------------------------------------------------------------- #
